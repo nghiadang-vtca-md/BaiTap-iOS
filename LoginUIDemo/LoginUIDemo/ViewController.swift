@@ -73,7 +73,28 @@ class ViewController: UIViewController {
         myLabelInside.backgroundColor = .yellow
         
         lblDemoRuntimeModify.addSubview(myLabelInside)
+        
+        
+        // Button
+        
+        
+        let buttonDemo = UIButton(frame: CGRect(x: 100, y: 350, width: 100, height: 50))
+        buttonDemo.setTitle("NghiaDang", for: .normal)
+        buttonDemo.setTitleColor(.red, for: .highlighted)
+        buttonDemo.backgroundColor = .gray
+        buttonDemo.addTarget(self, action: #selector(buttonDemo_Click), for: .touchUpInside)
+        
+        self.view.addSubview(buttonDemo)
+        
+        
+        
+        // end Button
     }
+    // For Button
+    @objc func buttonDemo_Click(){
+        print("my button clicked")
+    }
+    // end For Button
 
     func login(username: String, password: String) throws {
         guard !username.isEmpty else {
@@ -95,5 +116,21 @@ class ViewController: UIViewController {
         case emptyField(field: String)
         case unmatch
     }
+    
 }
+
+/* Note for Button UI:
+
+- State "Enable" (uncheck) khác với Interaction "User interaction enabled" (uncheck)
+ - BackgroundImage nằm trên Image ; hành vi của background sẽ làm mở hình khi hightlight
+ 
+ - Chú ý khi kéo thả hình
+    + check copy
+    + lưu ý phải kéo thả vào mới được ( download trực tiếp về project vẫn không được )
+ 
+ - tạo button bằng programmatically
+ 
+ - tạo action cho button programmatically
+    + fix lỗi (Add '@objc' to expose this instance method to Objective-C ) - do ruột là Objective-C
+*/
 
