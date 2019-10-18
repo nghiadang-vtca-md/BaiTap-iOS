@@ -112,11 +112,17 @@
                                 <state key="normal" title="Random">
                                     <color key="titleColor" red="0.89813512559999997" green="0.071382942970000002" blue="0.080612675999999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnRandom_TUI:" destination="Ffi-hg-ahs" eventType="touchUpInside" id="dGu-dS-zac"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fSA-7b-DLL"/>
                     </view>
+                    <connections>
+                        <outlet property="btnRandom" destination="aFj-75-94K" id="MTK-nC-1nh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8y-O2-peD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
