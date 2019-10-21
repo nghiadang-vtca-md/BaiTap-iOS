@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87484B34235DCBFD00F49CD5 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87484B33235DCBFD00F49CD5 /* ViewController3.swift */; };
+		87484B36235DD9E600F49CD5 /* ViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87484B35235DD9E600F49CD5 /* ViewController4.swift */; };
+		87484B38235DF17500F49CD5 /* ViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87484B37235DF17500F49CD5 /* ViewController5.swift */; };
+		87484B3A235DF65700F49CD5 /* ViewController6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87484B39235DF65700F49CD5 /* ViewController6.swift */; };
 		87769B242359D3E300B81FB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87769B232359D3E300B81FB8 /* AppDelegate.swift */; };
 		87769B262359D3E300B81FB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87769B252359D3E300B81FB8 /* ViewController.swift */; };
 		87769B292359D3E300B81FB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87769B272359D3E300B81FB8 /* Main.storyboard */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87484B33235DCBFD00F49CD5 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
+		87484B35235DD9E600F49CD5 /* ViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController4.swift; sourceTree = "<group>"; };
+		87484B37235DF17500F49CD5 /* ViewController5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController5.swift; sourceTree = "<group>"; };
+		87484B39235DF65700F49CD5 /* ViewController6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController6.swift; sourceTree = "<group>"; };
 		87769B202359D3E300B81FB8 /* LoginUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87769B232359D3E300B81FB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87769B252359D3E300B81FB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +76,10 @@
 				87769B2F2359D3E400B81FB8 /* Info.plist */,
 				87769B352359F39500B81FB8 /* Images */,
 				87769B3A2359FB3F00B81FB8 /* ViewController2.swift */,
+				87484B33235DCBFD00F49CD5 /* ViewController3.swift */,
+				87484B35235DD9E600F49CD5 /* ViewController4.swift */,
+				87484B37235DF17500F49CD5 /* ViewController5.swift */,
+				87484B39235DF65700F49CD5 /* ViewController6.swift */,
 			);
 			path = LoginUIDemo;
 			sourceTree = "<group>";
@@ -156,7 +168,11 @@
 			files = (
 				87769B262359D3E300B81FB8 /* ViewController.swift in Sources */,
 				87769B242359D3E300B81FB8 /* AppDelegate.swift in Sources */,
+				87484B3A235DF65700F49CD5 /* ViewController6.swift in Sources */,
+				87484B34235DCBFD00F49CD5 /* ViewController3.swift in Sources */,
 				87769B3B2359FB3F00B81FB8 /* ViewController2.swift in Sources */,
+				87484B38235DF17500F49CD5 /* ViewController5.swift in Sources */,
+				87484B36235DD9E600F49CD5 /* ViewController4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
