@@ -19,6 +19,7 @@
 		87769B382359F39500B81FB8 /* blue.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 87769B362359F39500B81FB8 /* blue.jpeg */; };
 		87769B392359F39500B81FB8 /* red.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 87769B372359F39500B81FB8 /* red.jpeg */; };
 		87769B3B2359FB3F00B81FB8 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87769B3A2359FB3F00B81FB8 /* ViewController2.swift */; };
+		A48573E523604B5F00E25122 /* ViewController7.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48573E423604B5F00E25122 /* ViewController7.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		87769B362359F39500B81FB8 /* blue.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue.jpeg; sourceTree = "<group>"; };
 		87769B372359F39500B81FB8 /* red.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red.jpeg; sourceTree = "<group>"; };
 		87769B3A2359FB3F00B81FB8 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		A48573E423604B5F00E25122 /* ViewController7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController7.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				87484B35235DD9E600F49CD5 /* ViewController4.swift */,
 				87484B37235DF17500F49CD5 /* ViewController5.swift */,
 				87484B39235DF65700F49CD5 /* ViewController6.swift */,
+				A48573E423604B5F00E25122 /* ViewController7.swift */,
 			);
 			path = LoginUIDemo;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				87484B34235DCBFD00F49CD5 /* ViewController3.swift in Sources */,
 				87769B3B2359FB3F00B81FB8 /* ViewController2.swift in Sources */,
 				87484B38235DF17500F49CD5 /* ViewController5.swift in Sources */,
+				A48573E523604B5F00E25122 /* ViewController7.swift in Sources */,
 				87484B36235DD9E600F49CD5 /* ViewController4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
