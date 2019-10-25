@@ -84,6 +84,11 @@
 		87769B382359F39500B81FB8 /* blue.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 87769B362359F39500B81FB8 /* blue.jpeg */; };
 		87769B392359F39500B81FB8 /* red.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 87769B372359F39500B81FB8 /* red.jpeg */; };
 		87769B3B2359FB3F00B81FB8 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87769B3A2359FB3F00B81FB8 /* ViewController2.swift */; };
+		87E2E3D02363049100D9D2D9 /* ViewController10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E2E3CF2363049100D9D2D9 /* ViewController10.swift */; };
+		87E2E3D22363192F00D9D2D9 /* ViewController11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E2E3D12363192F00D9D2D9 /* ViewController11.swift */; };
+		87E2E3D523631B7E00D9D2D9 /* sunMin.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E2E3D323631B7E00D9D2D9 /* sunMin.png */; };
+		87E2E3D623631B7E00D9D2D9 /* sunMax.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E2E3D423631B7E00D9D2D9 /* sunMax.png */; };
+		87E2E3D82363208B00D9D2D9 /* pikachu.png in Resources */ = {isa = PBXBuildFile; fileRef = 87E2E3D72363208A00D9D2D9 /* pikachu.png */; };
 		A48573E523604B5F00E25122 /* ViewController7.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48573E423604B5F00E25122 /* ViewController7.swift */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +172,11 @@
 		87769B362359F39500B81FB8 /* blue.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue.jpeg; sourceTree = "<group>"; };
 		87769B372359F39500B81FB8 /* red.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red.jpeg; sourceTree = "<group>"; };
 		87769B3A2359FB3F00B81FB8 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		87E2E3CF2363049100D9D2D9 /* ViewController10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController10.swift; sourceTree = "<group>"; };
+		87E2E3D12363192F00D9D2D9 /* ViewController11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController11.swift; sourceTree = "<group>"; };
+		87E2E3D323631B7E00D9D2D9 /* sunMin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunMin.png; sourceTree = "<group>"; };
+		87E2E3D423631B7E00D9D2D9 /* sunMax.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunMax.png; sourceTree = "<group>"; };
+		87E2E3D72363208A00D9D2D9 /* pikachu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pikachu.png; sourceTree = "<group>"; };
 		A48573E423604B5F00E25122 /* ViewController7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController7.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -294,6 +304,8 @@
 				A48573E423604B5F00E25122 /* ViewController7.swift */,
 				8730568923607E78003DEA93 /* ViewController8.swift */,
 				873D468C2360954300B95091 /* ViewController9.swift */,
+				87E2E3CF2363049100D9D2D9 /* ViewController10.swift */,
+				87E2E3D12363192F00D9D2D9 /* ViewController11.swift */,
 			);
 			path = LoginUIDemo;
 			sourceTree = "<group>";
@@ -301,6 +313,9 @@
 		87769B352359F39500B81FB8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				87E2E3D72363208A00D9D2D9 /* pikachu.png */,
+				87E2E3D423631B7E00D9D2D9 /* sunMax.png */,
+				87E2E3D323631B7E00D9D2D9 /* sunMin.png */,
 				87769B362359F39500B81FB8 /* blue.jpeg */,
 				87769B372359F39500B81FB8 /* red.jpeg */,
 			);
@@ -372,11 +387,13 @@
 				873D46582360947200B95091 /* 1_ch.png in Resources */,
 				8730569F236086D6003DEA93 /* 3.jpeg in Resources */,
 				873D46832360947200B95091 /* 6_c.png in Resources */,
+				87E2E3D623631B7E00D9D2D9 /* sunMax.png in Resources */,
 				873D467B2360947200B95091 /* 3_b.png in Resources */,
 				873D465B2360947200B95091 /* 8_r.png in Resources */,
 				873D466A2360947200B95091 /* 9_c.png in Resources */,
 				873D46602360947200B95091 /* 8_b.png in Resources */,
 				873D46662360947200B95091 /* 11_b.png in Resources */,
+				87E2E3D82363208B00D9D2D9 /* pikachu.png in Resources */,
 				8730569D236086D6003DEA93 /* 9.jpeg in Resources */,
 				873D46792360947200B95091 /* 1_c.png in Resources */,
 				8730569A236086D6003DEA93 /* 8.jpeg in Resources */,
@@ -415,6 +432,7 @@
 				87769B382359F39500B81FB8 /* blue.jpeg in Resources */,
 				873D46812360947200B95091 /* 6_ch.png in Resources */,
 				873D467E2360947200B95091 /* 4_b.png in Resources */,
+				87E2E3D523631B7E00D9D2D9 /* sunMin.png in Resources */,
 				873D46682360947200B95091 /* 13_b.png in Resources */,
 				873D46692360947200B95091 /* 13_c.png in Resources */,
 				873D467D2360947200B95091 /* 5_r.png in Resources */,
@@ -445,10 +463,12 @@
 			files = (
 				87769B262359D3E300B81FB8 /* ViewController.swift in Sources */,
 				87769B242359D3E300B81FB8 /* AppDelegate.swift in Sources */,
+				87E2E3D22363192F00D9D2D9 /* ViewController11.swift in Sources */,
 				873D468D2360954300B95091 /* ViewController9.swift in Sources */,
 				87484B3A235DF65700F49CD5 /* ViewController6.swift in Sources */,
 				87484B34235DCBFD00F49CD5 /* ViewController3.swift in Sources */,
 				87769B3B2359FB3F00B81FB8 /* ViewController2.swift in Sources */,
+				87E2E3D02363049100D9D2D9 /* ViewController10.swift in Sources */,
 				87484B38235DF17500F49CD5 /* ViewController5.swift in Sources */,
 				A48573E523604B5F00E25122 /* ViewController7.swift in Sources */,
 				87484B36235DD9E600F49CD5 /* ViewController4.swift in Sources */,
@@ -598,7 +618,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LoginUIDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -606,6 +627,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nghiadang.LoginUIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -615,7 +637,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LoginUIDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -623,6 +646,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nghiadang.LoginUIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

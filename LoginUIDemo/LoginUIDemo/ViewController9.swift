@@ -21,6 +21,9 @@ class ViewController9: UIViewController {
     @IBOutlet weak var imageComputer1: UIImageView!
     @IBOutlet weak var imageComputer2: UIImageView!
     @IBOutlet weak var imageComputer3: UIImageView!
+    
+    let imageUp = UIImage(named: "up.png")
+    var isPlayAgain = false
     // Actions
     
     @IBAction func btnStartGame_Click(_ sender: UIButton) {
@@ -53,9 +56,10 @@ class ViewController9: UIViewController {
         let categories = ["c","r","ch","b"]
         for name in 1...13 {
             for category in categories {
-                if let image = UIImage(named: "\(name)_\(category).png") {
+                let imgString = "\(name)_\(category).png"
+                if let image = UIImage(named: imgString) {
                     cards.append(image)
-                    cardsString.append("\(name)_\(category).png")
+                    cardsString.append(imgString)
                 }
             }
         }
@@ -75,20 +79,20 @@ class ViewController9: UIViewController {
     
     func dealTheCards(cards: [String] ) {
         var cardsShuffle = cards.shuffled()
-//        let getCardYour1 = cardsShuffle.removeLast()
-//        let getCardComputer1 = cardsShuffle.removeLast()
-//        let getCardYour2 = cardsShuffle.removeLast()
-//        let getCardComputer2 = cardsShuffle.removeLast()
-//        let getCardYour3 = cardsShuffle.removeLast()
-//        let getCardComputer3 = cardsShuffle.removeLast()
+        let getCardYour1 = cardsShuffle.removeLast()
+        let getCardComputer1 = cardsShuffle.removeLast()
+        let getCardYour2 = cardsShuffle.removeLast()
+        let getCardComputer2 = cardsShuffle.removeLast()
+        let getCardYour3 = cardsShuffle.removeLast()
+        let getCardComputer3 = cardsShuffle.removeLast()
         
         // Cheating game
-        let getCardYour1 = "13_b"
-        let getCardComputer1 = cardsShuffle.removeLast()
-        let getCardYour2 = "13_ch"
-        let getCardComputer2 = cardsShuffle.removeLast()
-        let getCardYour3 = "13_c"
-        let getCardComputer3 = cardsShuffle.removeLast()
+//        let getCardYour1 = "13_b"
+//        let getCardComputer1 = cardsShuffle.removeLast()
+//        let getCardYour2 = "13_ch"
+//        let getCardComputer2 = cardsShuffle.removeLast()
+//        let getCardYour3 = "13_c"
+//        let getCardComputer3 = cardsShuffle.removeLast()
         //
         
         imageYour1.image = UIImage(named: getCardYour1)
@@ -102,11 +106,11 @@ class ViewController9: UIViewController {
         let computerPoint = calculatePoint(cards: [getCardComputer1, getCardComputer2, getCardComputer3])
         
         if yourPoint > computerPoint {
-            lblResult.text = "You win!"
+            lblResult.text = "Bạn thắng!"
         } else if yourPoint < computerPoint {
-            lblResult.text = "Computer wins!"
+            lblResult.text = "Máy thắng!"
         } else {
-            lblResult.text = "Draw!"
+            lblResult.text = "Hoà!"
         }
         
         lblResult.isHidden = false
