@@ -15,6 +15,12 @@ class ViewController14: UIViewController {
     @IBOutlet weak var tvResultLap: UITextView!
     
     @IBAction func btn_action_tap(_ sender: UIButton) {
+        let tag = sender.tag
+        if tag == 10 {
+            
+        } else {
+            
+        }
         //print(sender.titleLabel?.text)
         switch sender.titleLabel?.text {
         case "Start":

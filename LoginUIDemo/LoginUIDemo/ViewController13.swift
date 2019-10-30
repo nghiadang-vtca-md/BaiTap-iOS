@@ -23,18 +23,18 @@ class ViewController13: UIViewController {
     @IBOutlet weak var tvResult: UITextView!
     
     @IBAction func stepperAge_Changed(_ sender: UIStepper) {
-        lblShowAge.text = String(Int(stepperAge.value))
+        lblShowAge.text = "\(Int(stepperAge.value))"
     }
     
     @IBAction func sliderExperience_Changed(_ sender: UISlider) {
-        lblShowExperience.text = String(Int(sliderExperience.value))
+        lblShowExperience.text = "\(Int(sliderExperience.value))"
     }
     
     var timer: Timer!
-    var count: Int = 1
     
     @IBAction func btnSubmit_Tapped(_ sender: UIButton) {
         
+        self.view.endEditing(true)
         
         let firstName = tfFirstname.text ?? ""
         let lastName = tfLastname.text ?? ""
@@ -55,32 +55,35 @@ class ViewController13: UIViewController {
         
         let result = "\(firstName) \(lastName)\n\(sex), born in \(Calendar.current.component(.year ,from: Date()) - age)\nNum of experience: \(numbOfExperience)\nNum of company: \(numOfCompany)"
         
-        self.view.endEditing(true)
+        
         showWaiting10Seconds(result: result)
         
     }
     
     func showWaiting10Seconds(result: String) {
-        indicatorWaitingForResult.isHidden = false
+//        indicatorWaitingForResult.isHidden = false
+//        indicatorWaitingForResult.isAnimating = true
         pvWaitingForResult.isHidden = false
-        pvWaitingForResult.progress = 0.0
+//        pvWaitingForResult.progress = 0.0
         indicatorWaitingForResult.startAnimating()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self](_) in
             
-            let progressUpdate = (self?.pvWaitingForResult.progress)! + 0.1 // không được làm vậy !!!
-            self?.pvWaitingForResult.setProgress(progressUpdate, animated: true)
+            guard let wSelf = self else { return }
             
-            if(self?.pvWaitingForResult.progress == 1) {
-                self?.timer.invalidate()
-                self?.timer = nil
-                self?.indicatorWaitingForResult.stopAnimating()
-                self?.showResult(result: result)
+            let progressUpdate = wSelf.pvWaitingForResult.progress + 0.1 // không được làm vậy !!!
+            wSelf.pvWaitingForResult.setProgress(progressUpdate, animated: true)
+            
+            if wSelf.pvWaitingForResult.progress == 1 {
+                wSelf.timer.invalidate()
+                wSelf.timer = nil
+                wSelf.indicatorWaitingForResult.stopAnimating()
+                wSelf.showResult(result: result)
             }
         })
     }
     
     func showResult(result: String) {
-        indicatorWaitingForResult.isHidden = true
+//        indicatorWaitingForResult.isHidden = true
         pvWaitingForResult.isHidden = true
         tvResult.isHidden = false
         tvResult.text = result
@@ -106,7 +109,7 @@ class ViewController13: UIViewController {
     
     func setUpInitial(){
         pvWaitingForResult.isHidden = true
-        indicatorWaitingForResult.isHidden = true
+//        indicatorWaitingForResult.isHidden = true
         tvResult.isHidden = true
     }
     
@@ -121,4 +124,23 @@ class ViewController13: UIViewController {
     }
     */
 
+}
+
+extension ViewController13: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        if textField == tfWeight {
+//            tfHeight.becomeFirstResponder()
+//        } else if textField == tfHeight {
+//            self.view.endEditing(true)
+//        }
+//        return true
+        
+        if textField == tfFirstname {
+            tfLastname.becomeFirstResponder()
+        } else if textField == tfLastname {
+            tfLastname.resignFirstResponder()
+            //self.view.endEditing(true)
+        }
+        return true
+    }
 }
