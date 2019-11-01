@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zu0-ke-se3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="koX-la-ZLU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -985,14 +985,144 @@
             </objects>
             <point key="canvasLocation" x="10179.710144927538" y="833.70535714285711"/>
         </scene>
+        <!--View Controller17-->
+        <scene sceneID="51b-kP-KqY">
+            <objects>
+                <viewController id="ede-1f-6HM" customClass="ViewController17" customModule="LoginUIDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FUi-c0-3Gq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="BkK-0r-JwM">
+                                <rect key="frame" x="20" y="115" width="374" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item1" image="square.and.arrow.down" catalog="system" width="42" id="zbQ-2U-xZo"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="P60-sE-3ZY"/>
+                                    <barButtonItem title="Item2" image="trash.fill" catalog="system" id="crX-Rl-PEF"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xrW-2n-eaF"/>
+                                    <barButtonItem title="Item3" image="paperplane.fill" catalog="system" id="pTB-Yf-zeX"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2yM-w8-YU5"/>
+                                    <barButtonItem title="Item4" image="tray.full.fill" catalog="system" id="c8v-RN-je4"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Fq1-RV-v1G">
+                                <rect key="frame" x="20" y="206" width="374" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item1" image="square.and.arrow.down" catalog="system" width="42" id="hrI-iQ-JK6"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="snt-hS-oiz"/>
+                                    <barButtonItem title="Item2" image="trash.fill" catalog="system" id="BS5-G5-Oq3"/>
+                                    <barButtonItem title="Item" style="plain" id="JBX-T9-hnK">
+                                        <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="xgo-2a-ziQ">
+                                            <rect key="frame" x="124" y="5" width="191" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item4" image="paperplane.fill" catalog="system" id="lft-mc-YaQ">
+                                        <connections>
+                                            <action selector="Send_ItemButtonBar:" destination="ede-1f-6HM" id="iOS-5q-snd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap to  trigger accessoryView" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jgg-ZQ-vpt">
+                                <rect key="frame" x="20" y="398" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LeL-YQ-tes"/>
+                    </view>
+                    <connections>
+                        <outlet property="myTextField" destination="jgg-ZQ-vpt" id="Z04-HZ-wsG"/>
+                        <outlet property="myTextFieldInsideToolbar" destination="xgo-2a-ziQ" id="aX2-eL-HPF"/>
+                        <outlet property="myToolbar" destination="BkK-0r-JwM" id="cgv-XT-wCU"/>
+                        <outlet property="myToolbarWithTextField" destination="Fq1-RV-v1G" id="vOe-U2-5b8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5fF-3V-9cR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11036.231884057972" y="833.70535714285711"/>
+        </scene>
+        <!--View Controller18-->
+        <scene sceneID="nTO-eJ-M8e">
+            <objects>
+                <viewController id="koX-la-ZLU" customClass="ViewController18" customModule="LoginUIDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MTt-go-3PQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bs-Y2-aEA">
+                                <rect key="frame" x="20" y="63" width="374" height="638"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="vS1-V7-HLb">
+                                <rect key="frame" x="20" y="770" width="374" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem enabled="NO" title="Back" id="Vux-aQ-Ezr">
+                                        <connections>
+                                            <action selector="backButton_Tap:" destination="koX-la-ZLU" id="hga-p2-b2e"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem enabled="NO" title="Forward" id="Im0-bb-4SQ">
+                                        <connections>
+                                            <action selector="forwardButton_Tap:" destination="koX-la-ZLU" id="PgJ-U6-oQc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem enabled="NO" title="Reload" id="r7w-bf-70m">
+                                        <connections>
+                                            <action selector="reloadButton_Tap:" destination="koX-la-ZLU" id="K6W-H6-wGa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="LoadHTML" id="Aet-Xs-kkT">
+                                        <connections>
+                                            <action selector="loadHTMLButton_Tap:" destination="koX-la-ZLU" id="81g-Qx-zbL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="eN5-tR-gTm"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButtonItem" destination="Vux-aQ-Ezr" id="eHX-eF-uiv"/>
+                        <outlet property="forwardButtonItem" destination="Im0-bb-4SQ" id="qlT-pD-PNs"/>
+                        <outlet property="loadHTMLButtonItem" destination="Aet-Xs-kkT" id="Ba7-nQ-R3f"/>
+                        <outlet property="myWebView" destination="1bs-Y2-aEA" id="axV-Eo-YEc"/>
+                        <outlet property="reloadButtonItem" destination="r7w-bf-70m" id="SxB-h0-Qqe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pbm-WG-W7m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11904.347826086958" y="833.70535714285711"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1.jpeg" width="265" height="190"/>
         <image name="blue.jpeg" width="212" height="212"/>
+        <image name="paperplane.fill" catalog="system" width="64" height="60"/>
         <image name="pikachu.png" width="226" height="223"/>
         <image name="red.jpeg" width="225" height="225"/>
+        <image name="square.and.arrow.down" catalog="system" width="60" height="64"/>
         <image name="sunMax.png" width="32.25" height="32.25"/>
         <image name="sunMin.png" width="32.25" height="32.25"/>
+        <image name="trash.fill" catalog="system" width="60" height="64"/>
+        <image name="tray.full.fill" catalog="system" width="64" height="44"/>
         <image name="up.png" width="180" height="251"/>
     </resources>
 </document>

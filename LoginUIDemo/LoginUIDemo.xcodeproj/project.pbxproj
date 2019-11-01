@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87248883236C4E6900F89FDD /* ViewController17.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87248882236C4E6900F89FDD /* ViewController17.swift */; };
+		87248885236C645000F89FDD /* ViewController18.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87248884236C645000F89FDD /* ViewController18.swift */; };
+		87248889236C69BC00F89FDD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87248887236C660800F89FDD /* WebKit.framework */; };
+		87248892236C73E600F89FDD /* zing.html in Resources */ = {isa = PBXBuildFile; fileRef = 87248891236C73E600F89FDD /* zing.html */; };
 		8730568A23607E78003DEA93 /* ViewController8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8730568923607E78003DEA93 /* ViewController8.swift */; };
 		87305696236086D6003DEA93 /* 10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8730568C236086D6003DEA93 /* 10.jpeg */; };
 		87305697236086D6003DEA93 /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8730568D236086D6003DEA93 /* 1.jpeg */; };
@@ -98,6 +102,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87248882236C4E6900F89FDD /* ViewController17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController17.swift; sourceTree = "<group>"; };
+		87248884236C645000F89FDD /* ViewController18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController18.swift; sourceTree = "<group>"; };
+		87248887236C660800F89FDD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		87248891236C73E600F89FDD /* zing.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = zing.html; sourceTree = "<group>"; };
 		8730568923607E78003DEA93 /* ViewController8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController8.swift; sourceTree = "<group>"; };
 		8730568C236086D6003DEA93 /* 10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpeg; sourceTree = "<group>"; };
 		8730568D236086D6003DEA93 /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
@@ -195,12 +203,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87248889236C69BC00F89FDD /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87248886236C660700F89FDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87248887236C660800F89FDD /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8724888A236C728D00F89FDD /* html */ = {
+			isa = PBXGroup;
+			children = (
+				87248891236C73E600F89FDD /* zing.html */,
+			);
+			path = html;
+			sourceTree = "<group>";
+		};
 		8730568B236086D6003DEA93 /* images_food */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +308,7 @@
 			children = (
 				87769B222359D3E300B81FB8 /* LoginUIDemo */,
 				87769B212359D3E300B81FB8 /* Products */,
+				87248886236C660700F89FDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -297,6 +323,7 @@
 		87769B222359D3E300B81FB8 /* LoginUIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8724888A236C728D00F89FDD /* html */,
 				8730568B236086D6003DEA93 /* images_food */,
 				873D46212360947200B95091 /* cards */,
 				87769B232359D3E300B81FB8 /* AppDelegate.swift */,
@@ -321,6 +348,8 @@
 				A4768D5B2369701B00B9EE6E /* ViewController14.swift */,
 				874AE7FD2369B784000065E8 /* ViewController15.swift */,
 				874AE7FF2369C4F8000065E8 /* ViewController16.swift */,
+				87248882236C4E6900F89FDD /* ViewController17.swift */,
+				87248884236C645000F89FDD /* ViewController18.swift */,
 			);
 			path = LoginUIDemo;
 			sourceTree = "<group>";
@@ -447,6 +476,7 @@
 				87769B382359F39500B81FB8 /* blue.jpeg in Resources */,
 				873D46812360947200B95091 /* 6_ch.png in Resources */,
 				873D467E2360947200B95091 /* 4_b.png in Resources */,
+				87248892236C73E600F89FDD /* zing.html in Resources */,
 				87E2E3D523631B7E00D9D2D9 /* sunMin.png in Resources */,
 				873D46682360947200B95091 /* 13_b.png in Resources */,
 				873D46692360947200B95091 /* 13_c.png in Resources */,
@@ -484,8 +514,10 @@
 				873D468D2360954300B95091 /* ViewController9.swift in Sources */,
 				874AE7FE2369B784000065E8 /* ViewController15.swift in Sources */,
 				87484B3A235DF65700F49CD5 /* ViewController6.swift in Sources */,
+				87248883236C4E6900F89FDD /* ViewController17.swift in Sources */,
 				87484B34235DCBFD00F49CD5 /* ViewController3.swift in Sources */,
 				8797967F23671D0600D4AF8D /* ViewController12.swift in Sources */,
+				87248885236C645000F89FDD /* ViewController18.swift in Sources */,
 				87769B3B2359FB3F00B81FB8 /* ViewController2.swift in Sources */,
 				87E2E3D02363049100D9D2D9 /* ViewController10.swift in Sources */,
 				87484B38235DF17500F49CD5 /* ViewController5.swift in Sources */,
