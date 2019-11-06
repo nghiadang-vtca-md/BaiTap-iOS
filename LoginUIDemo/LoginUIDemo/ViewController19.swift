@@ -22,13 +22,11 @@ class ViewController19: UIViewController {
         // Do any additional setup after loading the view.
         myTableView.dataSource = self
         myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "myCell") // khai báo vùng nhớ lần đầu để tái sử dụng
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        createBlueView()
+        //createBlueView()
     }
     
 
@@ -50,36 +48,41 @@ class ViewController19: UIViewController {
 //            print("section = \(newIndexPath.section) row = \(newIndexPath.row)")
 //        }
         
-        let point = CGPoint(x: 50, y: 250)
-        let view = UIView(frame: CGRect(x: 50, y: 250, width: 1, height: 1))
-        view.backgroundColor = .red
-        myTableView.addSubview(view)
-        if let indexPathPoint = myTableView.indexPathForRow(at: point) {
-            
-            print("section = \(indexPathPoint.section) row = \(indexPathPoint.row)")
-        }
+        
+//        let point = CGPoint(x: 50, y: 250)
+//        let view = UIView(frame: CGRect(x: 50, y: 250, width: 1, height: 1))
+//        view.backgroundColor = .red
+//        myTableView.addSubview(view)
+//        if let indexPathPoint = myTableView.indexPathForRow(at: point) {
+//
+//            print("section = \(indexPathPoint.section) row = \(indexPathPoint.row)")
+//        }
         
         
-//        let rect = CGRect(x: 50, y: 250, width: 10, height: 100)
-//        let view1 = UIView(frame: rect)
-//        view1.backgroundColor = .blue
-//        self.view.addSubview(view1)
-        if let indexPathPRect = myTableView.indexPathsForRows(in: blueView.frame
-            ) {
-
-            print((indexPathPRect))
-            //print("section = \(indexPathPoint.section) row = \(indexPathPoint.row)")
-        }
-    }
-    
-    
-    var blueView:UIView!
-    func createBlueView() {
+        
         let rect = CGRect(x: 50, y: 250, width: 10, height: 100)
-        blueView = UIView(frame: rect)
-        blueView.backgroundColor = .blue
-        self.view.addSubview(blueView)
+        let view1 = UIView(frame: rect)
+        view1.backgroundColor = .blue
+        self.view.addSubview(view1)
+        if let indexPathRect = myTableView.indexPathsForRows(in: view1.frame) {
+            print(indexPathRect)
+        }
+//        if let indexPathPRect = myTableView.indexPathsForRows(in: blueView.frame
+//            ) {
+//
+//            print((indexPathPRect))
+//            //print("section = \(indexPathPoint.section) row = \(indexPathPoint.row)")
+//        }
     }
+    
+    
+//    var blueView:UIView!
+//    func createBlueView() {
+//        let rect = CGRect(x: 50, y: 250, width: 10, height: 100)
+//        blueView = UIView(frame: rect)
+//        blueView.backgroundColor = .blue
+//        self.view.addSubview(blueView)
+//    }
     
     
 }
@@ -113,7 +116,6 @@ extension ViewController19: UITableViewDataSource {
         //let text = "section = \(currentSection); row = \(currentRowOfSection)"
         let text = getTextFromArray(section: currentSection, row: currentRowOfSection)
 //        print(text)
-        
 //        var cell = tableView.dequeueReusableCell(withIdentifier: "myCell")
 //        if cell == nil {
 //            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "myCell")

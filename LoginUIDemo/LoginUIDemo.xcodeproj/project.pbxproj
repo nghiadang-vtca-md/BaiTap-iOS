@@ -84,6 +84,14 @@
 		87484B3A235DF65700F49CD5 /* ViewController6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87484B39235DF65700F49CD5 /* ViewController6.swift */; };
 		874AE7FE2369B784000065E8 /* ViewController15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874AE7FD2369B784000065E8 /* ViewController15.swift */; };
 		874AE8002369C4F8000065E8 /* ViewController16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874AE7FF2369C4F8000065E8 /* ViewController16.swift */; };
+		8750B0A92372ED3A00E82783 /* ViewController20.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750B0A82372ED3A00E82783 /* ViewController20.swift */; };
+		8750B0AB2372F25600E82783 /* ViewController20_CustomViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750B0AA2372F25600E82783 /* ViewController20_CustomViewCellTableViewCell.swift */; };
+		8750B0B02372F6A100E82783 /* saurieng.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8750B0AD2372F6A100E82783 /* saurieng.jpg */; };
+		8750B0B12372F6A100E82783 /* xoai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8750B0AE2372F6A100E82783 /* xoai.jpg */; };
+		8750B0B22372F6A100E82783 /* duahau.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8750B0AF2372F6A100E82783 /* duahau.jpg */; };
+		8750B0B42372FDCD00E82783 /* tao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8750B0B32372FDCD00E82783 /* tao.jpg */; };
+		8750B0B723730AC900E82783 /* dao.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8750B0B523730AC800E82783 /* dao.jpeg */; };
+		8750B0B823730AC900E82783 /* nho.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8750B0B623730AC900E82783 /* nho.jpeg */; };
 		87769B242359D3E300B81FB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87769B232359D3E300B81FB8 /* AppDelegate.swift */; };
 		87769B262359D3E300B81FB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87769B252359D3E300B81FB8 /* ViewController.swift */; };
 		87769B292359D3E300B81FB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87769B272359D3E300B81FB8 /* Main.storyboard */; };
@@ -181,6 +189,14 @@
 		87484B39235DF65700F49CD5 /* ViewController6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController6.swift; sourceTree = "<group>"; };
 		874AE7FD2369B784000065E8 /* ViewController15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController15.swift; sourceTree = "<group>"; };
 		874AE7FF2369C4F8000065E8 /* ViewController16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController16.swift; sourceTree = "<group>"; };
+		8750B0A82372ED3A00E82783 /* ViewController20.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController20.swift; sourceTree = "<group>"; };
+		8750B0AA2372F25600E82783 /* ViewController20_CustomViewCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController20_CustomViewCellTableViewCell.swift; sourceTree = "<group>"; };
+		8750B0AD2372F6A100E82783 /* saurieng.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = saurieng.jpg; sourceTree = "<group>"; };
+		8750B0AE2372F6A100E82783 /* xoai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xoai.jpg; sourceTree = "<group>"; };
+		8750B0AF2372F6A100E82783 /* duahau.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = duahau.jpg; sourceTree = "<group>"; };
+		8750B0B32372FDCD00E82783 /* tao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tao.jpg; sourceTree = "<group>"; };
+		8750B0B523730AC800E82783 /* dao.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dao.jpeg; sourceTree = "<group>"; };
+		8750B0B623730AC900E82783 /* nho.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nho.jpeg; sourceTree = "<group>"; };
 		87769B202359D3E300B81FB8 /* LoginUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87769B232359D3E300B81FB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87769B252359D3E300B81FB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +323,19 @@
 			path = cards;
 			sourceTree = "<group>";
 		};
+		8750B0AC2372F68B00E82783 /* images_fruit */ = {
+			isa = PBXGroup;
+			children = (
+				8750B0AF2372F6A100E82783 /* duahau.jpg */,
+				8750B0AD2372F6A100E82783 /* saurieng.jpg */,
+				8750B0AE2372F6A100E82783 /* xoai.jpg */,
+				8750B0B32372FDCD00E82783 /* tao.jpg */,
+				8750B0B523730AC800E82783 /* dao.jpeg */,
+				8750B0B623730AC900E82783 /* nho.jpeg */,
+			);
+			path = images_fruit;
+			sourceTree = "<group>";
+		};
 		87769B172359D3E300B81FB8 = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +356,7 @@
 		87769B222359D3E300B81FB8 /* LoginUIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8750B0AC2372F68B00E82783 /* images_fruit */,
 				8724888A236C728D00F89FDD /* html */,
 				8730568B236086D6003DEA93 /* images_food */,
 				873D46212360947200B95091 /* cards */,
@@ -356,6 +386,8 @@
 				87248884236C645000F89FDD /* ViewController18.swift */,
 				872BAE6523705193002DB119 /* TestViewController.swift */,
 				872BAE6723705A75002DB119 /* ViewController19.swift */,
+				8750B0A82372ED3A00E82783 /* ViewController20.swift */,
+				8750B0AA2372F25600E82783 /* ViewController20_CustomViewCellTableViewCell.swift */,
 			);
 			path = LoginUIDemo;
 			sourceTree = "<group>";
@@ -435,7 +467,9 @@
 				873D466E2360947200B95091 /* 9_b.png in Resources */,
 				873D46592360947200B95091 /* 12_c.png in Resources */,
 				873D46582360947200B95091 /* 1_ch.png in Resources */,
+				8750B0B823730AC900E82783 /* nho.jpeg in Resources */,
 				8730569F236086D6003DEA93 /* 3.jpeg in Resources */,
+				8750B0B12372F6A100E82783 /* xoai.jpg in Resources */,
 				873D46832360947200B95091 /* 6_c.png in Resources */,
 				87E2E3D623631B7E00D9D2D9 /* sunMax.png in Resources */,
 				873D467B2360947200B95091 /* 3_b.png in Resources */,
@@ -456,12 +490,14 @@
 				873D46822360947200B95091 /* 13_ch.png in Resources */,
 				873D46762360947200B95091 /* 5_c.png in Resources */,
 				87305697236086D6003DEA93 /* 1.jpeg in Resources */,
+				8750B0B22372F6A100E82783 /* duahau.jpg in Resources */,
 				873D46702360947200B95091 /* 10_ch.png in Resources */,
 				873D46772360947200B95091 /* 7_r.png in Resources */,
 				873D465C2360947200B95091 /* 10_b.png in Resources */,
 				87305696236086D6003DEA93 /* 10.jpeg in Resources */,
 				873D467F2360947200B95091 /* 4_c.png in Resources */,
 				8730569E236086D6003DEA93 /* 2.jpeg in Resources */,
+				8750B0B723730AC900E82783 /* dao.jpeg in Resources */,
 				873D467A2360947200B95091 /* 1_b.png in Resources */,
 				873D467C2360947200B95091 /* 3_c.png in Resources */,
 				873D465F2360947200B95091 /* 8_c.png in Resources */,
@@ -478,6 +514,7 @@
 				873D46862360947200B95091 /* 11_ch.png in Resources */,
 				87769B2E2359D3E400B81FB8 /* LaunchScreen.storyboard in Resources */,
 				873D465E2360947200B95091 /* 10_r.png in Resources */,
+				8750B0B42372FDCD00E82783 /* tao.jpg in Resources */,
 				873D46842360947200B95091 /* 6_b.png in Resources */,
 				87769B382359F39500B81FB8 /* blue.jpeg in Resources */,
 				873D46812360947200B95091 /* 6_ch.png in Resources */,
@@ -485,6 +522,7 @@
 				87248892236C73E600F89FDD /* zing.html in Resources */,
 				87E2E3D523631B7E00D9D2D9 /* sunMin.png in Resources */,
 				873D46682360947200B95091 /* 13_b.png in Resources */,
+				8750B0B02372F6A100E82783 /* saurieng.jpg in Resources */,
 				873D46692360947200B95091 /* 13_c.png in Resources */,
 				873D467D2360947200B95091 /* 5_r.png in Resources */,
 				8730569B236086D6003DEA93 /* 4.jpeg in Resources */,
@@ -532,6 +570,8 @@
 				A48573E523604B5F00E25122 /* ViewController7.swift in Sources */,
 				87484B36235DD9E600F49CD5 /* ViewController4.swift in Sources */,
 				8730568A23607E78003DEA93 /* ViewController8.swift in Sources */,
+				8750B0A92372ED3A00E82783 /* ViewController20.swift in Sources */,
+				8750B0AB2372F25600E82783 /* ViewController20_CustomViewCellTableViewCell.swift in Sources */,
 				874AE8002369C4F8000065E8 /* ViewController16.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
