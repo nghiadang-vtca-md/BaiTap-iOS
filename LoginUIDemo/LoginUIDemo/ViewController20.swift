@@ -69,6 +69,7 @@ class ViewController20: UIViewController {
 
         // Do any additional setup after loading the view.
         myTableView.dataSource = self
+        myTableView.delegate = self
     }
     
 
@@ -81,7 +82,10 @@ class ViewController20: UIViewController {
      - ở tableView của Datasource -> cast qua kiểu file vừa tạo (thay vì là UITableViewCell)
      - cài đặt datasource = self
      
-     Cách 2:
+     Cách 2: tạo bằng code rồi thêm bằng "register"
+     - xem lại màn hình trước
+     
+     
      
      Fix lỗi mặc định row height cell = 44px
      - Size inspector của TableView -> Chọn kích thước cho "Row height"
@@ -104,9 +108,28 @@ extension ViewController20: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        customCell.lblName.text = currentFruit.name
-        customCell.lblDescription.text = currentFruit.description
-        customCell.imgView.image = UIImage(named: currentFruit.image)
+        // Cách 1:
+//        customCell.lblName.text = currentFruit.name
+//        customCell.lblDescription.text = currentFruit.description
+//        customCell.imgView.image = UIImage(named: currentFruit.image)
+        
+        // Cách 2: chia code xử lý về cell (file TableViewCell.swift)
+        customCell.visualizeCell(item: currentFruit)
+        // Cách 3: xem code viewcontroller21
+        
+        
+        // accessory type
+        //customCell.accessoryType = .detailButton
+        
+        // tạo accessoryView bằng code
+        let buttonAccessory = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        buttonAccessory.backgroundColor = .cyan
+        buttonAccessory.setTitle("+", for: .normal)
+        customCell.accessoryView = buttonAccessory
+        //customCell.btnChoose.isHidden = true
+        // end tạo accessoryView bằng code
+        
+       
         
         return customCell
     }
@@ -139,4 +162,76 @@ extension ViewController20: UITableViewDataSource {
         arrayItem.insert(item, at: rowDes)
     }
 
+}
+
+extension ViewController20: UITableViewDelegate {
+    // hàm này gọi trước hàm func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    // nếu trả về nill thì sẽ không vô hàm tiếp theo
+    // cái này dùng để check điều kiện để không xử lý những row cần thiết
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return indexPath
+        //return nil
+    }
+    
+    // khi row được selected
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //tableView.deselectRow(at: indexPath, animated: true)
+        
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        let isSelected = cell?.isSelected ?? false
+        //let isHighlighted = cell?.isHighlighted ?? false
+        
+//        cell?.setSelected(<#T##selected: Bool##Bool#>, animated: <#T##Bool#>)
+//        cell?.setHighlighted(<#T##highlighted: Bool##Bool#>, animated: <#T##Bool#>)
+        
+        if isSelected {
+            if cell?.backgroundColor == .cyan {
+                tableView.deselectRow(at: indexPath, animated: true)
+                cell?.backgroundColor = .white
+            } else {
+                cell?.backgroundColor = .cyan
+            }
+        } else {
+            if cell?.backgroundColor == .yellow {
+                tableView.deselectRow(at: indexPath, animated: true)
+                cell?.backgroundColor = .white
+            } else {
+                cell?.backgroundColor = .yellow
+            }
+        }
+               
+        
+        print(isSelected)
+        //print(isHighlighted)
+    }
+    
+    // gọi trước khi cell display
+    // giải quyết vấn đề LOAD MORE
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // ví dụ mỗi lần load 50 items từ server về
+        // check điều kiện indexPath = 40 thì gọi hàm "LOAD MORE" để kéo thêm 50 items về nữa
+        print(indexPath)
+    }
+    // sau khi display xong thì vô được hàm này
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        print(indexPath)
+    }
+    
+    // thiết lập chiều cao cho row
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        switch indexPath.row {
+//        case 0:
+//            return 50
+//        case 1:
+//            return 70
+//        case 2:
+//            return 100
+//        case 3:
+//            return 140
+//        default:
+//            print("something's wrong!")
+//        }
+//        return 0
+//    }
 }

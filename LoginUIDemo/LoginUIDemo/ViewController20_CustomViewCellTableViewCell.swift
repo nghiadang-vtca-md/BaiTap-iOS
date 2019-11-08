@@ -25,5 +25,19 @@ class ViewController20_CustomViewCellTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func prepareForReuse() {
+        // hàm này giải quyết vấn đề - khi nhiều dữ liệu nếu không xoá dữ liệu cũ sẽ load đè không kịp
+        // giải pháp là gán lại bằng nil tất cả
+        lblName.text = nil
+        lblDescription.text = nil
+        imgView.image = nil
+    }
+    
+    func visualizeCell(item: FruitItem) {
+        lblName.text = item.name
+        lblDescription.text = item.description
+        imgView.image = UIImage(named: item.image)
+    }
 
 }

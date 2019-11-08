@@ -100,6 +100,11 @@
 		87769B382359F39500B81FB8 /* blue.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 87769B362359F39500B81FB8 /* blue.jpeg */; };
 		87769B392359F39500B81FB8 /* red.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 87769B372359F39500B81FB8 /* red.jpeg */; };
 		87769B3B2359FB3F00B81FB8 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87769B3A2359FB3F00B81FB8 /* ViewController2.swift */; };
+		8786BF3F2375A62B003E23F5 /* ViewController21.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8786BF3D2375A62B003E23F5 /* ViewController21.swift */; };
+		8786BF402375A62B003E23F5 /* ViewController21.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8786BF3E2375A62B003E23F5 /* ViewController21.xib */; };
+		8786BF422375A7C9003E23F5 /* ViewController21_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8786BF412375A7C9003E23F5 /* ViewController21_TableViewCell.swift */; };
+		8786BF4B2375AF86003E23F5 /* ViewController21_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8786BF492375AF86003E23F5 /* ViewController21_Cell.swift */; };
+		8786BF4C2375AF86003E23F5 /* ViewController21_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8786BF4A2375AF86003E23F5 /* ViewController21_Cell.xib */; };
 		8797967F23671D0600D4AF8D /* ViewController12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8797967E23671D0600D4AF8D /* ViewController12.swift */; };
 		8797968123672DF600D4AF8D /* ViewController13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8797968023672DF600D4AF8D /* ViewController13.swift */; };
 		87E2E3D02363049100D9D2D9 /* ViewController10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E2E3CF2363049100D9D2D9 /* ViewController10.swift */; };
@@ -207,6 +212,11 @@
 		87769B362359F39500B81FB8 /* blue.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue.jpeg; sourceTree = "<group>"; };
 		87769B372359F39500B81FB8 /* red.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red.jpeg; sourceTree = "<group>"; };
 		87769B3A2359FB3F00B81FB8 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		8786BF3D2375A62B003E23F5 /* ViewController21.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController21.swift; sourceTree = "<group>"; };
+		8786BF3E2375A62B003E23F5 /* ViewController21.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController21.xib; sourceTree = "<group>"; };
+		8786BF412375A7C9003E23F5 /* ViewController21_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController21_TableViewCell.swift; sourceTree = "<group>"; };
+		8786BF492375AF86003E23F5 /* ViewController21_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController21_Cell.swift; sourceTree = "<group>"; };
+		8786BF4A2375AF86003E23F5 /* ViewController21_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController21_Cell.xib; sourceTree = "<group>"; };
 		8797967E23671D0600D4AF8D /* ViewController12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController12.swift; sourceTree = "<group>"; };
 		8797968023672DF600D4AF8D /* ViewController13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController13.swift; sourceTree = "<group>"; };
 		87E2E3CF2363049100D9D2D9 /* ViewController10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController10.swift; sourceTree = "<group>"; };
@@ -388,6 +398,11 @@
 				872BAE6723705A75002DB119 /* ViewController19.swift */,
 				8750B0A82372ED3A00E82783 /* ViewController20.swift */,
 				8750B0AA2372F25600E82783 /* ViewController20_CustomViewCellTableViewCell.swift */,
+				8786BF3D2375A62B003E23F5 /* ViewController21.swift */,
+				8786BF3E2375A62B003E23F5 /* ViewController21.xib */,
+				8786BF412375A7C9003E23F5 /* ViewController21_TableViewCell.swift */,
+				8786BF492375AF86003E23F5 /* ViewController21_Cell.swift */,
+				8786BF4A2375AF86003E23F5 /* ViewController21_Cell.xib */,
 			);
 			path = LoginUIDemo;
 			sourceTree = "<group>";
@@ -505,6 +520,7 @@
 				873D465A2360947200B95091 /* 10_c.png in Resources */,
 				873D466B2360947200B95091 /* 5_ch.png in Resources */,
 				873D46622360947200B95091 /* up.png in Resources */,
+				8786BF4C2375AF86003E23F5 /* ViewController21_Cell.xib in Resources */,
 				873D465D2360947200B95091 /* 12_r.png in Resources */,
 				87769B392359F39500B81FB8 /* red.jpeg in Resources */,
 				873D46732360947200B95091 /* 7_b.png in Resources */,
@@ -520,6 +536,7 @@
 				873D46812360947200B95091 /* 6_ch.png in Resources */,
 				873D467E2360947200B95091 /* 4_b.png in Resources */,
 				87248892236C73E600F89FDD /* zing.html in Resources */,
+				8786BF402375A62B003E23F5 /* ViewController21.xib in Resources */,
 				87E2E3D523631B7E00D9D2D9 /* sunMin.png in Resources */,
 				873D46682360947200B95091 /* 13_b.png in Resources */,
 				8750B0B02372F6A100E82783 /* saurieng.jpg in Resources */,
@@ -561,14 +578,17 @@
 				87248883236C4E6900F89FDD /* ViewController17.swift in Sources */,
 				87484B34235DCBFD00F49CD5 /* ViewController3.swift in Sources */,
 				872BAE6623705193002DB119 /* TestViewController.swift in Sources */,
+				8786BF3F2375A62B003E23F5 /* ViewController21.swift in Sources */,
 				8797967F23671D0600D4AF8D /* ViewController12.swift in Sources */,
 				872BAE6823705A75002DB119 /* ViewController19.swift in Sources */,
+				8786BF422375A7C9003E23F5 /* ViewController21_TableViewCell.swift in Sources */,
 				87248885236C645000F89FDD /* ViewController18.swift in Sources */,
 				87769B3B2359FB3F00B81FB8 /* ViewController2.swift in Sources */,
 				87E2E3D02363049100D9D2D9 /* ViewController10.swift in Sources */,
 				87484B38235DF17500F49CD5 /* ViewController5.swift in Sources */,
 				A48573E523604B5F00E25122 /* ViewController7.swift in Sources */,
 				87484B36235DD9E600F49CD5 /* ViewController4.swift in Sources */,
+				8786BF4B2375AF86003E23F5 /* ViewController21_Cell.swift in Sources */,
 				8730568A23607E78003DEA93 /* ViewController8.swift in Sources */,
 				8750B0A92372ED3A00E82783 /* ViewController20.swift in Sources */,
 				8750B0AB2372F25600E82783 /* ViewController20_CustomViewCellTableViewCell.swift in Sources */,
