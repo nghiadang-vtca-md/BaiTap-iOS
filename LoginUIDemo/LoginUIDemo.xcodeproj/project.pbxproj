@@ -24,6 +24,8 @@
 		8730569D236086D6003DEA93 /* 9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 87305693236086D6003DEA93 /* 9.jpeg */; };
 		8730569E236086D6003DEA93 /* 2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 87305694236086D6003DEA93 /* 2.jpeg */; };
 		8730569F236086D6003DEA93 /* 3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 87305695236086D6003DEA93 /* 3.jpeg */; };
+		87370CCC237980EC00C0D29F /* ViewController22.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87370CCB237980EC00C0D29F /* ViewController22.swift */; };
+		87370CCE2379836100C0D29F /* ViewController22_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87370CCD2379836100C0D29F /* ViewController22_TableViewCell.swift */; };
 		873D46572360947200B95091 /* 12_b.png in Resources */ = {isa = PBXBuildFile; fileRef = 873D46222360947200B95091 /* 12_b.png */; };
 		873D46582360947200B95091 /* 1_ch.png in Resources */ = {isa = PBXBuildFile; fileRef = 873D46232360947200B95091 /* 1_ch.png */; };
 		873D46592360947200B95091 /* 12_c.png in Resources */ = {isa = PBXBuildFile; fileRef = 873D46242360947200B95091 /* 12_c.png */; };
@@ -103,8 +105,6 @@
 		8786BF3F2375A62B003E23F5 /* ViewController21.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8786BF3D2375A62B003E23F5 /* ViewController21.swift */; };
 		8786BF402375A62B003E23F5 /* ViewController21.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8786BF3E2375A62B003E23F5 /* ViewController21.xib */; };
 		8786BF422375A7C9003E23F5 /* ViewController21_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8786BF412375A7C9003E23F5 /* ViewController21_TableViewCell.swift */; };
-		8786BF4B2375AF86003E23F5 /* ViewController21_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8786BF492375AF86003E23F5 /* ViewController21_Cell.swift */; };
-		8786BF4C2375AF86003E23F5 /* ViewController21_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8786BF4A2375AF86003E23F5 /* ViewController21_Cell.xib */; };
 		8797967F23671D0600D4AF8D /* ViewController12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8797967E23671D0600D4AF8D /* ViewController12.swift */; };
 		8797968123672DF600D4AF8D /* ViewController13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8797968023672DF600D4AF8D /* ViewController13.swift */; };
 		87E2E3D02363049100D9D2D9 /* ViewController10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E2E3CF2363049100D9D2D9 /* ViewController10.swift */; };
@@ -134,6 +134,8 @@
 		87305693236086D6003DEA93 /* 9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 9.jpeg; sourceTree = "<group>"; };
 		87305694236086D6003DEA93 /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpeg; sourceTree = "<group>"; };
 		87305695236086D6003DEA93 /* 3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpeg; sourceTree = "<group>"; };
+		87370CCB237980EC00C0D29F /* ViewController22.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController22.swift; sourceTree = "<group>"; };
+		87370CCD2379836100C0D29F /* ViewController22_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController22_TableViewCell.swift; sourceTree = "<group>"; };
 		873D46222360947200B95091 /* 12_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12_b.png; sourceTree = "<group>"; };
 		873D46232360947200B95091 /* 1_ch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_ch.png; sourceTree = "<group>"; };
 		873D46242360947200B95091 /* 12_c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12_c.png; sourceTree = "<group>"; };
@@ -215,8 +217,6 @@
 		8786BF3D2375A62B003E23F5 /* ViewController21.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController21.swift; sourceTree = "<group>"; };
 		8786BF3E2375A62B003E23F5 /* ViewController21.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController21.xib; sourceTree = "<group>"; };
 		8786BF412375A7C9003E23F5 /* ViewController21_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController21_TableViewCell.swift; sourceTree = "<group>"; };
-		8786BF492375AF86003E23F5 /* ViewController21_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController21_Cell.swift; sourceTree = "<group>"; };
-		8786BF4A2375AF86003E23F5 /* ViewController21_Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController21_Cell.xib; sourceTree = "<group>"; };
 		8797967E23671D0600D4AF8D /* ViewController12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController12.swift; sourceTree = "<group>"; };
 		8797968023672DF600D4AF8D /* ViewController13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController13.swift; sourceTree = "<group>"; };
 		87E2E3CF2363049100D9D2D9 /* ViewController10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController10.swift; sourceTree = "<group>"; };
@@ -401,8 +401,8 @@
 				8786BF3D2375A62B003E23F5 /* ViewController21.swift */,
 				8786BF3E2375A62B003E23F5 /* ViewController21.xib */,
 				8786BF412375A7C9003E23F5 /* ViewController21_TableViewCell.swift */,
-				8786BF492375AF86003E23F5 /* ViewController21_Cell.swift */,
-				8786BF4A2375AF86003E23F5 /* ViewController21_Cell.xib */,
+				87370CCB237980EC00C0D29F /* ViewController22.swift */,
+				87370CCD2379836100C0D29F /* ViewController22_TableViewCell.swift */,
 			);
 			path = LoginUIDemo;
 			sourceTree = "<group>";
@@ -520,7 +520,6 @@
 				873D465A2360947200B95091 /* 10_c.png in Resources */,
 				873D466B2360947200B95091 /* 5_ch.png in Resources */,
 				873D46622360947200B95091 /* up.png in Resources */,
-				8786BF4C2375AF86003E23F5 /* ViewController21_Cell.xib in Resources */,
 				873D465D2360947200B95091 /* 12_r.png in Resources */,
 				87769B392359F39500B81FB8 /* red.jpeg in Resources */,
 				873D46732360947200B95091 /* 7_b.png in Resources */,
@@ -571,8 +570,10 @@
 				87769B262359D3E300B81FB8 /* ViewController.swift in Sources */,
 				A4768D5C2369701B00B9EE6E /* ViewController14.swift in Sources */,
 				87769B242359D3E300B81FB8 /* AppDelegate.swift in Sources */,
+				87370CCC237980EC00C0D29F /* ViewController22.swift in Sources */,
 				87E2E3D22363192F00D9D2D9 /* ViewController11.swift in Sources */,
 				873D468D2360954300B95091 /* ViewController9.swift in Sources */,
+				87370CCE2379836100C0D29F /* ViewController22_TableViewCell.swift in Sources */,
 				874AE7FE2369B784000065E8 /* ViewController15.swift in Sources */,
 				87484B3A235DF65700F49CD5 /* ViewController6.swift in Sources */,
 				87248883236C4E6900F89FDD /* ViewController17.swift in Sources */,
@@ -588,7 +589,6 @@
 				87484B38235DF17500F49CD5 /* ViewController5.swift in Sources */,
 				A48573E523604B5F00E25122 /* ViewController7.swift in Sources */,
 				87484B36235DD9E600F49CD5 /* ViewController4.swift in Sources */,
-				8786BF4B2375AF86003E23F5 /* ViewController21_Cell.swift in Sources */,
 				8730568A23607E78003DEA93 /* ViewController8.swift in Sources */,
 				8750B0A92372ED3A00E82783 /* ViewController20.swift in Sources */,
 				8750B0AB2372F25600E82783 /* ViewController20_CustomViewCellTableViewCell.swift in Sources */,

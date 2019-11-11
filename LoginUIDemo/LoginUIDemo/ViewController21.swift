@@ -41,11 +41,12 @@ class ViewController21: UIViewController {
 
 extension ViewController21: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 30
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = myTableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? ViewController21_TableViewCell else { return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? ViewController21_TableViewCell else {
+            return UITableViewCell()
         }
         
         cell.myLabel.text = "\(indexPath.row)"
