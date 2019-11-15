@@ -11,6 +11,9 @@
 		87248885236C645000F89FDD /* ViewController18.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87248884236C645000F89FDD /* ViewController18.swift */; };
 		87248889236C69BC00F89FDD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87248887236C660800F89FDD /* WebKit.framework */; };
 		87248892236C73E600F89FDD /* zing.html in Resources */ = {isa = PBXBuildFile; fileRef = 87248891236C73E600F89FDD /* zing.html */; };
+		87282962237EC87D00BCC51A /* VPageViewController25.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87282961237EC87D00BCC51A /* VPageViewController25.swift */; };
+		87282964237ED75600BCC51A /* ViewController25.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87282963237ED75600BCC51A /* ViewController25.swift */; };
+		87282966237EE63C00BCC51A /* ViewController26.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87282965237EE63C00BCC51A /* ViewController26.swift */; };
 		872BAE6623705193002DB119 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872BAE6523705193002DB119 /* TestViewController.swift */; };
 		872BAE6823705A75002DB119 /* ViewController19.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872BAE6723705A75002DB119 /* ViewController19.swift */; };
 		8730568A23607E78003DEA93 /* ViewController8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8730568923607E78003DEA93 /* ViewController8.swift */; };
@@ -123,6 +126,9 @@
 		87248884236C645000F89FDD /* ViewController18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController18.swift; sourceTree = "<group>"; };
 		87248887236C660800F89FDD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		87248891236C73E600F89FDD /* zing.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = zing.html; sourceTree = "<group>"; };
+		87282961237EC87D00BCC51A /* VPageViewController25.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPageViewController25.swift; sourceTree = "<group>"; };
+		87282963237ED75600BCC51A /* ViewController25.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController25.swift; sourceTree = "<group>"; };
+		87282965237EE63C00BCC51A /* ViewController26.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController26.swift; sourceTree = "<group>"; };
 		872BAE6523705193002DB119 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		872BAE6723705A75002DB119 /* ViewController19.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController19.swift; sourceTree = "<group>"; };
 		8730568923607E78003DEA93 /* ViewController8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController8.swift; sourceTree = "<group>"; };
@@ -409,6 +415,9 @@
 				87370CCD2379836100C0D29F /* ViewController22_TableViewCell.swift */,
 				876F2480237C25E30077880D /* ViewController23_TableViewController.swift */,
 				876F2482237C3AB50077880D /* ViewController24.swift */,
+				87282961237EC87D00BCC51A /* VPageViewController25.swift */,
+				87282963237ED75600BCC51A /* ViewController25.swift */,
+				87282965237EE63C00BCC51A /* ViewController26.swift */,
 			);
 			path = LoginUIDemo;
 			sourceTree = "<group>";
@@ -589,11 +598,14 @@
 				8786BF3F2375A62B003E23F5 /* ViewController21.swift in Sources */,
 				8797967F23671D0600D4AF8D /* ViewController12.swift in Sources */,
 				872BAE6823705A75002DB119 /* ViewController19.swift in Sources */,
+				87282964237ED75600BCC51A /* ViewController25.swift in Sources */,
 				876F2483237C3AB50077880D /* ViewController24.swift in Sources */,
 				8786BF422375A7C9003E23F5 /* ViewController21_TableViewCell.swift in Sources */,
 				87248885236C645000F89FDD /* ViewController18.swift in Sources */,
 				87769B3B2359FB3F00B81FB8 /* ViewController2.swift in Sources */,
+				87282962237EC87D00BCC51A /* VPageViewController25.swift in Sources */,
 				87E2E3D02363049100D9D2D9 /* ViewController10.swift in Sources */,
+				87282966237EE63C00BCC51A /* ViewController26.swift in Sources */,
 				87484B38235DF17500F49CD5 /* ViewController5.swift in Sources */,
 				A48573E523604B5F00E25122 /* ViewController7.swift in Sources */,
 				87484B36235DD9E600F49CD5 /* ViewController4.swift in Sources */,
