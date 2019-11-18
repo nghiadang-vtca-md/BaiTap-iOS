@@ -97,6 +97,10 @@
 		8750B0B42372FDCD00E82783 /* tao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8750B0B32372FDCD00E82783 /* tao.jpg */; };
 		8750B0B723730AC900E82783 /* dao.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8750B0B523730AC800E82783 /* dao.jpeg */; };
 		8750B0B823730AC900E82783 /* nho.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8750B0B623730AC900E82783 /* nho.jpeg */; };
+		8753ABB52382BF4C0024340F /* ViewController27.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753ABB42382BF4C0024340F /* ViewController27.swift */; };
+		8753ABB72382C9A00024340F /* ViewController28.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753ABB62382C9A00024340F /* ViewController28.swift */; };
+		8753ABB92382D0700024340F /* ViewController28_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8753ABB82382D0700024340F /* ViewController28_Cell.swift */; };
+		8753ABBB2382D75D0024340F /* x-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8753ABBA2382D75D0024340F /* x-button.png */; };
 		876F2481237C25E30077880D /* ViewController23_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F2480237C25E30077880D /* ViewController23_TableViewController.swift */; };
 		876F2483237C3AB50077880D /* ViewController24.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876F2482237C3AB50077880D /* ViewController24.swift */; };
 		87769B242359D3E300B81FB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87769B232359D3E300B81FB8 /* AppDelegate.swift */; };
@@ -212,6 +216,10 @@
 		8750B0B32372FDCD00E82783 /* tao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tao.jpg; sourceTree = "<group>"; };
 		8750B0B523730AC800E82783 /* dao.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dao.jpeg; sourceTree = "<group>"; };
 		8750B0B623730AC900E82783 /* nho.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nho.jpeg; sourceTree = "<group>"; };
+		8753ABB42382BF4C0024340F /* ViewController27.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController27.swift; sourceTree = "<group>"; };
+		8753ABB62382C9A00024340F /* ViewController28.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController28.swift; sourceTree = "<group>"; };
+		8753ABB82382D0700024340F /* ViewController28_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController28_Cell.swift; sourceTree = "<group>"; };
+		8753ABBA2382D75D0024340F /* x-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x-button.png"; sourceTree = "<group>"; };
 		876F2480237C25E30077880D /* ViewController23_TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController23_TableViewController.swift; sourceTree = "<group>"; };
 		876F2482237C3AB50077880D /* ViewController24.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController24.swift; sourceTree = "<group>"; };
 		87769B202359D3E300B81FB8 /* LoginUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -418,6 +426,9 @@
 				87282961237EC87D00BCC51A /* VPageViewController25.swift */,
 				87282963237ED75600BCC51A /* ViewController25.swift */,
 				87282965237EE63C00BCC51A /* ViewController26.swift */,
+				8753ABB42382BF4C0024340F /* ViewController27.swift */,
+				8753ABB62382C9A00024340F /* ViewController28.swift */,
+				8753ABB82382D0700024340F /* ViewController28_Cell.swift */,
 			);
 			path = LoginUIDemo;
 			sourceTree = "<group>";
@@ -425,6 +436,7 @@
 		87769B352359F39500B81FB8 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8753ABBA2382D75D0024340F /* x-button.png */,
 				87E2E3D72363208A00D9D2D9 /* pikachu.png */,
 				87E2E3D423631B7E00D9D2D9 /* sunMax.png */,
 				87E2E3D323631B7E00D9D2D9 /* sunMin.png */,
@@ -492,6 +504,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8753ABBB2382D75D0024340F /* x-button.png in Resources */,
 				873D46782360947200B95091 /* 2_ch.png in Resources */,
 				873D46722360947200B95091 /* 1_r.png in Resources */,
 				873D466E2360947200B95091 /* 9_b.png in Resources */,
@@ -583,17 +596,20 @@
 			files = (
 				8797968123672DF600D4AF8D /* ViewController13.swift in Sources */,
 				87769B262359D3E300B81FB8 /* ViewController.swift in Sources */,
+				8753ABB72382C9A00024340F /* ViewController28.swift in Sources */,
 				A4768D5C2369701B00B9EE6E /* ViewController14.swift in Sources */,
 				876F2481237C25E30077880D /* ViewController23_TableViewController.swift in Sources */,
 				87769B242359D3E300B81FB8 /* AppDelegate.swift in Sources */,
 				87370CCC237980EC00C0D29F /* ViewController22.swift in Sources */,
 				87E2E3D22363192F00D9D2D9 /* ViewController11.swift in Sources */,
 				873D468D2360954300B95091 /* ViewController9.swift in Sources */,
+				8753ABB52382BF4C0024340F /* ViewController27.swift in Sources */,
 				87370CCE2379836100C0D29F /* ViewController22_TableViewCell.swift in Sources */,
 				874AE7FE2369B784000065E8 /* ViewController15.swift in Sources */,
 				87484B3A235DF65700F49CD5 /* ViewController6.swift in Sources */,
 				87248883236C4E6900F89FDD /* ViewController17.swift in Sources */,
 				87484B34235DCBFD00F49CD5 /* ViewController3.swift in Sources */,
+				8753ABB92382D0700024340F /* ViewController28_Cell.swift in Sources */,
 				872BAE6623705193002DB119 /* TestViewController.swift in Sources */,
 				8786BF3F2375A62B003E23F5 /* ViewController21.swift in Sources */,
 				8797967F23671D0600D4AF8D /* ViewController12.swift in Sources */,
