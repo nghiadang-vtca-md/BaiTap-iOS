@@ -14,8 +14,11 @@ class ViewController28: UIViewController {
     let PADDING_LEFT = 20
     let PADDING_RIGHT = 20
     let NUMBER_OF_ITEMS_IN_LINE = 5
+    var isEditingButton: Bool = false
 
     @IBOutlet weak var cvImages: UICollectionView!
+    
+    private var myCollectionCell: ViewController28_Cell!
     
     @IBAction func btnAdd_Click(_ sender: UIButton) {
         let pickerView = UIImagePickerController()
@@ -28,7 +31,15 @@ class ViewController28: UIViewController {
     
     
     @IBAction func btnEditDone_Click(_ sender: UIButton) {
-        
+        if sender.titleLabel?.text == "Edit" {
+            isEditingButton = true
+            cvImages.reloadData()
+            sender.setTitle("Done", for: .normal)
+        } else {
+            isEditingButton = false
+            cvImages.reloadData()
+            sender.setTitle("Edit", for: .normal)
+        }
     }
     
     var images: [UIImage] = []
@@ -70,10 +81,17 @@ extension ViewController28: UICollectionViewDataSource {
         customCell.myImage.image = images[indexPath.row]
         customCell.myImage.contentMode = .scaleToFill
         customCell.currentIndexPath = indexPath
+        customCell.btnRemove.isHidden = isEditingButton ? false : true
+        customCell.customDelegate = self
         return customCell
     }
-    
-    
+}
+
+extension ViewController28: CustomRemoveDelegate {
+    func didClickRemoveButton(with indexPath: IndexPath?) {
+        images.remove(at: indexPath?.row ?? -1)
+        cvImages.reloadData()
+    }
 }
 
 extension ViewController28: UICollectionViewDelegate {

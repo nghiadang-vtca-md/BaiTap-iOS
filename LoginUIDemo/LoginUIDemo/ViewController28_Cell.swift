@@ -8,15 +8,19 @@
 
 import UIKit
 
+protocol CustomRemoveDelegate: class {
+    func didClickRemoveButton(with indexPath: IndexPath?)
+}
+
 class ViewController28_Cell: UICollectionViewCell {
     
     var currentIndexPath: IndexPath?
     @IBOutlet weak var myImage: UIImageView!
     @IBOutlet weak var btnRemove: UIButton!
     
+    var customDelegate: CustomRemoveDelegate?
+    
     @IBAction func btnRemove_Click(_ sender: UIButton) {
-        
+        customDelegate?.didClickRemoveButton(with: currentIndexPath)
     }
-    
-    
 }
