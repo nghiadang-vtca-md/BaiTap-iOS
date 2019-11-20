@@ -14,6 +14,7 @@ class ViewController29: UIViewController {
     let PADDING_LEFT = 20
     let PADDING_RIGHT = 20
     let NUMBER_OF_ITEMS_IN_LINE = 3
+    let NUMBER_OF_ITEMS = 6
     
     @IBOutlet weak var myCollectionView: UICollectionView!
     override func viewDidLoad() {
@@ -40,7 +41,7 @@ class ViewController29: UIViewController {
 
 extension ViewController29: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return NUMBER_OF_ITEMS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -49,6 +50,7 @@ extension ViewController29: UICollectionViewDataSource {
         }
         
         customCell.backgroundColor = indexPath.row % 2 == 0 ? .blue : .green
+        customCell.myLabel.text = String(indexPath.row)
         
         return customCell
     }
@@ -64,22 +66,47 @@ extension ViewController29: UICollectionViewDelegateFlowLayout {
         
         let cellWidth = (totalWidth - totalSpacing) / CGFloat(NUMBER_OF_ITEMS_IN_LINE)
         
-        let rowEven = (((indexPath.row + 1) / NUMBER_OF_ITEMS_IN_LINE) + 1) % 2 == 0 ? true : false
-        let orderInRow = (indexPath.row % NUMBER_OF_ITEMS_IN_LINE) // 0 1 2
-        
-        if !rowEven {
-            if (orderInRow == 0 || orderInRow == 2) {
-                return CGSize(width: cellWidth, height: cellWidth)
-            } else {
-                return CGSize(width: cellWidth, height: cellWidth * 2)
-            }
-        } else {
-           if (orderInRow == 0 || orderInRow == 2) {
-                return CGSize(width: cellWidth, height: cellWidth * 2)
-            } else {
-                return CGSize(width: cellWidth, height: cellWidth)
-            }
+        switch indexPath.row {
+        case 0:
+            return CGSize(width: cellWidth, height: cellWidth)
+            case 1:
+            return CGSize(width: cellWidth, height: cellWidth * 2)
+            case 2:
+            return CGSize(width: cellWidth, height: cellWidth)
+            case 3:
+            return CGSize(width: cellWidth, height: cellWidth * 2)
+            case 4:
+            return CGSize(width: cellWidth, height: cellWidth)
+            case 5:
+            return CGSize(width: cellWidth, height: cellWidth * 2)
+        default:
+            print("EEEEE")
         }
+        // ve lam tiep
+        // https://octodev.net/custom-collectionviewlayout/
+        
+//        let rowEven = (((indexPath.row + 1) / NUMBER_OF_ITEMS_IN_LINE) + 1) % 2 == 0 ? true : false
+//        let orderInRow = (indexPath.row % NUMBER_OF_ITEMS_IN_LINE) // 0 1 2
+//
+//        if !rowEven {
+//            if orderInRow == 0 {
+//                return CGSize(width: cellWidth, height: cellWidth)
+//            } else  if orderInRow == 1 {
+//                return CGSize(width: cellWidth, height: cellWidth * 2)
+//            } else  if orderInRow == 2 {
+//                return CGSize(width: cellWidth, height: cellWidth)
+//            }
+//        } else {
+//           if orderInRow == 0 {
+//               return CGSize(width: cellWidth, height: cellWidth * 2)
+//           } else if orderInRow == 1 {
+//               return CGSize(width: cellWidth, height: cellWidth)
+//           } else  if orderInRow == 2 {
+//               return CGSize(width: cellWidth, height: cellWidth * 2)
+//           }
+//        }
+//        return CGSize(width: cellWidth, height: cellWidth * 3)
+        return CGSize(width: cellWidth, height: cellWidth * 2)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

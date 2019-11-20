@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m4g-IF-sCD">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DemoAutoLayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QUf-k3-Urg">
+                                <rect key="frame" x="20" y="20" width="157" height="293"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PDx-Uv-Lhd">
+                                <rect key="frame" x="20" y="354" width="335" height="293"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hWh-Sl-VsU">
+                                <rect key="frame" x="198" y="20" width="157" height="293"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="topLeftView" destination="QUf-k3-Urg" id="h9L-4z-Muy"/>
+                        <outlet property="topRightView" destination="hWh-Sl-VsU" id="JwW-no-J8I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="uA6-GG-M20">
+            <objects>
+                <viewController id="m4g-IF-sCD" customClass="ViewController2" customModule="DemoAutoLayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ses-Sx-x3e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bj3-21-UPP" userLabel="View Yellow">
+                                <rect key="frame" x="197.5" y="20" width="157.5" height="303.5"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNR-Qm-JoO" userLabel="View Green">
+                                <rect key="frame" x="20" y="20" width="157.5" height="303.5"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFY-gu-v7N" userLabel="View Blue">
+                                <rect key="frame" x="20" y="343.5" width="335" height="303.5"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dSz-CS-sbw" firstAttribute="bottom" secondItem="JFY-gu-v7N" secondAttribute="bottom" constant="20" id="5fd-N8-elK"/>
+                            <constraint firstItem="dSz-CS-sbw" firstAttribute="trailing" secondItem="JFY-gu-v7N" secondAttribute="trailing" constant="20" id="CO1-vV-eGc"/>
+                            <constraint firstItem="WNR-Qm-JoO" firstAttribute="top" secondItem="dSz-CS-sbw" secondAttribute="top" constant="20" id="MN0-Wr-mQh"/>
+                            <constraint firstItem="dSz-CS-sbw" firstAttribute="trailing" secondItem="Bj3-21-UPP" secondAttribute="trailing" constant="20" id="PYu-9m-bar"/>
+                            <constraint firstItem="JFY-gu-v7N" firstAttribute="top" secondItem="WNR-Qm-JoO" secondAttribute="bottom" constant="20" id="ZNl-UL-cjj"/>
+                            <constraint firstItem="Bj3-21-UPP" firstAttribute="leading" secondItem="WNR-Qm-JoO" secondAttribute="trailing" constant="20" id="atv-wA-fy0"/>
+                            <constraint firstItem="WNR-Qm-JoO" firstAttribute="width" secondItem="Bj3-21-UPP" secondAttribute="width" id="azf-2e-bWq"/>
+                            <constraint firstItem="JFY-gu-v7N" firstAttribute="top" secondItem="Bj3-21-UPP" secondAttribute="bottom" constant="20" id="c6Z-HU-oHI"/>
+                            <constraint firstItem="JFY-gu-v7N" firstAttribute="leading" secondItem="dSz-CS-sbw" secondAttribute="leading" constant="20" id="gXq-ay-Sby"/>
+                            <constraint firstItem="WNR-Qm-JoO" firstAttribute="leading" secondItem="dSz-CS-sbw" secondAttribute="leading" constant="20" id="hNv-p3-Jfw"/>
+                            <constraint firstItem="Bj3-21-UPP" firstAttribute="height" secondItem="WNR-Qm-JoO" secondAttribute="height" id="jFZ-EM-tLO"/>
+                            <constraint firstItem="JFY-gu-v7N" firstAttribute="height" secondItem="WNR-Qm-JoO" secondAttribute="height" id="ngZ-Bn-HG7"/>
+                            <constraint firstItem="Bj3-21-UPP" firstAttribute="top" secondItem="dSz-CS-sbw" secondAttribute="top" constant="20" id="uPa-tj-acj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dSz-CS-sbw"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SGx-va-Ekn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933.60000000000002" y="136.28185907046478"/>
+        </scene>
+    </scenes>
+</document>
