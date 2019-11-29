@@ -43,11 +43,21 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func backToScreen1(_ segue: UIStoryboardSegue) { // phải có kiểu dữ liệu này mới nhận được
+    @IBAction func backToScreen1(_ segue: UIStoryboardSegue) { // phải có kiểu dữ liệu này thì kéo thả đến EXIT mới nhận được
         // cách này gọi là UNWIND
     }
     
     
+    @IBAction func moveToScreen2_programmatically(_ sender: UIButton) {
+        //Bước 1: đặt tên cho StoryboardID cho 2 ViewController + use
+        //Bước 2: lấy ra storyboard chứa 2 ViewController cần thao tác
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //Bước 3: lấy ra view cần chuyển hướng
+        if let secondVC = storyboard.instantiateViewController(identifier: "ViewController2") as? ViewController2 {
+            // Bước 4: Show
+            self.present(secondVC, animated: true, completion: nil)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
