@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  DemoSegue
+//  BlueBrokerApp
 //
-//  Created by iMac_VTCA on 11/27/19.
+//  Created by iMac_VTCA on 12/2/19.
 //  Copyright © 2019 iMac_VTCA. All rights reserved.
 //
 
@@ -17,19 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let scene = (scene as? UIWindowScene) else { return }
-        
-        // Tạo view bằng code
-//        let window = UIWindow(windowScene: scene)
-//        let aVC = AViewController()
-//        // sử dụng cho Navigation Controller
-//        let navVC = UINavigationController(rootViewController: aVC)
-//        window.rootViewController = navVC
-//        //
-//        //window.rootViewController = aVC
-//        self.window = window
-//        window.makeKeyAndVisible()
-        // end
+        guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
