@@ -22,14 +22,14 @@ class ViewController: UIViewController {
                             [1,0,1,0,1],
                             [1,1,1,1,1]]
     
-    func countTotalItem(array: [[Int]]) -> Int {
-        var res = 0
-        for line in array {
-            res += line.count
-        }
-        print(res)
-        return res
-    }
+//    func countTotalItem(array: [[Int]]) -> Int {
+//        var res = 0
+//        for line in array {
+//            res += line.count
+//        }
+//        print(res)
+//        return res
+//    }
     
     @IBOutlet weak var myCollectionView: UICollectionView!
     
@@ -47,8 +47,11 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return arrayTest.count
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return countTotalItem(array: arrayTest)
+        return arrayTest[section].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,13 +59,19 @@ extension ViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        let line: Int = ((indexPath.item + 1) / 5)
-        let position: Int = (indexPath.item + 1) % 5
-        if line < 5 {
-            if arrayTest[line][position] == 0 {
-                customCell.isHidden = true
-            }
+        
+//        let line: Int = ((indexPath.item + 1) / 5)
+//        let position: Int = ((indexPath.item) % 5)
+//        if line < 5 {
+//            if arrayTest[line][position] == 0 {
+//                customCell.isHidden = true
+//            }
+//        }
+        
+        if arrayTest[indexPath.section][indexPath.item] == 0 {
+            customCell.isHidden = true
         }
+        
         return customCell
     }
 }
@@ -80,7 +89,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: CGFloat(PADDING_LEFT), bottom: 0, right: CGFloat(PADDING_RIGHT))
+        return UIEdgeInsets(top: CGFloat(CELL_PADDING), left: CGFloat(PADDING_LEFT), bottom: 0, right: CGFloat(PADDING_RIGHT))
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
