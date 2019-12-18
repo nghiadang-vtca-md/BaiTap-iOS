@@ -11,13 +11,12 @@ import AVFoundation
 
 class ViewController4: UIViewController {
     
-    var player: AVAudioPlayer!
-    
     @IBOutlet weak var lblStartTime: UILabel!
     @IBOutlet weak var lblEndTime: UILabel!
     @IBOutlet weak var sliderDuration: UISlider!
     @IBOutlet weak var btnPlay: UIButton!
     
+    var player: AVAudioPlayer!
     var timer: Timer?
     var timeDuration = 0
     var currentTime = 0
@@ -27,6 +26,7 @@ class ViewController4: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         guard let path = Bundle.main.path(forResource: "If_I_Had_a_Chicken", ofType: "mp3") else {
             return
         }
@@ -40,9 +40,28 @@ class ViewController4: UIViewController {
             print(error.localizedDescription)
         }
         
+        // https://stackoverflow.com/questions/9390298/iphone-how-to-detect-the-end-of-slider-drag
+        sliderDuration.addTarget(self, action: #selector(onSliderValChanged(slider:event:)), for: .valueChanged)
+        
         lblEndTime.text = convertTimeIntervalToString(time: player.duration)
         timeDuration = Int(round(player.duration))
         
+        
+        
+    }
+    
+    @objc func onSliderValChanged(slider: UISlider, event: UIEvent) {
+        if let touchEvent = event.allTouches?.first {
+            switch touchEvent.phase {
+            case .moved:
+                currentTime = Int(slider.value * Float(player.duration))
+                lblStartTime.text = convertTimeIntervalToString(time: player.currentTime)
+                player.currentTime = TimeInterval(currentTime)
+            case .ended:
+                player.play()
+            default:
+                break            }
+        }
     }
     
     @IBAction func btnLoop_Click(_ sender: UIButton) {
@@ -60,12 +79,12 @@ class ViewController4: UIViewController {
         }
     }
     
-    @IBAction func slider_ValueChange(_ sender: UISlider) {
-        currentTime = Int(sender.value * Float(player.duration))
-        player.stop()
-        player.currentTime = TimeInterval(currentTime)
-        player.play()
-    }
+//    @IBAction func slider_ValueChange(_ sender: UISlider) {
+//        currentTime = Int(sender.value * Float(player.duration))
+////        player.stop()
+//        player.currentTime = TimeInterval(currentTime)
+//        player.play()
+//    }
     
     @IBAction func play(_ sender: UIButton) {
         // tag = 1 -> play ; tag = 2 -> pause
@@ -86,8 +105,7 @@ class ViewController4: UIViewController {
         }
     }
     
-    @objc func onTimerFires()
-    {
+    @objc func onTimerFires() {
         
         currentTime = Int(round(player.currentTime))
         print(currentTime)
@@ -101,7 +119,8 @@ class ViewController4: UIViewController {
             if let image = UIImage(named: "play-icon.png") {
                 btnPlay.setImage(image, for: .normal)
                 btnPlay.tag = 1
-                player.pause()
+                player.stop()
+                player.currentTime = 0
             }
         }
     }
