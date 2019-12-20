@@ -8,23 +8,45 @@
 
 import UIKit
 
-let API_URL = "http://omdbapi.com/?apikey=7882463&s=batman"
+//let API_URL = "http://omdbapi.com/?apikey=7882463&s=batman"
 
-struct Movie {
+struct Movie: Codable{
+//    var Title: String
+//    var Year: String
+//    var imdbID: String
+//    var `Type`: String
+//    var Poster: String
+    
+    // fix lỗi đổi tên khác với api
     var title: String
     var year: String
     var imdbID: String
     var type: String
     var poster: String
     
-    init(with dict: [String: Any]) {
-       title = dict["Title"] as? String ?? ""
-       year = dict["Year"] as? String ?? ""
-       imdbID = dict["imdbID"] as? String ?? ""
-       type = dict["Type"] as? String ?? ""
-       poster = dict["Poster"] as? String ?? ""
+    enum CodingKeys: String, CodingKey {
+        case title = "Title"
+        case year = "Year"
+        case imdbID // không đổi (có thể nhiều biến trên 1 case: a,b,c)
+        case type = "Type"
+        case poster = "Poster"
     }
+    
+    
+//    init(with dict: [String: Any]) {
+//       title = dict["Title"] as? String ?? ""
+//       year = dict["Year"] as? String ?? ""
+//       imdbID = dict["imdbID"] as? String ?? ""
+//       type` = dict["Type"] as? String ?? ""
+//       poster = dict["Poster"] as? String ?? ""
+//    }
 }
+
+struct SearchAB: Codable {
+    var Search: [Movie]
+}
+
+
 
 class ViewController: UIViewController {
 
@@ -54,20 +76,28 @@ class ViewController: UIViewController {
                 } else if let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 {
                     print("Success")
                     do {
-                        let object = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                        /*
-                         Lưu ý: phân biệt response dictionary {} và response mảng dictionary [{}]
-                         */
-                        if let dictionary = object as? [String: Any] {
-                            if let arraySearchDict = dictionary["Search"] as? [[String: Any]] {
-                                for dict in arraySearchDict {
-                                    let movie = Movie(with: dict)
-                                    self.arrayMovie.append(movie)
-                                }
-                                print(self.arrayMovie)
-                            }
-                        }
+                        // Cách 1: Thủ công
+//                        let object = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+//                        /*
+//                         Lưu ý: phân biệt response dictionary {} và response mảng dictionary [{}]
+//                         */
+//                        if let dictionary = object as? [String: Any] {
+//                            if let arraySearchDict = dictionary["Search"] as? [[String: Any]] {
+//                                for dict in arraySearchDict {
+//                                    let movie = Movie(with: dict)
+//                                    self.arrayMovie.append(movie)
+//                                }
+//                                print(self.arrayMovie)
+//                            }
+//                        }
+                        // end Cách 1
                         
+                        // Cách 2: Sử dụng Codable
+                        let object = try JSONDecoder().decode(SearchAB.self, from: data)
+                        // lưu ý: phân biệt dữ liệu trả về ".decode(SearchAB.self, from: data)" khác với ".decode([Movie].self, from: data)"
+                        print(object)
+                        
+                        // end Cách 2
                     } catch let error {
                         print(error.localizedDescription)
                     }

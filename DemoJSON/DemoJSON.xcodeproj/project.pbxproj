@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8780D52D23ACE8E700DD61C8 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780D52C23ACE8E700DD61C8 /* ViewController2.swift */; };
+		8780D52F23AD08A300DD61C8 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780D52E23AD08A300DD61C8 /* ViewController3.swift */; };
 		87EA1D3623AA5C63008F93FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA1D3523AA5C63008F93FD /* AppDelegate.swift */; };
 		87EA1D3823AA5C63008F93FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA1D3723AA5C63008F93FD /* SceneDelegate.swift */; };
 		87EA1D3A23AA5C63008F93FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA1D3923AA5C63008F93FD /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8780D52C23ACE8E700DD61C8 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		8780D52E23AD08A300DD61C8 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		87EA1D3223AA5C63008F93FD /* DemoJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87EA1D3523AA5C63008F93FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87EA1D3723AA5C63008F93FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				87EA1D3E23AA5C63008F93FD /* Assets.xcassets */,
 				87EA1D4023AA5C63008F93FD /* LaunchScreen.storyboard */,
 				87EA1D4323AA5C63008F93FD /* Info.plist */,
+				8780D52C23ACE8E700DD61C8 /* ViewController2.swift */,
+				8780D52E23AD08A300DD61C8 /* ViewController3.swift */,
 			);
 			path = DemoJSON;
 			sourceTree = "<group>";
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8780D52F23AD08A300DD61C8 /* ViewController3.swift in Sources */,
 				87EA1D3A23AA5C63008F93FD /* ViewController.swift in Sources */,
+				8780D52D23ACE8E700DD61C8 /* ViewController2.swift in Sources */,
 				87EA1D3623AA5C63008F93FD /* AppDelegate.swift in Sources */,
 				87EA1D3823AA5C63008F93FD /* SceneDelegate.swift in Sources */,
 			);
