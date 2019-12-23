@@ -44,6 +44,8 @@ class ViewController3: UIViewController {
 
         // Do any additional setup after loading the view.
         tbvTracks.dataSource = self
+        
+        searchBar.returnKeyType = .go
         requestAPI()
     }
     
@@ -62,6 +64,11 @@ class ViewController3: UIViewController {
                         let objectDecoder = try JSONDecoder().decode(ObjectFromServerItunes.self, from: data)
                         print(objectDecoder.resultCount)
                         // gan du lieu vo array nheeee
+                        self.arrayTrack = objectDecoder.results
+                        DispatchQueue.main.async {
+                            self.tbvTracks.reloadData()
+                        }
+                        
                     } catch let error {
                         print(error.localizedDescription)
                     }
@@ -100,4 +107,14 @@ extension ViewController3: UITableViewDataSource {
     }
     
     
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        print(searchBar.text ?? "nnnn")
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+    }
 }
