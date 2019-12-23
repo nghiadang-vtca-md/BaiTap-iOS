@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5cb-sm-s10">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5cb-sm-s10">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -48,10 +48,14 @@
                             <searchBar contentMode="redraw" placeholder="Enter name of song" translatesAutoresizingMaskIntoConstraints="NO" id="Wms-di-Py8">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="go"/>
-                                <connections>
-                                    <outlet property="delegate" destination="5cb-sm-s10" id="GdN-97-2Ca"/>
-                                </connections>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="NO SONG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGV-S0-FCr">
+                                <rect key="frame" x="186" y="437" width="134" height="36"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J2A-PA-U5g">
                                 <rect key="frame" x="0.0" y="100" width="414" height="762"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -85,6 +89,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="sGV-S0-FCr" firstAttribute="centerX" secondItem="Wyi-3A-6EH" secondAttribute="centerX" id="7RQ-61-hHU"/>
+                            <constraint firstItem="sGV-S0-FCr" firstAttribute="centerY" secondItem="Wyi-3A-6EH" secondAttribute="centerY" id="BvR-sL-UXs"/>
                             <constraint firstItem="Wms-di-Py8" firstAttribute="trailing" secondItem="Wyi-3A-6EH" secondAttribute="trailing" id="FVD-ug-iaN"/>
                             <constraint firstItem="J2A-PA-U5g" firstAttribute="top" secondItem="Wms-di-Py8" secondAttribute="bottom" id="T5e-f6-tLI"/>
                             <constraint firstItem="J2A-PA-U5g" firstAttribute="leading" secondItem="Wyi-3A-6EH" secondAttribute="leading" id="fED-Fi-ac5"/>
@@ -96,6 +102,7 @@
                         <viewLayoutGuide key="safeArea" id="Wyi-3A-6EH"/>
                     </view>
                     <connections>
+                        <outlet property="labelNoSong" destination="sGV-S0-FCr" id="i6p-lF-zEq"/>
                         <outlet property="searchBar" destination="Wms-di-Py8" id="pX6-vp-y7S"/>
                         <outlet property="tbvTracks" destination="J2A-PA-U5g" id="0Go-yP-Y0f"/>
                     </connections>
