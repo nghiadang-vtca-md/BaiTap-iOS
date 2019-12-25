@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="DemoDownloadFile_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dIl-Gp-TLF">
+                                <rect key="frame" x="0.0" y="104" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I1o-RR-YiE" userLabel="Content Table">
+                                <rect key="frame" x="0.0" y="160" width="414" height="702"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SongTableViewCell" rowHeight="80" id="7Wz-BA-3qD" customClass="SongTableViewCell" customModule="DemoDownloadFile_Practice" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Wz-BA-3qD" id="GSp-9x-Meu">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C64-bv-jft">
+                                                    <rect key="frame" x="15" y="8" width="299" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qvw-FD-bbF">
+                                                    <rect key="frame" x="15" y="34" width="299" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ee-yh-e1P">
+                                                    <rect key="frame" x="329" y="20" width="75" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="3s8-tZ-KUE"/>
+                                                        <constraint firstAttribute="width" constant="75" id="rc6-8K-ubV"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Download"/>
+                                                    <connections>
+                                                        <action selector="downloadButton_clicked:" destination="7Wz-BA-3qD" eventType="touchUpInside" id="AgE-Eg-JLd"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% of 1.35 MB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WP-I7-uXa" userLabel="Percentage Label">
+                                                    <rect key="frame" x="306" y="55" width="93" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GKX-m3-Zr7" userLabel="Download Progress">
+                                                    <rect key="frame" x="15" y="61.5" width="269" height="2"/>
+                                                </progressView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="2WP-I7-uXa" secondAttribute="trailing" constant="15" id="21q-AL-42T"/>
+                                                <constraint firstItem="Qvw-FD-bbF" firstAttribute="trailing" secondItem="C64-bv-jft" secondAttribute="trailing" id="8Wj-m3-tF8"/>
+                                                <constraint firstAttribute="trailing" secondItem="5ee-yh-e1P" secondAttribute="trailing" constant="10" id="GgD-qq-M1c"/>
+                                                <constraint firstAttribute="trailing" secondItem="C64-bv-jft" secondAttribute="trailing" constant="100" id="Uvv-Fq-Nhx"/>
+                                                <constraint firstAttribute="bottom" secondItem="2WP-I7-uXa" secondAttribute="bottom" constant="10" id="UyS-Yy-Elm"/>
+                                                <constraint firstItem="C64-bv-jft" firstAttribute="leading" secondItem="GSp-9x-Meu" secondAttribute="leading" constant="15" id="iGa-ab-uqr"/>
+                                                <constraint firstItem="GKX-m3-Zr7" firstAttribute="leading" secondItem="GSp-9x-Meu" secondAttribute="leading" constant="15" id="iXu-Nv-sEh"/>
+                                                <constraint firstItem="C64-bv-jft" firstAttribute="top" secondItem="GSp-9x-Meu" secondAttribute="top" constant="8" id="kaD-YB-MF9"/>
+                                                <constraint firstItem="Qvw-FD-bbF" firstAttribute="top" secondItem="C64-bv-jft" secondAttribute="bottom" constant="5" id="qhz-DA-Iub"/>
+                                                <constraint firstItem="Qvw-FD-bbF" firstAttribute="leading" secondItem="C64-bv-jft" secondAttribute="leading" id="siZ-fW-HBt"/>
+                                                <constraint firstItem="GKX-m3-Zr7" firstAttribute="centerY" secondItem="2WP-I7-uXa" secondAttribute="centerY" id="z7Z-94-9oE"/>
+                                                <constraint firstAttribute="trailing" secondItem="GKX-m3-Zr7" secondAttribute="trailing" constant="130" id="zBI-Id-NO7"/>
+                                                <constraint firstItem="5ee-yh-e1P" firstAttribute="top" secondItem="GSp-9x-Meu" secondAttribute="top" constant="20" id="zhc-RI-qJb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artistLabel" destination="Qvw-FD-bbF" id="NgK-Co-vO0"/>
+                                            <outlet property="downloadProgress" destination="GKX-m3-Zr7" id="bsb-uM-7jJ"/>
+                                            <outlet property="percentLabel" destination="2WP-I7-uXa" id="QIN-Pc-1k0"/>
+                                            <outlet property="songNameLabel" destination="C64-bv-jft" id="L1m-OJ-ZSc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="I1o-RR-YiE" firstAttribute="top" secondItem="dIl-Gp-TLF" secondAttribute="bottom" id="65J-ag-ve5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I1o-RR-YiE" secondAttribute="trailing" id="buP-kc-UGH"/>
+                            <constraint firstItem="dIl-Gp-TLF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gcH-Ff-EAj"/>
+                            <constraint firstItem="dIl-Gp-TLF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="gpr-Jq-ZQx"/>
+                            <constraint firstItem="I1o-RR-YiE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jT8-af-8sr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="I1o-RR-YiE" secondAttribute="bottom" id="s7a-pb-Nac"/>
+                            <constraint firstItem="dIl-Gp-TLF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ssK-iB-wp6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentTableView" destination="I1o-RR-YiE" id="aBh-Lg-C7t"/>
+                        <outlet property="searchBar" destination="dIl-Gp-TLF" id="btS-Lj-faI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="139"/>
+        </scene>
+    </scenes>
+</document>
