@@ -11,6 +11,8 @@ import UIKit
 protocol SongTableViewCellDelegate: class {
     func downloadTapped(_ cell: SongTableViewCell)
     func cancelTapped(_ cell: SongTableViewCell)
+    func pauseTapped(_ cell: SongTableViewCell)
+    func resumeTapped(_ cell: SongTableViewCell)
 }
 
 class SongTableViewCell: UITableViewCell, Cell {
@@ -19,6 +21,10 @@ class SongTableViewCell: UITableViewCell, Cell {
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var downloadProgress: UIProgressView!
     @IBOutlet weak var percentLabel: UILabel!
+    
+    @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    
     
     weak var delegate: SongTableViewCellDelegate?
     
@@ -35,6 +41,12 @@ class SongTableViewCell: UITableViewCell, Cell {
 
     @IBAction func downloadButton_clicked(_ sender: UIButton) {
         delegate?.downloadTapped(self)
+    }
+    
+    @IBAction func pauseButton_clicked(_ sender: UIButton) {
+    }
+    
+    @IBAction func cancelButton_clicked(_ sender: UIButton) {
     }
     
     func visualizeCell(with track: Track) {

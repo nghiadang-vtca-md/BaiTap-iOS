@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -62,18 +62,44 @@
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GKX-m3-Zr7" userLabel="Download Progress">
                                                     <rect key="frame" x="15" y="61.5" width="269" height="2"/>
                                                 </progressView>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLK-6I-tDe">
+                                                    <rect key="frame" x="307" y="20" width="42" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="8Zw-1I-cxP"/>
+                                                        <constraint firstAttribute="height" constant="40" id="u22-57-aCx"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Pause"/>
+                                                    <connections>
+                                                        <action selector="pauseButton_clicked:" destination="7Wz-BA-3qD" eventType="touchUpInside" id="Xx0-5x-c7j"/>
+                                                    </connections>
+                                                </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cu8-T0-rhu">
+                                                    <rect key="frame" x="354" y="20" width="50" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="nml-bg-J5S"/>
+                                                        <constraint firstAttribute="height" constant="40" id="xNt-hX-Bwn"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Cancel"/>
+                                                    <connections>
+                                                        <action selector="cancelButton_clicked:" destination="7Wz-BA-3qD" eventType="touchUpInside" id="fM0-cQ-FOR"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="2WP-I7-uXa" secondAttribute="trailing" constant="15" id="21q-AL-42T"/>
+                                                <constraint firstItem="Cu8-T0-rhu" firstAttribute="top" secondItem="GSp-9x-Meu" secondAttribute="top" constant="20" id="2NW-eH-oo8"/>
                                                 <constraint firstItem="Qvw-FD-bbF" firstAttribute="trailing" secondItem="C64-bv-jft" secondAttribute="trailing" id="8Wj-m3-tF8"/>
+                                                <constraint firstAttribute="trailing" secondItem="Cu8-T0-rhu" secondAttribute="trailing" constant="10" id="CWS-ir-lyc"/>
                                                 <constraint firstAttribute="trailing" secondItem="5ee-yh-e1P" secondAttribute="trailing" constant="10" id="GgD-qq-M1c"/>
                                                 <constraint firstAttribute="trailing" secondItem="C64-bv-jft" secondAttribute="trailing" constant="100" id="Uvv-Fq-Nhx"/>
                                                 <constraint firstAttribute="bottom" secondItem="2WP-I7-uXa" secondAttribute="bottom" constant="10" id="UyS-Yy-Elm"/>
+                                                <constraint firstItem="pLK-6I-tDe" firstAttribute="top" secondItem="GSp-9x-Meu" secondAttribute="top" constant="20" id="XHB-QM-ghd"/>
                                                 <constraint firstItem="C64-bv-jft" firstAttribute="leading" secondItem="GSp-9x-Meu" secondAttribute="leading" constant="15" id="iGa-ab-uqr"/>
                                                 <constraint firstItem="GKX-m3-Zr7" firstAttribute="leading" secondItem="GSp-9x-Meu" secondAttribute="leading" constant="15" id="iXu-Nv-sEh"/>
                                                 <constraint firstItem="C64-bv-jft" firstAttribute="top" secondItem="GSp-9x-Meu" secondAttribute="top" constant="8" id="kaD-YB-MF9"/>
                                                 <constraint firstItem="Qvw-FD-bbF" firstAttribute="top" secondItem="C64-bv-jft" secondAttribute="bottom" constant="5" id="qhz-DA-Iub"/>
                                                 <constraint firstItem="Qvw-FD-bbF" firstAttribute="leading" secondItem="C64-bv-jft" secondAttribute="leading" id="siZ-fW-HBt"/>
+                                                <constraint firstItem="Cu8-T0-rhu" firstAttribute="leading" secondItem="pLK-6I-tDe" secondAttribute="trailing" constant="5" id="wjV-Gf-WJV"/>
                                                 <constraint firstItem="GKX-m3-Zr7" firstAttribute="centerY" secondItem="2WP-I7-uXa" secondAttribute="centerY" id="z7Z-94-9oE"/>
                                                 <constraint firstAttribute="trailing" secondItem="GKX-m3-Zr7" secondAttribute="trailing" constant="130" id="zBI-Id-NO7"/>
                                                 <constraint firstItem="5ee-yh-e1P" firstAttribute="top" secondItem="GSp-9x-Meu" secondAttribute="top" constant="20" id="zhc-RI-qJb"/>
@@ -81,7 +107,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="artistLabel" destination="Qvw-FD-bbF" id="NgK-Co-vO0"/>
+                                            <outlet property="cancelButton" destination="Cu8-T0-rhu" id="4bc-i0-niX"/>
                                             <outlet property="downloadProgress" destination="GKX-m3-Zr7" id="bsb-uM-7jJ"/>
+                                            <outlet property="pauseButton" destination="pLK-6I-tDe" id="j7F-o5-tOs"/>
                                             <outlet property="percentLabel" destination="2WP-I7-uXa" id="QIN-Pc-1k0"/>
                                             <outlet property="songNameLabel" destination="C64-bv-jft" id="L1m-OJ-ZSc"/>
                                         </connections>

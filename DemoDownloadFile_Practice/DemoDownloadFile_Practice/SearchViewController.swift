@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class SearchViewController: UIViewController {
 
     //MARK :- Variables
@@ -21,6 +23,7 @@ class SearchViewController: UIViewController {
     //
     
     var searchResults: [Track] = []
+    var tracksDownloading: [TrackProgressDownload] = []
     
     var currentIndexPath: IndexPath?
     
@@ -96,7 +99,7 @@ extension SearchViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = SongTableViewCell.createCell(tableView: tableView)
-        
+        // giải quyết vấn đề thêm TrackProgressDownload ở đây
         cell.visualizeCell(with: searchResults[indexPath.row])
         
         cell.delegate = self
@@ -116,11 +119,29 @@ extension SearchViewController: SongTableViewCellDelegate {
             currentIndexPath = indexPath
             let track = searchResults[indexPath.row]
             downloadService.startDownload(with: track)
+            self.contentTableView.reloadRows(at: [indexPath], with: .automatic)
         }
     }
     
     func cancelTapped(_ cell: SongTableViewCell) {
-        
+        if let indexPath = contentTableView.indexPath(for: cell) {
+            let track = searchResults[indexPath.row]
+            downloadService.cancelDownload(with: track)
+        }
+    }
+    
+    func pauseTapped(_ cell: SongTableViewCell) {
+        if let indexPath = contentTableView.indexPath(for: cell) {
+            let track = searchResults[indexPath.row]
+            downloadService.pauseDownload(with: track)
+        }
+    }
+       
+    func resumeTapped(_ cell: SongTableViewCell) {
+        if let indexPath = contentTableView.indexPath(for: cell) {
+            let track = searchResults[indexPath.row]
+            downloadService.resumeDownload(with: track)
+        }
     }
 }
 
@@ -132,8 +153,12 @@ extension SearchViewController: URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         guard let sourceURL = downloadTask.originalRequest?.url else { return }
         
-        print(documentsPath)
+        print(sourceURL.absoluteString)
+        print(sourceURL.path)
+        print(sourceURL.relativeString)
+        print(sourceURL.relativePath)
         let lastPathComponent = sourceURL.lastPathComponent
+        print(lastPathComponent)
         
         let destinationURL = documentsPath.appendingPathComponent(lastPathComponent)
         print(destinationURL)
@@ -154,10 +179,21 @@ extension SearchViewController: URLSessionDownloadDelegate {
         let progress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
         let totalSize = ByteCountFormatter.string(fromByteCount: totalBytesExpectedToWrite, countStyle: .file)
         
+        // lấy trackProgressDownload thông qua "downloadTask" và "DownloadService"
+        guard let sourceURL = downloadTask.originalRequest?.url?.absoluteString,
+                let download = downloadService.activeDownloads[sourceURL] else { return }
+        
+        download.progress = progress
+        
         DispatchQueue.main.async {
-            if let indexPath = self.currentIndexPath,
-                let cell = self.contentTableView.cellForRow(at: indexPath) as? SongTableViewCell {
-                cell.updateDisplay(progress: progress, totalSize: totalSize)
+//            if let indexPath = self.currentIndexPath,
+//                let cell = self.contentTableView.cellForRow(at: indexPath) as? SongTableViewCell {
+//                cell.updateDisplay(progress: progress, totalSize: totalSize)
+//            }
+            // Xử lý vấn đề lưu trạng thái cho mỗi track
+            let indexPath = IndexPath(row: download.track.index, section: 0)
+            if let cell = self.contentTableView.cellForRow(at: indexPath) as? SongTableViewCell {
+                cell.updateDisplay(progress: download.progress, totalSize: totalSize)
             }
         }
         
