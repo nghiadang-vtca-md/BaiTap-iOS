@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DemoSaveDataLocal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="40H-lV-x3i">
+                                <rect key="frame" x="30" y="144" width="354" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tn7-kw-v97">
+                                <rect key="frame" x="177" y="198" width="60" height="40"/>
+                                <color key="backgroundColor" red="0.43921568630000002" green="0.63137254899999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="BNJ-fB-uVf"/>
+                                    <constraint firstAttribute="height" constant="40" id="Crb-ar-CfH"/>
+                                </constraints>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButton_Clicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PUg-f2-fbg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOb-5q-CLX">
+                                <rect key="frame" x="172.5" y="438" width="69" height="30"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="-- Save --">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButton_Clicked_UserDefault:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pAz-1b-bu2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tn7-kw-v97" firstAttribute="top" secondItem="40H-lV-x3i" secondAttribute="bottom" constant="20" id="5af-I0-ewL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="40H-lV-x3i" secondAttribute="trailing" constant="30" id="JPh-q8-nZY"/>
+                            <constraint firstItem="40H-lV-x3i" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kzz-eD-grE"/>
+                            <constraint firstItem="XOb-5q-CLX" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="mwr-rX-F4E"/>
+                            <constraint firstItem="40H-lV-x3i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="o8S-Gg-b77"/>
+                            <constraint firstItem="XOb-5q-CLX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qeW-5R-ifT"/>
+                            <constraint firstItem="40H-lV-x3i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="qnZ-8h-HRT"/>
+                            <constraint firstItem="tn7-kw-v97" firstAttribute="centerX" secondItem="40H-lV-x3i" secondAttribute="centerX" id="zTX-rc-cIn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="myTextField" destination="40H-lV-x3i" id="hPO-T5-k9L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+    </scenes>
+</document>
