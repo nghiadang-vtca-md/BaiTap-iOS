@@ -13,7 +13,8 @@ struct Note: Codable {
     let id: String
     var title: String
     var description: String
-    var latitude: Float
-    var longitude: Float
+    var latitude: Double
+    var longitude: Double
     var dateCreated: String
+    
 }
