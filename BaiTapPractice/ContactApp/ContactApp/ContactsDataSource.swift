@@ -69,7 +69,7 @@ class ContactsDataSource: NSObject, UITableViewDataSource {
     func object(at indexPath: IndexPath) -> Contact {
         return sectionedData[indexPath.section][indexPath.row]
     }
-    
+
     func indexPath(for contact: Contact) -> IndexPath? {
         for (index, contacts) in sectionedData.enumerated() {
             if let indexOfContact = contacts.firstIndex(of: contact) {
@@ -78,10 +78,9 @@ class ContactsDataSource: NSObject, UITableViewDataSource {
         }
         return nil
     }
-    
+
     func updateContact(_ contact: Contact, at indexPath: IndexPath) {
         sectionedData[indexPath.section][indexPath.row] = contact
     }
-    
     
 }
