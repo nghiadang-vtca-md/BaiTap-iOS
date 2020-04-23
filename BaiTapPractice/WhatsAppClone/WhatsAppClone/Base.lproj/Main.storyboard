@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhatsAppClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="WhatsAppClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,6 +47,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9S5-Tu-sVY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmb-xd-v5p">
                                 <rect key="frame" x="274" y="286" width="120" height="40"/>
@@ -59,9 +62,13 @@
                                 <state key="normal" title="Register">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="giV-Qv-ATK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="wmb-xd-v5p" firstAttribute="top" secondItem="5js-vn-j0w" secondAttribute="bottom" constant="20" id="0n3-ur-1rX"/>
                             <constraint firstItem="sGy-3B-W32" firstAttribute="top" secondItem="5js-vn-j0w" secondAttribute="bottom" constant="20" id="6DH-8S-FW4"/>
@@ -81,9 +88,22 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rFu-s1-gOJ" secondAttribute="trailing" constant="20" id="r09-et-fnp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="X8a-bD-hko" appends="YES" id="TPf-zo-MUh"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="H86-9K-xvy" id="KIx-tB-mDY"/>
+                        <outlet property="passwordTextField" destination="rFu-s1-gOJ" id="Fdh-lk-7l3"/>
+                        <outlet property="repeatPasswordTextField" destination="5js-vn-j0w" id="AgI-Qg-hI9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="X8a-bD-hko">
+                    <connections>
+                        <action selector="backgroundTap:" destination="BYZ-38-t0r" id="mr7-GL-dYU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="136.95652173913044"/>
         </scene>
