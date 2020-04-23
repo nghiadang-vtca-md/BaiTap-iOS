@@ -3,11 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		13EF94F653EC05753A607CFD /* Pods_DemoRealmData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CF4A20935AEF8DF15D8594 /* Pods_DemoRealmData.framework */; };
+		D36E59232418F20700DDC5CC /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E59222418F20700DDC5CC /* Note.swift */; };
+		D36E592624190A2A00DDC5CC /* NotebookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E592524190A2A00DDC5CC /* NotebookTableViewController.swift */; };
+		D36E592824190DF500DDC5CC /* NotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E592724190DF500DDC5CC /* NotesManager.swift */; };
+		D36E592A2419125200DDC5CC /* NoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E59292419125200DDC5CC /* NoteTableViewController.swift */; };
+		D36E592C241915CD00DDC5CC /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E592B241915CD00DDC5CC /* NoteViewController.swift */; };
 		D3EB22CA24093AD700A38BE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB22C924093AD700A38BE0 /* AppDelegate.swift */; };
 		D3EB22CC24093AD700A38BE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB22CB24093AD700A38BE0 /* SceneDelegate.swift */; };
 		D3EB22CE24093AD700A38BE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EB22CD24093AD700A38BE0 /* ViewController.swift */; };
@@ -20,6 +25,11 @@
 		0B84023424B8C7CF3FB952A2 /* Pods-DemoRealmData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoRealmData.debug.xcconfig"; path = "Target Support Files/Pods-DemoRealmData/Pods-DemoRealmData.debug.xcconfig"; sourceTree = "<group>"; };
 		92CF4A20935AEF8DF15D8594 /* Pods_DemoRealmData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoRealmData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B00D9AD4ADDD153BFD94D5 /* Pods-DemoRealmData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoRealmData.release.xcconfig"; path = "Target Support Files/Pods-DemoRealmData/Pods-DemoRealmData.release.xcconfig"; sourceTree = "<group>"; };
+		D36E59222418F20700DDC5CC /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		D36E592524190A2A00DDC5CC /* NotebookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookTableViewController.swift; sourceTree = "<group>"; };
+		D36E592724190DF500DDC5CC /* NotesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesManager.swift; sourceTree = "<group>"; };
+		D36E59292419125200DDC5CC /* NoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewController.swift; sourceTree = "<group>"; };
+		D36E592B241915CD00DDC5CC /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		D3EB22C624093AD700A38BE0 /* DemoRealmData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoRealmData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EB22C924093AD700A38BE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3EB22CB24093AD700A38BE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,8 +66,26 @@
 				0B84023424B8C7CF3FB952A2 /* Pods-DemoRealmData.debug.xcconfig */,
 				A5B00D9AD4ADDD153BFD94D5 /* Pods-DemoRealmData.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D36E59212418F1EE00DDC5CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D36E59222418F20700DDC5CC /* Note.swift */,
+				D36E592724190DF500DDC5CC /* NotesManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D36E5924241909FA00DDC5CC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D36E592524190A2A00DDC5CC /* NotebookTableViewController.swift */,
+				D36E59292419125200DDC5CC /* NoteTableViewController.swift */,
+				D36E592B241915CD00DDC5CC /* NoteViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		D3EB22BD24093AD700A38BE0 = {
@@ -81,6 +109,8 @@
 		D3EB22C824093AD700A38BE0 /* DemoRealmData */ = {
 			isa = PBXGroup;
 			children = (
+				D36E5924241909FA00DDC5CC /* Controllers */,
+				D36E59212418F1EE00DDC5CC /* Models */,
 				D3EB22C924093AD700A38BE0 /* AppDelegate.swift */,
 				D3EB22CB24093AD700A38BE0 /* SceneDelegate.swift */,
 				D3EB22CD24093AD700A38BE0 /* ViewController.swift */,
@@ -207,9 +237,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D36E592C241915CD00DDC5CC /* NoteViewController.swift in Sources */,
+				D36E592A2419125200DDC5CC /* NoteTableViewController.swift in Sources */,
 				D3EB22CE24093AD700A38BE0 /* ViewController.swift in Sources */,
+				D36E592824190DF500DDC5CC /* NotesManager.swift in Sources */,
 				D3EB22CA24093AD700A38BE0 /* AppDelegate.swift in Sources */,
+				D36E592624190A2A00DDC5CC /* NotebookTableViewController.swift in Sources */,
 				D3EB22CC24093AD700A38BE0 /* SceneDelegate.swift in Sources */,
+				D36E59232418F20700DDC5CC /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

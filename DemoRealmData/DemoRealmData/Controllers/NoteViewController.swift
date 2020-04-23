@@ -9,22 +9,43 @@
 import UIKit
 
 class NoteViewController: UIViewController {
+    
+    @IBOutlet weak var noteTextView: UITextView!
+    
+    var noteObject: Note?
+    
+    var notebookObject: Notebook! {
+        didSet {
+            self.configureView()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.configureView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureView() {
+        if noteObject == nil {
+            self.navigationItem.title = "New Note"
+        } else {
+            if let content = noteObject?.content {
+                noteTextView.text = content
+                self.navigationItem.title = "Edit note"
+            }
+        }
+        
+        navigationItem.largeTitleDisplayMode = .never
     }
-    */
+    
+    // MARK: - IBActions
+    @IBAction func saveNote(_ sender: Any) {
+        if noteObject == nil { // Create new note
+            NotesManager.shared.addNote(notebookObject, content: noteTextView.text)
+        } else {
+            NotesManager.shared.updateNote(note: noteObject!, newContent: noteTextView.text)
+        }
+    }
 
 }

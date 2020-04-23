@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		873A6DAE23A10CB200C00C8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873A6DAD23A10CB200C00C8B /* AppDelegate.swift */; };
 		873A6DB023A10CB200C00C8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873A6DAF23A10CB200C00C8B /* SceneDelegate.swift */; };
-		873A6DB223A10CB200C00C8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873A6DB123A10CB200C00C8B /* ViewController.swift */; };
+		873A6DB223A10CB200C00C8B /* ScrollViewProgrammatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873A6DB123A10CB200C00C8B /* ScrollViewProgrammatic.swift */; };
 		873A6DB523A10CB200C00C8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873A6DB323A10CB200C00C8B /* Main.storyboard */; };
 		873A6DB723A10CB300C00C8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 873A6DB623A10CB300C00C8B /* Assets.xcassets */; };
 		873A6DBA23A10CB300C00C8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873A6DB823A10CB300C00C8B /* LaunchScreen.storyboard */; };
+		D3D71342242B8DF0007F3790 /* ScrollViewAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D71341242B8DF0007F3790 /* ScrollViewAutoLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		873A6DAA23A10CB200C00C8B /* ScrollViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873A6DAD23A10CB200C00C8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		873A6DAF23A10CB200C00C8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		873A6DB123A10CB200C00C8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		873A6DB123A10CB200C00C8B /* ScrollViewProgrammatic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewProgrammatic.swift; sourceTree = "<group>"; };
 		873A6DB423A10CB200C00C8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		873A6DB623A10CB300C00C8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		873A6DB923A10CB300C00C8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873A6DBB23A10CB300C00C8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3D71341242B8DF0007F3790 /* ScrollViewAutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewAutoLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				873A6DAD23A10CB200C00C8B /* AppDelegate.swift */,
 				873A6DAF23A10CB200C00C8B /* SceneDelegate.swift */,
-				873A6DB123A10CB200C00C8B /* ViewController.swift */,
+				873A6DB123A10CB200C00C8B /* ScrollViewProgrammatic.swift */,
+				D3D71341242B8DF0007F3790 /* ScrollViewAutoLayout.swift */,
 				873A6DB323A10CB200C00C8B /* Main.storyboard */,
 				873A6DB623A10CB300C00C8B /* Assets.xcassets */,
 				873A6DB823A10CB300C00C8B /* LaunchScreen.storyboard */,
@@ -138,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873A6DB223A10CB200C00C8B /* ViewController.swift in Sources */,
+				873A6DB223A10CB200C00C8B /* ScrollViewProgrammatic.swift in Sources */,
 				873A6DAE23A10CB200C00C8B /* AppDelegate.swift in Sources */,
+				D3D71342242B8DF0007F3790 /* ScrollViewAutoLayout.swift in Sources */,
 				873A6DB023A10CB200C00C8B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
