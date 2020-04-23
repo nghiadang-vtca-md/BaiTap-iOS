@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BPH-JQ-WKp">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Second View Controller-->
+        <scene sceneID="cFp-mI-VnO">
+            <objects>
+                <viewController id="Qs4-nB-4ty" customClass="SecondViewController" customModule="DemoComponents" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ytd-JE-ehh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJr-ZN-uW8">
+                                <rect key="frame" x="304" y="30" width="80" height="30"/>
+                                <state key="normal" title="Select Date"/>
+                                <connections>
+                                    <segue destination="td0-Pw-YEh" kind="presentation" id="4rf-r4-2Nj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aJr-ZN-uW8" firstAttribute="top" secondItem="Ldk-Gr-ua2" secondAttribute="top" constant="30" id="1ZA-a0-oqf"/>
+                            <constraint firstItem="Ldk-Gr-ua2" firstAttribute="trailing" secondItem="aJr-ZN-uW8" secondAttribute="trailing" constant="30" id="eKe-IT-euv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ldk-Gr-ua2"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" systemItem="recents" id="uVd-UR-rs3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7UR-Yo-3Nf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="200"/>
+        </scene>
+        <!--First View Controller-->
+        <scene sceneID="uch-cK-DcA">
+            <objects>
+                <viewController id="TqY-1D-FHM" customClass="FirstViewController" customModule="DemoComponents" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mre-TG-pN0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="on2-Wo-Tui">
+                                <rect key="frame" x="304" y="30" width="80" height="30"/>
+                                <state key="normal" title="Select Date"/>
+                                <connections>
+                                    <segue destination="td0-Pw-YEh" kind="presentation" identifier="goToPopUpVC" id="9eb-qO-RDJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="on2-Wo-Tui" firstAttribute="top" secondItem="BFi-oA-6cr" secondAttribute="top" constant="30" id="9Ru-Gt-m0z"/>
+                            <constraint firstItem="BFi-oA-6cr" firstAttribute="trailing" secondItem="on2-Wo-Tui" secondAttribute="trailing" constant="30" id="SvM-mu-pPD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BFi-oA-6cr"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" systemItem="topRated" id="X7w-Ye-JNH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rz1-1K-7xD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="-449"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yTh-zM-Dz2">
+            <objects>
+                <tabBarController id="BPH-JQ-WKp" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BZX-mG-YAc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="TqY-1D-FHM" kind="relationship" relationship="viewControllers" id="qrK-1w-vMV"/>
+                        <segue destination="Qs4-nB-4ty" kind="relationship" relationship="viewControllers" id="AcV-a2-tOm"/>
+                        <segue destination="Cvi-83-FUA" kind="relationship" relationship="viewControllers" id="L8Y-IA-ltG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="06w-hI-U32" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-945" y="-125"/>
+        </scene>
+        <!--SelectTimeViewController-->
+        <scene sceneID="JuU-IU-yjl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectTimeViewController" id="Cvi-83-FUA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="N7l-0q-jub"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3r1-6S-rHR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-937" y="365"/>
+        </scene>
+        <!--PopUp-->
+        <scene sceneID="M84-ZJ-k0j">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PopUp" id="td0-Pw-YEh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8WP-cu-s6C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="-161"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9eb-qO-RDJ"/>
+    </inferredMetricsTieBreakers>
+</document>

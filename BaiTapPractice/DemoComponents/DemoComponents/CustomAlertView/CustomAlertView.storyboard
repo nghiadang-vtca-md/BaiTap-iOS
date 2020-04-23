@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vko-Np-t05">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom Alert ViewVC-->
+        <scene sceneID="cxW-Wd-2B9">
+            <objects>
+                <viewController id="Vko-Np-t05" customClass="CustomAlertViewVC" customModule="DemoComponents" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JrP-zN-47z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Alert" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpQ-X0-Das">
+                                <rect key="frame" x="20" y="40" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQG-n5-cKN">
+                                <rect key="frame" x="40" y="313" width="334" height="50"/>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.75294117650000003" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dsw-Bc-Fpc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Success">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickSuccess:" destination="Vko-Np-t05" eventType="touchUpInside" id="uSC-wG-gwt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ggj-IE-chi">
+                                <rect key="frame" x="40" y="373" width="334" height="50"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="PC4-Fg-Hqh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Failure">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickFailure:" destination="Vko-Np-t05" eventType="touchUpInside" id="IKB-Mx-TXR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RC0-MJ-poH">
+                                <rect key="frame" x="40" y="438" width="334" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Jue-hz-04T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Show popup with animation">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickShowPopUp:" destination="Vko-Np-t05" eventType="touchUpInside" id="HTt-cs-dYg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RC0-MJ-poH" firstAttribute="leading" secondItem="S8K-2q-YRQ" secondAttribute="leading" constant="40" id="C3n-Wf-RW5"/>
+                            <constraint firstItem="Ggj-IE-chi" firstAttribute="centerY" secondItem="JrP-zN-47z" secondAttribute="centerY" constant="30" id="Deo-VN-pMr"/>
+                            <constraint firstItem="RC0-MJ-poH" firstAttribute="top" secondItem="Ggj-IE-chi" secondAttribute="bottom" constant="15" id="F1j-cs-fAU"/>
+                            <constraint firstItem="aQG-n5-cKN" firstAttribute="centerY" secondItem="JrP-zN-47z" secondAttribute="centerY" constant="-30" id="IUy-TI-T0o"/>
+                            <constraint firstItem="S8K-2q-YRQ" firstAttribute="trailing" secondItem="RC0-MJ-poH" secondAttribute="trailing" constant="40" id="Mv1-hI-K8x"/>
+                            <constraint firstItem="aQG-n5-cKN" firstAttribute="leading" secondItem="S8K-2q-YRQ" secondAttribute="leading" constant="40" id="NVt-9p-d6G"/>
+                            <constraint firstItem="Ggj-IE-chi" firstAttribute="leading" secondItem="S8K-2q-YRQ" secondAttribute="leading" constant="40" id="Py6-65-tUw"/>
+                            <constraint firstItem="Ggj-IE-chi" firstAttribute="centerX" secondItem="JrP-zN-47z" secondAttribute="centerX" id="SyM-by-pvw"/>
+                            <constraint firstItem="ZpQ-X0-Das" firstAttribute="top" secondItem="S8K-2q-YRQ" secondAttribute="top" constant="40" id="UmN-xC-lVd"/>
+                            <constraint firstItem="S8K-2q-YRQ" firstAttribute="trailing" secondItem="Ggj-IE-chi" secondAttribute="trailing" constant="40" id="Xsq-jh-v5P"/>
+                            <constraint firstItem="S8K-2q-YRQ" firstAttribute="trailing" secondItem="ZpQ-X0-Das" secondAttribute="trailing" constant="20" id="bac-9N-gPK"/>
+                            <constraint firstItem="aQG-n5-cKN" firstAttribute="centerX" secondItem="JrP-zN-47z" secondAttribute="centerX" id="bgx-9a-X3W"/>
+                            <constraint firstItem="S8K-2q-YRQ" firstAttribute="trailing" secondItem="aQG-n5-cKN" secondAttribute="trailing" constant="40" id="n2c-C0-yDA"/>
+                            <constraint firstItem="ZpQ-X0-Das" firstAttribute="leading" secondItem="S8K-2q-YRQ" secondAttribute="leading" constant="20" id="nZ6-ZK-por"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="S8K-2q-YRQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kpn-mQ-5Wh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HOG-mv-Xf2">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tap Gesture-->
+        <scene sceneID="AGB-EI-vRE">
+            <objects>
+                <viewController id="HOG-mv-Xf2" customClass="TapGesture" customModule="DemoComponents" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EMN-Dc-UCi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="mYh-F2-2HX">
+                                <rect key="frame" x="30" y="60" width="354" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="zVx-h5-ckO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5F-oj-vuI">
+                                <rect key="frame" x="30" y="360" width="354" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.87185529620000002" blue="0.36955930380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GW1-xv-GKv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mYh-F2-2HX" firstAttribute="top" secondItem="fam-gQ-OGQ" secondAttribute="top" constant="60" id="5jV-2w-KbM"/>
+                            <constraint firstItem="fam-gQ-OGQ" firstAttribute="trailing" secondItem="v5F-oj-vuI" secondAttribute="trailing" constant="30" id="Mh2-F5-MF0"/>
+                            <constraint firstItem="mYh-F2-2HX" firstAttribute="leading" secondItem="fam-gQ-OGQ" secondAttribute="leading" constant="30" id="bNm-KZ-eEB"/>
+                            <constraint firstItem="v5F-oj-vuI" firstAttribute="top" secondItem="mYh-F2-2HX" secondAttribute="bottom" constant="50" id="hcz-ZD-MPE"/>
+                            <constraint firstItem="fam-gQ-OGQ" firstAttribute="trailing" secondItem="mYh-F2-2HX" secondAttribute="trailing" constant="30" id="qcm-Qa-ekH"/>
+                            <constraint firstItem="v5F-oj-vuI" firstAttribute="leading" secondItem="fam-gQ-OGQ" secondAttribute="leading" constant="30" id="x4n-eD-Iif"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fam-gQ-OGQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageV" destination="mYh-F2-2HX" id="AIV-CY-vFQ"/>
+                        <outlet property="labelText" destination="v5F-oj-vuI" id="zDk-o9-wgC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKX-NK-3WY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="118"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1" width="317" height="159"/>
+    </resources>
+</document>

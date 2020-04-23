@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uif-Kv-NNs">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Date PickerVC-->
+        <scene sceneID="Qre-NI-cyR">
+            <objects>
+                <viewController id="Uif-Kv-NNs" customClass="DatePickerVC" customModule="DemoComponents" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i3a-aY-LnP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pick a date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LFM-kk-7zk">
+                                <rect key="frame" x="50" y="343" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jcT-DK-QM9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LFM-kk-7zk" firstAttribute="centerX" secondItem="i3a-aY-LnP" secondAttribute="centerX" id="3x4-2R-nGc"/>
+                            <constraint firstItem="LFM-kk-7zk" firstAttribute="leading" secondItem="Aca-OV-geC" secondAttribute="leading" constant="50" id="SLQ-ZB-anz"/>
+                            <constraint firstItem="Aca-OV-geC" firstAttribute="trailing" secondItem="LFM-kk-7zk" secondAttribute="trailing" constant="50" id="Z1J-a9-T2j"/>
+                            <constraint firstItem="LFM-kk-7zk" firstAttribute="centerY" secondItem="i3a-aY-LnP" secondAttribute="centerY" id="eJC-Os-uo1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Aca-OV-geC"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="LFM-kk-7zk" id="0I8-H9-8vq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cNy-AN-QqW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="137"/>
+        </scene>
+    </scenes>
+</document>

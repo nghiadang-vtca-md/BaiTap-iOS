@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N9d-vc-K85">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Picker View With Multiple ComponentsVC-->
+        <scene sceneID="1qy-E9-m9m">
+            <objects>
+                <viewController id="N9d-vc-K85" customClass="PickerViewWithMultipleComponentsVC" customModule="DemoComponents" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IRt-ju-w8W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtW-4g-Nry">
+                                <rect key="frame" x="0.0" y="60" width="414" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njA-PA-Qkt">
+                                <rect key="frame" x="40" y="316" width="334" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.87185529620000002" blue="0.36955930380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC5-gV-Sy6">
+                                <rect key="frame" x="40" y="356" width="334" height="24"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xHQ-F8-WJq" firstAttribute="trailing" secondItem="njA-PA-Qkt" secondAttribute="trailing" constant="40" id="1do-yK-vKX"/>
+                            <constraint firstItem="pC5-gV-Sy6" firstAttribute="leading" secondItem="xHQ-F8-WJq" secondAttribute="leading" constant="40" id="BYP-11-egu"/>
+                            <constraint firstItem="xHQ-F8-WJq" firstAttribute="trailing" secondItem="pC5-gV-Sy6" secondAttribute="trailing" constant="40" id="EPg-bp-hx0"/>
+                            <constraint firstItem="wtW-4g-Nry" firstAttribute="top" secondItem="xHQ-F8-WJq" secondAttribute="top" constant="60" id="NmL-4N-Ilc"/>
+                            <constraint firstItem="wtW-4g-Nry" firstAttribute="leading" secondItem="xHQ-F8-WJq" secondAttribute="leading" id="X1c-vu-NT8"/>
+                            <constraint firstItem="wtW-4g-Nry" firstAttribute="trailing" secondItem="xHQ-F8-WJq" secondAttribute="trailing" id="cQP-RA-L7N"/>
+                            <constraint firstItem="njA-PA-Qkt" firstAttribute="leading" secondItem="xHQ-F8-WJq" secondAttribute="leading" constant="40" id="h0F-dg-2eB"/>
+                            <constraint firstItem="pC5-gV-Sy6" firstAttribute="top" secondItem="njA-PA-Qkt" secondAttribute="bottom" constant="10" id="m2y-Jj-mFd"/>
+                            <constraint firstItem="njA-PA-Qkt" firstAttribute="top" secondItem="wtW-4g-Nry" secondAttribute="bottom" constant="40" id="mH8-BB-iNS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xHQ-F8-WJq"/>
+                    </view>
+                    <connections>
+                        <outlet property="childLabel" destination="pC5-gV-Sy6" id="do4-IP-kHI"/>
+                        <outlet property="parentLabel" destination="njA-PA-Qkt" id="sQH-eH-wdv"/>
+                        <outlet property="pickerView" destination="wtW-4g-Nry" id="Ny0-cF-sir"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DMb-oc-xbO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="118"/>
+        </scene>
+    </scenes>
+</document>
