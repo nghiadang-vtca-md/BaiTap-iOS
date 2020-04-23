@@ -1,0 +1,777 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D3945122242F16FC0040B83E /* StretchyHeader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3945121242F16FC0040B83E /* StretchyHeader.storyboard */; };
+		D3945124242F170F0040B83E /* StretchyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3945123242F170F0040B83E /* StretchyHeader.swift */; };
+		D394513D243186DD0040B83E /* CellXib.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D394513C243186DD0040B83E /* CellXib.storyboard */; };
+		D394513F243186F10040B83E /* CellXibVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394513E243186F10040B83E /* CellXibVC.swift */; };
+		D3945142243187A70040B83E /* CheckmarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3945140243187A70040B83E /* CheckmarkCell.swift */; };
+		D3945143243187A70040B83E /* CheckmarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3945141243187A70040B83E /* CheckmarkCell.xib */; };
+		D3C7511024225072002BE1DE /* CollectionViewInsideTableViewCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C7510F24225072002BE1DE /* CollectionViewInsideTableViewCell.storyboard */; };
+		D3C7511224225086002BE1DE /* CollectionViewInsideTableViewCellVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7511124225086002BE1DE /* CollectionViewInsideTableViewCellVC.swift */; };
+		D3C75115242256D2002BE1DE /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C75114242256D2002BE1DE /* BannerCell.swift */; };
+		D3C75117242256F2002BE1DE /* FruitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C75116242256F2002BE1DE /* FruitCell.swift */; };
+		D3C7511924225772002BE1DE /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7511824225772002BE1DE /* FoodCell.swift */; };
+		D3C7511F2422591D002BE1DE /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7511E2422591D002BE1DE /* MainTableView.swift */; };
+		D3C7512124225CE0002BE1DE /* FoodCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7512024225CE0002BE1DE /* FoodCollection.swift */; };
+		D3C75123242326D1002BE1DE /* VeggieCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C75122242326D1002BE1DE /* VeggieCollection.swift */; };
+		D3C75126242362F9002BE1DE /* TableViewInsertDeleteWithAnimation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C75125242362F9002BE1DE /* TableViewInsertDeleteWithAnimation.storyboard */; };
+		D3C751282423630F002BE1DE /* TableViewInsertDeleteWithAnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C751272423630F002BE1DE /* TableViewInsertDeleteWithAnimationVC.swift */; };
+		D3D4D39E241FA2F300694EBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D39D241FA2F300694EBC /* AppDelegate.swift */; };
+		D3D4D3A0241FA2F300694EBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D39F241FA2F300694EBC /* SceneDelegate.swift */; };
+		D3D4D3A2241FA2F300694EBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3A1241FA2F300694EBC /* ViewController.swift */; };
+		D3D4D3A5241FA2F300694EBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3A3241FA2F300694EBC /* Main.storyboard */; };
+		D3D4D3A7241FA2F400694EBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3A6241FA2F400694EBC /* Assets.xcassets */; };
+		D3D4D3AA241FA2F400694EBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3A8241FA2F400694EBC /* LaunchScreen.storyboard */; };
+		D3D4D3B5241FA48700694EBC /* SmallFruitImages.0 in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3B1241FA48700694EBC /* SmallFruitImages.0 */; };
+		D3D4D3B6241FA48700694EBC /* SmallVeggieImages in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3B2241FA48700694EBC /* SmallVeggieImages */; };
+		D3D4D3B7241FA48700694EBC /* fruits in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3B3241FA48700694EBC /* fruits */; };
+		D3D4D3B8241FA48700694EBC /* veggies in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3B4241FA48700694EBC /* veggies */; };
+		D3D4D3BA241FA4D300694EBC /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3B9241FA4D300694EBC /* Food.swift */; };
+		D3D4D3BC241FA57800694EBC /* FruitsNVeggies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3BB241FA57800694EBC /* FruitsNVeggies.swift */; };
+		D3D4D3C1241FAFE300694EBC /* ProgrammaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3C0241FAFE300694EBC /* ProgrammaticTableViewController.swift */; };
+		D3D4D3C4241FB64600694EBC /* TableViewWithSections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3C3241FB64600694EBC /* TableViewWithSections.storyboard */; };
+		D3D4D3C6241FB65400694EBC /* TableViewWithSectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3C5241FB65400694EBC /* TableViewWithSectionsViewController.swift */; };
+		D3D4D3C9241FBB2A00694EBC /* TableViewWithSectionDelete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3C8241FBB2A00694EBC /* TableViewWithSectionDelete.storyboard */; };
+		D3D4D3CB241FBB3A00694EBC /* TableViewWithSectionDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3CA241FBB3A00694EBC /* TableViewWithSectionDeleteViewController.swift */; };
+		D3D4D3CE2420BACC00694EBC /* TableViewWithEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3CD2420BACC00694EBC /* TableViewWithEdit.storyboard */; };
+		D3D4D3D02420BAE100694EBC /* TableViewWithEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3CF2420BAE100694EBC /* TableViewWithEditViewController.swift */; };
+		D3D4D3D32420BDD300694EBC /* TableViewWithInsert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3D22420BDD300694EBC /* TableViewWithInsert.storyboard */; };
+		D3D4D3D52420BDDE00694EBC /* TableViewWithInsertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3D42420BDDE00694EBC /* TableViewWithInsertViewController.swift */; };
+		D3D4D3D82420D15400694EBC /* TableViewCustomCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3D72420D15400694EBC /* TableViewCustomCell.storyboard */; };
+		D3D4D3DA2420D16200694EBC /* TableViewCustomCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3D92420D16200694EBC /* TableViewCustomCellViewController.swift */; };
+		D3D4D3DC2420D3C400694EBC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3DB2420D3C400694EBC /* CustomTableViewCell.swift */; };
+		D3D4D3DF2420D83E00694EBC /* ProgrammaticCustomTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3DE2420D83E00694EBC /* ProgrammaticCustomTVC.swift */; };
+		D3D4D3E22420F7F500694EBC /* SelfSizeTVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3E12420F7F500694EBC /* SelfSizeTVC.storyboard */; };
+		D3D4D3E42420F82E00694EBC /* SelfSizeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3E32420F82E00694EBC /* SelfSizeTVC.swift */; };
+		D3D4D3E62420FC7800694EBC /* SelfSizingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3E52420FC7800694EBC /* SelfSizingCell.swift */; };
+		D3D4D3E92420FEC400694EBC /* StaticTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3E82420FEC400694EBC /* StaticTableView.storyboard */; };
+		D3D4D3EB2420FEDB00694EBC /* StaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3EA2420FEDB00694EBC /* StaticTableViewController.swift */; };
+		D3D4D3ED242100E000694EBC /* DetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3EC242100E000694EBC /* DetailsTableViewController.swift */; };
+		D3D4D3F02421C2CB00694EBC /* SearchTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3EF2421C2CB00694EBC /* SearchTableView.storyboard */; };
+		D3D4D3F22421C2DE00694EBC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3F12421C2DE00694EBC /* SearchViewController.swift */; };
+		D3D4D3F52421D01D00694EBC /* ActionsTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3F42421D01D00694EBC /* ActionsTableView.storyboard */; };
+		D3D4D3F72421D03400694EBC /* ActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3F62421D03400694EBC /* ActionsTableViewController.swift */; };
+		D3D4D3FA2421D82D00694EBC /* ExpandTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3F92421D82D00694EBC /* ExpandTableView.storyboard */; };
+		D3D4D3FC2421D83A00694EBC /* ExpandTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D3FB2421D83A00694EBC /* ExpandTableViewController.swift */; };
+		D3D4D4002421E8CE00694EBC /* TableviewWithRefresh.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D3FF2421E8CE00694EBC /* TableviewWithRefresh.storyboard */; };
+		D3D4D4022421E8E400694EBC /* TableviewWithRefreshVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D4012421E8E400694EBC /* TableviewWithRefreshVC.swift */; };
+		D3D4D405242203EE00694EBC /* StickyButtonTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D404242203EE00694EBC /* StickyButtonTable.storyboard */; };
+		D3D4D4072422040000694EBC /* StickyButtonTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D4062422040000694EBC /* StickyButtonTableVC.swift */; };
+		D3D4D40A24220E2100694EBC /* EmptyTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D40924220E2100694EBC /* EmptyTableView.storyboard */; };
+		D3D4D40C24220E4300694EBC /* EmptyTableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D40B24220E4300694EBC /* EmptyTableViewVC.swift */; };
+		D3D4D40F2422273C00694EBC /* DropdownListTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D40E2422273C00694EBC /* DropdownListTableView.storyboard */; };
+		D3D4D4112422274F00694EBC /* DropdownListTableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D4102422274F00694EBC /* DropdownListTableViewVC.swift */; };
+		D3D4D41524223E5900694EBC /* MultipleSelectionRowsTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D4D41424223E5900694EBC /* MultipleSelectionRowsTableView.storyboard */; };
+		D3D4D41724223E6800694EBC /* MultipleSelectionRowsTableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D4D41624223E6800694EBC /* MultipleSelectionRowsTableViewVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D3945121242F16FC0040B83E /* StretchyHeader.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StretchyHeader.storyboard; sourceTree = "<group>"; };
+		D3945123242F170F0040B83E /* StretchyHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeader.swift; sourceTree = "<group>"; };
+		D394513C243186DD0040B83E /* CellXib.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CellXib.storyboard; sourceTree = "<group>"; };
+		D394513E243186F10040B83E /* CellXibVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellXibVC.swift; sourceTree = "<group>"; };
+		D3945140243187A70040B83E /* CheckmarkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkCell.swift; sourceTree = "<group>"; };
+		D3945141243187A70040B83E /* CheckmarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckmarkCell.xib; sourceTree = "<group>"; };
+		D3C7510F24225072002BE1DE /* CollectionViewInsideTableViewCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionViewInsideTableViewCell.storyboard; sourceTree = "<group>"; };
+		D3C7511124225086002BE1DE /* CollectionViewInsideTableViewCellVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewInsideTableViewCellVC.swift; sourceTree = "<group>"; };
+		D3C75114242256D2002BE1DE /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		D3C75116242256F2002BE1DE /* FruitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCell.swift; sourceTree = "<group>"; };
+		D3C7511824225772002BE1DE /* FoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
+		D3C7511E2422591D002BE1DE /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
+		D3C7512024225CE0002BE1DE /* FoodCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollection.swift; sourceTree = "<group>"; };
+		D3C75122242326D1002BE1DE /* VeggieCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeggieCollection.swift; sourceTree = "<group>"; };
+		D3C75125242362F9002BE1DE /* TableViewInsertDeleteWithAnimation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewInsertDeleteWithAnimation.storyboard; sourceTree = "<group>"; };
+		D3C751272423630F002BE1DE /* TableViewInsertDeleteWithAnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewInsertDeleteWithAnimationVC.swift; sourceTree = "<group>"; };
+		D3D4D39A241FA2F300694EBC /* DemoTableViewFull.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoTableViewFull.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3D4D39D241FA2F300694EBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D3D4D39F241FA2F300694EBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D3D4D3A1241FA2F300694EBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D3D4D3A4241FA2F300694EBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D3D4D3A6241FA2F400694EBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3D4D3A9241FA2F400694EBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D3D4D3AB241FA2F400694EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3D4D3B1241FA48700694EBC /* SmallFruitImages.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SmallFruitImages.0; sourceTree = "<group>"; };
+		D3D4D3B2241FA48700694EBC /* SmallVeggieImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SmallVeggieImages; sourceTree = "<group>"; };
+		D3D4D3B3241FA48700694EBC /* fruits */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fruits; sourceTree = "<group>"; };
+		D3D4D3B4241FA48700694EBC /* veggies */ = {isa = PBXFileReference; lastKnownFileType = folder; path = veggies; sourceTree = "<group>"; };
+		D3D4D3B9241FA4D300694EBC /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		D3D4D3BB241FA57800694EBC /* FruitsNVeggies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsNVeggies.swift; sourceTree = "<group>"; };
+		D3D4D3C0241FAFE300694EBC /* ProgrammaticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammaticTableViewController.swift; sourceTree = "<group>"; };
+		D3D4D3C3241FB64600694EBC /* TableViewWithSections.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewWithSections.storyboard; sourceTree = "<group>"; };
+		D3D4D3C5241FB65400694EBC /* TableViewWithSectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewWithSectionsViewController.swift; sourceTree = "<group>"; };
+		D3D4D3C8241FBB2A00694EBC /* TableViewWithSectionDelete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewWithSectionDelete.storyboard; sourceTree = "<group>"; };
+		D3D4D3CA241FBB3A00694EBC /* TableViewWithSectionDeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewWithSectionDeleteViewController.swift; sourceTree = "<group>"; };
+		D3D4D3CD2420BACC00694EBC /* TableViewWithEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewWithEdit.storyboard; sourceTree = "<group>"; };
+		D3D4D3CF2420BAE100694EBC /* TableViewWithEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewWithEditViewController.swift; sourceTree = "<group>"; };
+		D3D4D3D22420BDD300694EBC /* TableViewWithInsert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewWithInsert.storyboard; sourceTree = "<group>"; };
+		D3D4D3D42420BDDE00694EBC /* TableViewWithInsertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewWithInsertViewController.swift; sourceTree = "<group>"; };
+		D3D4D3D72420D15400694EBC /* TableViewCustomCell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableViewCustomCell.storyboard; sourceTree = "<group>"; };
+		D3D4D3D92420D16200694EBC /* TableViewCustomCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCustomCellViewController.swift; sourceTree = "<group>"; };
+		D3D4D3DB2420D3C400694EBC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		D3D4D3DE2420D83E00694EBC /* ProgrammaticCustomTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammaticCustomTVC.swift; sourceTree = "<group>"; };
+		D3D4D3E12420F7F500694EBC /* SelfSizeTVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelfSizeTVC.storyboard; sourceTree = "<group>"; };
+		D3D4D3E32420F82E00694EBC /* SelfSizeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizeTVC.swift; sourceTree = "<group>"; };
+		D3D4D3E52420FC7800694EBC /* SelfSizingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizingCell.swift; sourceTree = "<group>"; };
+		D3D4D3E82420FEC400694EBC /* StaticTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StaticTableView.storyboard; sourceTree = "<group>"; };
+		D3D4D3EA2420FEDB00694EBC /* StaticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTableViewController.swift; sourceTree = "<group>"; };
+		D3D4D3EC242100E000694EBC /* DetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewController.swift; sourceTree = "<group>"; };
+		D3D4D3EF2421C2CB00694EBC /* SearchTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTableView.storyboard; sourceTree = "<group>"; };
+		D3D4D3F12421C2DE00694EBC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D3D4D3F42421D01D00694EBC /* ActionsTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActionsTableView.storyboard; sourceTree = "<group>"; };
+		D3D4D3F62421D03400694EBC /* ActionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsTableViewController.swift; sourceTree = "<group>"; };
+		D3D4D3F92421D82D00694EBC /* ExpandTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExpandTableView.storyboard; sourceTree = "<group>"; };
+		D3D4D3FB2421D83A00694EBC /* ExpandTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandTableViewController.swift; sourceTree = "<group>"; };
+		D3D4D3FF2421E8CE00694EBC /* TableviewWithRefresh.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TableviewWithRefresh.storyboard; sourceTree = "<group>"; };
+		D3D4D4012421E8E400694EBC /* TableviewWithRefreshVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableviewWithRefreshVC.swift; sourceTree = "<group>"; };
+		D3D4D404242203EE00694EBC /* StickyButtonTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StickyButtonTable.storyboard; sourceTree = "<group>"; };
+		D3D4D4062422040000694EBC /* StickyButtonTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyButtonTableVC.swift; sourceTree = "<group>"; };
+		D3D4D40924220E2100694EBC /* EmptyTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmptyTableView.storyboard; sourceTree = "<group>"; };
+		D3D4D40B24220E4300694EBC /* EmptyTableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewVC.swift; sourceTree = "<group>"; };
+		D3D4D40E2422273C00694EBC /* DropdownListTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DropdownListTableView.storyboard; sourceTree = "<group>"; };
+		D3D4D4102422274F00694EBC /* DropdownListTableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownListTableViewVC.swift; sourceTree = "<group>"; };
+		D3D4D41424223E5900694EBC /* MultipleSelectionRowsTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MultipleSelectionRowsTableView.storyboard; sourceTree = "<group>"; };
+		D3D4D41624223E6800694EBC /* MultipleSelectionRowsTableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionRowsTableViewVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D3D4D397241FA2F300694EBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D3945120242F16DE0040B83E /* StretchyHeader */ = {
+			isa = PBXGroup;
+			children = (
+				D3945121242F16FC0040B83E /* StretchyHeader.storyboard */,
+				D3945123242F170F0040B83E /* StretchyHeader.swift */,
+			);
+			name = StretchyHeader;
+			sourceTree = "<group>";
+		};
+		D394513B243186BC0040B83E /* CellXib */ = {
+			isa = PBXGroup;
+			children = (
+				D394513C243186DD0040B83E /* CellXib.storyboard */,
+				D394513E243186F10040B83E /* CellXibVC.swift */,
+				D3945140243187A70040B83E /* CheckmarkCell.swift */,
+				D3945141243187A70040B83E /* CheckmarkCell.xib */,
+			);
+			name = CellXib;
+			sourceTree = "<group>";
+		};
+		D3C7510E24224FF1002BE1DE /* CollectionViewInsideTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3C7511D242258E3002BE1DE /* DataTableView */,
+				D3C7511A242257AE002BE1DE /* DataCollection */,
+				D3C75113242255F3002BE1DE /* Cell */,
+				D3C7510F24225072002BE1DE /* CollectionViewInsideTableViewCell.storyboard */,
+				D3C7511124225086002BE1DE /* CollectionViewInsideTableViewCellVC.swift */,
+			);
+			name = CollectionViewInsideTableViewCell;
+			sourceTree = "<group>";
+		};
+		D3C75113242255F3002BE1DE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D3C75114242256D2002BE1DE /* BannerCell.swift */,
+				D3C75116242256F2002BE1DE /* FruitCell.swift */,
+				D3C7511824225772002BE1DE /* FoodCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		D3C7511A242257AE002BE1DE /* DataCollection */ = {
+			isa = PBXGroup;
+			children = (
+				D3C7512024225CE0002BE1DE /* FoodCollection.swift */,
+				D3C75122242326D1002BE1DE /* VeggieCollection.swift */,
+			);
+			name = DataCollection;
+			sourceTree = "<group>";
+		};
+		D3C7511D242258E3002BE1DE /* DataTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D3C7511E2422591D002BE1DE /* MainTableView.swift */,
+			);
+			name = DataTableView;
+			sourceTree = "<group>";
+		};
+		D3C75124242362A7002BE1DE /* TableViewInsertDeleteWithAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				D3C75125242362F9002BE1DE /* TableViewInsertDeleteWithAnimation.storyboard */,
+				D3C751272423630F002BE1DE /* TableViewInsertDeleteWithAnimationVC.swift */,
+			);
+			name = TableViewInsertDeleteWithAnimation;
+			sourceTree = "<group>";
+		};
+		D3D4D391241FA2F300694EBC = {
+			isa = PBXGroup;
+			children = (
+				D3D4D39C241FA2F300694EBC /* DemoTableViewFull */,
+				D3D4D39B241FA2F300694EBC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D3D4D39B241FA2F300694EBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D39A241FA2F300694EBC /* DemoTableViewFull.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3D4D39C241FA2F300694EBC /* DemoTableViewFull */ = {
+			isa = PBXGroup;
+			children = (
+				D394513B243186BC0040B83E /* CellXib */,
+				D3945120242F16DE0040B83E /* StretchyHeader */,
+				D3C7510E24224FF1002BE1DE /* CollectionViewInsideTableViewCell */,
+				D3D4D41224223E3100694EBC /* MultipleSelectionRowsTableView */,
+				D3D4D40D2422272000694EBC /* DropdownListTableView */,
+				D3D4D40824220E1300694EBC /* EmptyTableView */,
+				D3D4D403242203DA00694EBC /* StickyButtonTable */,
+				D3D4D3FD2421E8A800694EBC /* TableviewWithRefresh */,
+				D3D4D3F82421D81C00694EBC /* ExpandTableView */,
+				D3D4D3F32421D00600694EBC /* ActionsTableView */,
+				D3D4D3EE2421C2A500694EBC /* SearchTableView */,
+				D3D4D3E72420FEB000694EBC /* StaticTableView */,
+				D3D4D3E02420F7AA00694EBC /* SelfSizeTVC */,
+				D3D4D3DD2420D7FD00694EBC /* ProgrammaticCustomTVC */,
+				D3D4D3D62420D13000694EBC /* TableViewCustomCell */,
+				D3C75124242362A7002BE1DE /* TableViewInsertDeleteWithAnimation */,
+				D3D4D3D12420BDB300694EBC /* TableViewWithInsert */,
+				D3D4D3CC2420BAAE00694EBC /* TableViewWithEdit */,
+				D3D4D3C7241FBB1000694EBC /* TableViewWithSectionDelete */,
+				D3D4D3C2241FB60100694EBC /* TableViewWithSections */,
+				D3D4D3BF241FAFB900694EBC /* ProgrammaticTableView */,
+				D3D4D3BD241FA78300694EBC /* Helpers */,
+				D3D4D3BE241FA79D00694EBC /* BasicTableViewStoryboard */,
+				D3D4D39D241FA2F300694EBC /* AppDelegate.swift */,
+				D3D4D39F241FA2F300694EBC /* SceneDelegate.swift */,
+				D3D4D3A6241FA2F400694EBC /* Assets.xcassets */,
+				D3D4D3A8241FA2F400694EBC /* LaunchScreen.storyboard */,
+				D3D4D3AB241FA2F400694EBC /* Info.plist */,
+			);
+			path = DemoTableViewFull;
+			sourceTree = "<group>";
+		};
+		D3D4D3BD241FA78300694EBC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3B9241FA4D300694EBC /* Food.swift */,
+				D3D4D3BB241FA57800694EBC /* FruitsNVeggies.swift */,
+				D3D4D3B3241FA48700694EBC /* fruits */,
+				D3D4D3B1241FA48700694EBC /* SmallFruitImages.0 */,
+				D3D4D3B2241FA48700694EBC /* SmallVeggieImages */,
+				D3D4D3B4241FA48700694EBC /* veggies */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		D3D4D3BE241FA79D00694EBC /* BasicTableViewStoryboard */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3A1241FA2F300694EBC /* ViewController.swift */,
+				D3D4D3A3241FA2F300694EBC /* Main.storyboard */,
+			);
+			name = BasicTableViewStoryboard;
+			sourceTree = "<group>";
+		};
+		D3D4D3BF241FAFB900694EBC /* ProgrammaticTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3C0241FAFE300694EBC /* ProgrammaticTableViewController.swift */,
+			);
+			name = ProgrammaticTableView;
+			sourceTree = "<group>";
+		};
+		D3D4D3C2241FB60100694EBC /* TableViewWithSections */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3C3241FB64600694EBC /* TableViewWithSections.storyboard */,
+				D3D4D3C5241FB65400694EBC /* TableViewWithSectionsViewController.swift */,
+			);
+			name = TableViewWithSections;
+			sourceTree = "<group>";
+		};
+		D3D4D3C7241FBB1000694EBC /* TableViewWithSectionDelete */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3C8241FBB2A00694EBC /* TableViewWithSectionDelete.storyboard */,
+				D3D4D3CA241FBB3A00694EBC /* TableViewWithSectionDeleteViewController.swift */,
+			);
+			name = TableViewWithSectionDelete;
+			sourceTree = "<group>";
+		};
+		D3D4D3CC2420BAAE00694EBC /* TableViewWithEdit */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3CD2420BACC00694EBC /* TableViewWithEdit.storyboard */,
+				D3D4D3CF2420BAE100694EBC /* TableViewWithEditViewController.swift */,
+			);
+			name = TableViewWithEdit;
+			sourceTree = "<group>";
+		};
+		D3D4D3D12420BDB300694EBC /* TableViewWithInsert */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3D22420BDD300694EBC /* TableViewWithInsert.storyboard */,
+				D3D4D3D42420BDDE00694EBC /* TableViewWithInsertViewController.swift */,
+			);
+			name = TableViewWithInsert;
+			sourceTree = "<group>";
+		};
+		D3D4D3D62420D13000694EBC /* TableViewCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3D72420D15400694EBC /* TableViewCustomCell.storyboard */,
+				D3D4D3D92420D16200694EBC /* TableViewCustomCellViewController.swift */,
+				D3D4D3DB2420D3C400694EBC /* CustomTableViewCell.swift */,
+			);
+			name = TableViewCustomCell;
+			sourceTree = "<group>";
+		};
+		D3D4D3DD2420D7FD00694EBC /* ProgrammaticCustomTVC */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3DE2420D83E00694EBC /* ProgrammaticCustomTVC.swift */,
+			);
+			name = ProgrammaticCustomTVC;
+			sourceTree = "<group>";
+		};
+		D3D4D3E02420F7AA00694EBC /* SelfSizeTVC */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3E12420F7F500694EBC /* SelfSizeTVC.storyboard */,
+				D3D4D3E32420F82E00694EBC /* SelfSizeTVC.swift */,
+				D3D4D3E52420FC7800694EBC /* SelfSizingCell.swift */,
+			);
+			name = SelfSizeTVC;
+			sourceTree = "<group>";
+		};
+		D3D4D3E72420FEB000694EBC /* StaticTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3E82420FEC400694EBC /* StaticTableView.storyboard */,
+				D3D4D3EA2420FEDB00694EBC /* StaticTableViewController.swift */,
+				D3D4D3EC242100E000694EBC /* DetailsTableViewController.swift */,
+			);
+			name = StaticTableView;
+			sourceTree = "<group>";
+		};
+		D3D4D3EE2421C2A500694EBC /* SearchTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3EF2421C2CB00694EBC /* SearchTableView.storyboard */,
+				D3D4D3F12421C2DE00694EBC /* SearchViewController.swift */,
+			);
+			name = SearchTableView;
+			sourceTree = "<group>";
+		};
+		D3D4D3F32421D00600694EBC /* ActionsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3F42421D01D00694EBC /* ActionsTableView.storyboard */,
+				D3D4D3F62421D03400694EBC /* ActionsTableViewController.swift */,
+			);
+			name = ActionsTableView;
+			sourceTree = "<group>";
+		};
+		D3D4D3F82421D81C00694EBC /* ExpandTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3F92421D82D00694EBC /* ExpandTableView.storyboard */,
+				D3D4D3FB2421D83A00694EBC /* ExpandTableViewController.swift */,
+			);
+			name = ExpandTableView;
+			sourceTree = "<group>";
+		};
+		D3D4D3FD2421E8A800694EBC /* TableviewWithRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D3FF2421E8CE00694EBC /* TableviewWithRefresh.storyboard */,
+				D3D4D4012421E8E400694EBC /* TableviewWithRefreshVC.swift */,
+			);
+			name = TableviewWithRefresh;
+			sourceTree = "<group>";
+		};
+		D3D4D403242203DA00694EBC /* StickyButtonTable */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D404242203EE00694EBC /* StickyButtonTable.storyboard */,
+				D3D4D4062422040000694EBC /* StickyButtonTableVC.swift */,
+			);
+			name = StickyButtonTable;
+			sourceTree = "<group>";
+		};
+		D3D4D40824220E1300694EBC /* EmptyTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D40924220E2100694EBC /* EmptyTableView.storyboard */,
+				D3D4D40B24220E4300694EBC /* EmptyTableViewVC.swift */,
+			);
+			name = EmptyTableView;
+			sourceTree = "<group>";
+		};
+		D3D4D40D2422272000694EBC /* DropdownListTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D40E2422273C00694EBC /* DropdownListTableView.storyboard */,
+				D3D4D4102422274F00694EBC /* DropdownListTableViewVC.swift */,
+			);
+			path = DropdownListTableView;
+			sourceTree = "<group>";
+		};
+		D3D4D41224223E3100694EBC /* MultipleSelectionRowsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				D3D4D41424223E5900694EBC /* MultipleSelectionRowsTableView.storyboard */,
+				D3D4D41624223E6800694EBC /* MultipleSelectionRowsTableViewVC.swift */,
+			);
+			path = MultipleSelectionRowsTableView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D3D4D399241FA2F300694EBC /* DemoTableViewFull */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3D4D3AE241FA2F400694EBC /* Build configuration list for PBXNativeTarget "DemoTableViewFull" */;
+			buildPhases = (
+				D3D4D396241FA2F300694EBC /* Sources */,
+				D3D4D397241FA2F300694EBC /* Frameworks */,
+				D3D4D398241FA2F300694EBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DemoTableViewFull;
+			productName = DemoTableViewFull;
+			productReference = D3D4D39A241FA2F300694EBC /* DemoTableViewFull.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D3D4D392241FA2F300694EBC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = nghiadang1205;
+				TargetAttributes = {
+					D3D4D399241FA2F300694EBC = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = D3D4D395241FA2F300694EBC /* Build configuration list for PBXProject "DemoTableViewFull" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D3D4D391241FA2F300694EBC;
+			productRefGroup = D3D4D39B241FA2F300694EBC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D3D4D399241FA2F300694EBC /* DemoTableViewFull */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D3D4D398241FA2F300694EBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3D4D4002421E8CE00694EBC /* TableviewWithRefresh.storyboard in Resources */,
+				D3D4D3E22420F7F500694EBC /* SelfSizeTVC.storyboard in Resources */,
+				D3945122242F16FC0040B83E /* StretchyHeader.storyboard in Resources */,
+				D3D4D3AA241FA2F400694EBC /* LaunchScreen.storyboard in Resources */,
+				D394513D243186DD0040B83E /* CellXib.storyboard in Resources */,
+				D3C7511024225072002BE1DE /* CollectionViewInsideTableViewCell.storyboard in Resources */,
+				D3D4D3B7241FA48700694EBC /* fruits in Resources */,
+				D3D4D3B8241FA48700694EBC /* veggies in Resources */,
+				D3D4D3C9241FBB2A00694EBC /* TableViewWithSectionDelete.storyboard in Resources */,
+				D3D4D3B5241FA48700694EBC /* SmallFruitImages.0 in Resources */,
+				D3D4D3F52421D01D00694EBC /* ActionsTableView.storyboard in Resources */,
+				D3D4D3C4241FB64600694EBC /* TableViewWithSections.storyboard in Resources */,
+				D3D4D3FA2421D82D00694EBC /* ExpandTableView.storyboard in Resources */,
+				D3C75126242362F9002BE1DE /* TableViewInsertDeleteWithAnimation.storyboard in Resources */,
+				D3D4D40F2422273C00694EBC /* DropdownListTableView.storyboard in Resources */,
+				D3D4D40A24220E2100694EBC /* EmptyTableView.storyboard in Resources */,
+				D3D4D3CE2420BACC00694EBC /* TableViewWithEdit.storyboard in Resources */,
+				D3D4D3E92420FEC400694EBC /* StaticTableView.storyboard in Resources */,
+				D3D4D3B6241FA48700694EBC /* SmallVeggieImages in Resources */,
+				D3D4D405242203EE00694EBC /* StickyButtonTable.storyboard in Resources */,
+				D3D4D3A7241FA2F400694EBC /* Assets.xcassets in Resources */,
+				D3D4D3A5241FA2F300694EBC /* Main.storyboard in Resources */,
+				D3D4D41524223E5900694EBC /* MultipleSelectionRowsTableView.storyboard in Resources */,
+				D3D4D3F02421C2CB00694EBC /* SearchTableView.storyboard in Resources */,
+				D3D4D3D32420BDD300694EBC /* TableViewWithInsert.storyboard in Resources */,
+				D3945143243187A70040B83E /* CheckmarkCell.xib in Resources */,
+				D3D4D3D82420D15400694EBC /* TableViewCustomCell.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3D4D396241FA2F300694EBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3945124242F170F0040B83E /* StretchyHeader.swift in Sources */,
+				D3D4D3A2241FA2F300694EBC /* ViewController.swift in Sources */,
+				D3D4D3FC2421D83A00694EBC /* ExpandTableViewController.swift in Sources */,
+				D3D4D3F72421D03400694EBC /* ActionsTableViewController.swift in Sources */,
+				D3D4D3ED242100E000694EBC /* DetailsTableViewController.swift in Sources */,
+				D3C75117242256F2002BE1DE /* FruitCell.swift in Sources */,
+				D3D4D3DF2420D83E00694EBC /* ProgrammaticCustomTVC.swift in Sources */,
+				D3945142243187A70040B83E /* CheckmarkCell.swift in Sources */,
+				D3D4D3DA2420D16200694EBC /* TableViewCustomCellViewController.swift in Sources */,
+				D3D4D3C1241FAFE300694EBC /* ProgrammaticTableViewController.swift in Sources */,
+				D3D4D3BA241FA4D300694EBC /* Food.swift in Sources */,
+				D3C75115242256D2002BE1DE /* BannerCell.swift in Sources */,
+				D3D4D41724223E6800694EBC /* MultipleSelectionRowsTableViewVC.swift in Sources */,
+				D3C7512124225CE0002BE1DE /* FoodCollection.swift in Sources */,
+				D3D4D3E62420FC7800694EBC /* SelfSizingCell.swift in Sources */,
+				D3D4D39E241FA2F300694EBC /* AppDelegate.swift in Sources */,
+				D3D4D3D02420BAE100694EBC /* TableViewWithEditViewController.swift in Sources */,
+				D3D4D3DC2420D3C400694EBC /* CustomTableViewCell.swift in Sources */,
+				D3C7511F2422591D002BE1DE /* MainTableView.swift in Sources */,
+				D3C751282423630F002BE1DE /* TableViewInsertDeleteWithAnimationVC.swift in Sources */,
+				D3D4D4072422040000694EBC /* StickyButtonTableVC.swift in Sources */,
+				D3D4D4112422274F00694EBC /* DropdownListTableViewVC.swift in Sources */,
+				D3D4D3EB2420FEDB00694EBC /* StaticTableViewController.swift in Sources */,
+				D3C75123242326D1002BE1DE /* VeggieCollection.swift in Sources */,
+				D3D4D3E42420F82E00694EBC /* SelfSizeTVC.swift in Sources */,
+				D3C7511224225086002BE1DE /* CollectionViewInsideTableViewCellVC.swift in Sources */,
+				D3D4D3F22421C2DE00694EBC /* SearchViewController.swift in Sources */,
+				D3D4D3D52420BDDE00694EBC /* TableViewWithInsertViewController.swift in Sources */,
+				D3D4D3BC241FA57800694EBC /* FruitsNVeggies.swift in Sources */,
+				D3D4D3C6241FB65400694EBC /* TableViewWithSectionsViewController.swift in Sources */,
+				D3D4D4022421E8E400694EBC /* TableviewWithRefreshVC.swift in Sources */,
+				D394513F243186F10040B83E /* CellXibVC.swift in Sources */,
+				D3D4D40C24220E4300694EBC /* EmptyTableViewVC.swift in Sources */,
+				D3D4D3A0241FA2F300694EBC /* SceneDelegate.swift in Sources */,
+				D3C7511924225772002BE1DE /* FoodCell.swift in Sources */,
+				D3D4D3CB241FBB3A00694EBC /* TableViewWithSectionDeleteViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D3D4D3A3241FA2F300694EBC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3D4D3A4241FA2F300694EBC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D3D4D3A8241FA2F400694EBC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3D4D3A9241FA2F400694EBC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D3D4D3AC241FA2F400694EBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D3D4D3AD241FA2F400694EBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D3D4D3AF241FA2F400694EBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DemoTableViewFull/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nghiadang1205.DemoTableViewFull;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3D4D3B0241FA2F400694EBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DemoTableViewFull/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = nghiadang1205.DemoTableViewFull;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D3D4D395241FA2F300694EBC /* Build configuration list for PBXProject "DemoTableViewFull" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3D4D3AC241FA2F400694EBC /* Debug */,
+				D3D4D3AD241FA2F400694EBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3D4D3AE241FA2F400694EBC /* Build configuration list for PBXNativeTarget "DemoTableViewFull" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3D4D3AF241FA2F400694EBC /* Debug */,
+				D3D4D3B0241FA2F400694EBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D3D4D392241FA2F300694EBC /* Project object */;
+}

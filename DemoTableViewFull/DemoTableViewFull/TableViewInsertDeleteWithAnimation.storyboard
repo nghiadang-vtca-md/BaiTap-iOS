@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WLN-y8-6D3">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TBV Insert Delete With Animation-->
+        <scene sceneID="saL-IL-Tfy">
+            <objects>
+                <viewController id="AG6-YP-TbO" customClass="TableViewInsertDeleteWithAnimationVC" customModule="DemoTableViewFull" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pfq-q8-3wc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zlu-64-UvO">
+                                <rect key="frame" x="0.0" y="144" width="414" height="592"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="165" id="GcG-9P-Oce">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="165"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GcG-9P-Oce" id="Tr7-At-mpk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiJ-h9-Mal">
+                                                    <rect key="frame" x="35" y="11" width="259" height="143"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQ0-f1-wHi">
+                                                    <rect key="frame" x="369" y="67.666666666666671" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="4gt-d6-3or"/>
+                                                        <constraint firstAttribute="height" constant="30" id="pZa-wp-gJY"/>
+                                                    </constraints>
+                                                    <state key="normal" image="deleteIcon"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="WiJ-h9-Mal" secondAttribute="bottom" id="TIC-uz-hnh"/>
+                                                <constraint firstItem="WiJ-h9-Mal" firstAttribute="leading" secondItem="Tr7-At-mpk" secondAttribute="leadingMargin" constant="15" id="eNM-kV-ce0"/>
+                                                <constraint firstItem="WiJ-h9-Mal" firstAttribute="top" secondItem="Tr7-At-mpk" secondAttribute="topMargin" id="gcY-3Z-qx1"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="WiJ-h9-Mal" secondAttribute="trailing" constant="100" id="rlc-Jd-OL6"/>
+                                                <constraint firstItem="VQ0-f1-wHi" firstAttribute="centerY" secondItem="Tr7-At-mpk" secondAttribute="centerY" id="sFu-E5-6m5"/>
+                                                <constraint firstAttribute="trailing" secondItem="VQ0-f1-wHi" secondAttribute="trailing" constant="15" id="tCT-eW-vTi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pll-Wk-9o7">
+                                <rect key="frame" x="332" y="64" width="62" height="47"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <state key="normal" title="ADD">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addRow:" destination="AG6-YP-TbO" eventType="touchUpInside" id="GOB-TU-sic"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zlu-64-UvO" firstAttribute="top" secondItem="BCF-y0-ZQo" secondAttribute="top" constant="100" id="KQA-XU-oLY"/>
+                            <constraint firstItem="Zlu-64-UvO" firstAttribute="leading" secondItem="BCF-y0-ZQo" secondAttribute="leading" id="PTx-av-ups"/>
+                            <constraint firstItem="BCF-y0-ZQo" firstAttribute="bottom" secondItem="Zlu-64-UvO" secondAttribute="bottom" id="Ved-Vn-MwC"/>
+                            <constraint firstItem="BCF-y0-ZQo" firstAttribute="trailing" secondItem="Zlu-64-UvO" secondAttribute="trailing" id="hrj-md-iPF"/>
+                            <constraint firstItem="BCF-y0-ZQo" firstAttribute="trailing" secondItem="pll-Wk-9o7" secondAttribute="trailing" constant="20" id="mOd-Lb-TRX"/>
+                            <constraint firstItem="pll-Wk-9o7" firstAttribute="top" secondItem="BCF-y0-ZQo" secondAttribute="top" constant="20" id="qqh-YO-WOV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BCF-y0-ZQo"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="TBV Insert Delete With Animation" id="xVK-ds-FuQ"/>
+                    <connections>
+                        <outlet property="addButton" destination="pll-Wk-9o7" id="I69-E1-Yao"/>
+                        <outlet property="tableView" destination="Zlu-64-UvO" id="H3I-Bx-0lU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dgl-DC-EJ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128.985507246377" y="136.95652173913044"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GCP-hc-QqK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WLN-y8-6D3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uV2-Fd-A7K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AG6-YP-TbO" kind="relationship" relationship="rootViewController" id="P90-Tk-5HE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BdL-c8-DVV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221.73913043478262" y="137.77173913043478"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="deleteIcon" width="512" height="512"/>
+    </resources>
+</document>
