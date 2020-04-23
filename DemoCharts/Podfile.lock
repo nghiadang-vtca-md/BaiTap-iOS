@@ -1,0 +1,26 @@
+PODS:
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
+  - Macaw (0.9.5):
+    - SWXMLHash
+  - SWXMLHash (5.0.1)
+
+DEPENDENCIES:
+  - Charts
+  - Macaw (= 0.9.5)
+
+SPEC REPOS:
+  trunk:
+    - Charts
+    - Macaw
+    - SWXMLHash
+
+SPEC CHECKSUMS:
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  Macaw: 10bf9e327cb75f24e3225d5229a80ed544df85f0
+  SWXMLHash: 9cc0c2e4807926c74377724aa8722ee5707a0485
+
+PODFILE CHECKSUM: 1536b683dc09bab65b3a86fca54e712eeaa944f1
+
+COCOAPODS: 1.8.4
