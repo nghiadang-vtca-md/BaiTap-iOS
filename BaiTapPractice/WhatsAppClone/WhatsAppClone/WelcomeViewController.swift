@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class WelcomeViewController: UIViewController {
     
@@ -25,13 +26,35 @@ class WelcomeViewController: UIViewController {
 
     // MARK: IBActions
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        print("login")
+        
         dismissKeyboard()
+        
+        // Read more about Password
+        // medium.com/developerinsider/ios12-password-autofill-automatic-strong-password-and-security-code-autofill-6e7db8da1810
+        if emailTextField.text != "" && passwordTextField.text != "" {
+            loginUser()
+        } else {
+            ProgressHUD.showError("Email and password cannot empty!")
+        }
+        
     }
 
     @IBAction func registerButtonPressed(_ sender: UIButton) {
-        print("register")
+        
         dismissKeyboard()
+        
+        // Read more about Password
+        // medium.com/developerinsider/ios12-password-autofill-automatic-strong-password-and-security-code-autofill-6e7db8da1810
+        if emailTextField.text != "" && passwordTextField.text != "" && repeatPasswordTextField.text != "" {
+            if passwordTextField.text == repeatPasswordTextField.text {
+                registerUser()
+            } else {
+                ProgressHUD.showError("Passwords don't match!")
+            }
+            
+        } else {
+            ProgressHUD.showError("All fields are required!")
+        }
     }
     
     @IBAction func backgroundTap(_ sender: Any) {
@@ -40,6 +63,23 @@ class WelcomeViewController: UIViewController {
     }
     
     // MARK: Helper functions
+    func loginUser() {
+        ProgressHUD.show("Login...")
+        
+        FUser.loginUserWith(email: emailTextField.text!, password: passwordTextField.text!) { (error) in
+            if error != nil {
+                ProgressHUD.showError(error!.localizedDescription)
+                return
+            }
+    
+            self.goToApp()
+        }
+    }
+    
+    func registerUser() {
+        
+    }
+    
     func dismissKeyboard() {
         self.view.endEditing(true)
     }
@@ -48,6 +88,16 @@ class WelcomeViewController: UIViewController {
         emailTextField.text = ""
         passwordTextField.text = ""
         repeatPasswordTextField.text = ""
+    }
+    
+    // MARK: GoToApp
+    func goToApp() {
+        ProgressHUD.dismiss()
+        cleanTextFields()
+        dismissKeyboard()
+        
+        print("show the app")
+        // present the app
     }
     
 }
