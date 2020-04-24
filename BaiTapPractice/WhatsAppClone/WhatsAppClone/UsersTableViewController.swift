@@ -21,7 +21,7 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
     var sectionTitleList: [String] = []
     
     let searchController = UISearchController(searchResultsController: nil)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,23 +37,75 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
         
         loadUsers(filter: kCITY)
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return 1
+        } else {
+            return allUsersGroupped.count
+        }
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allUsers.count
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredUsers.count
+        } else {
+            // find section Title
+            let sectionTitle = self.sectionTitleList[section]
+            //user for given title
+            let users = self.allUsersGroupped[sectionTitle]
+            
+            return users!.count
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? UserTableViewCell else { return UITableViewCell() }
         
-        cell.generateCellWith(fUser: allUsers[indexPath.row], indexPath: indexPath)
+        var user: FUser
+        
+        if searchController.isActive && searchController.searchBar.text != "" {
+            user = filteredUsers[indexPath.row]
+        } else {
+            let sectionTitle = self.sectionTitleList[indexPath.section]
+            
+            let users = self.allUsersGroupped[sectionTitle]
+            
+            user = users![indexPath.row]
+        }
+        
+        cell.generateCellWith(fUser: user, indexPath: indexPath)
         
         return cell
+    }
+    
+    //
+    
+    // MARK: TableView Delegate
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return ""
+        } else {
+            return sectionTitleList[section]
+        }
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return nil
+        } else {
+            return sectionTitleList
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        print(title)
+        print(index)
+        return index
     }
     
     //
@@ -100,6 +152,8 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
                 }
                 
                 // split to groups
+                self.splitDataIntoSection()
+                self.tableView.reloadData()
             }
             
             self.tableView.reloadData()
@@ -120,7 +174,7 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
             return
         }
     }
-
+    
     // MARK: Search controller functions
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         filteredUsers = allUsers.filter({ (user) -> Bool in
@@ -133,5 +187,30 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchText: searchController.searchBar.text!)
     }
-
+    
+    // MARK: Helper functions
+    
+    fileprivate func splitDataIntoSection() {
+        var sectionTitle: String = ""
+        
+        for i in 0..<self.allUsers.count {
+            let currentUser = self.allUsers[i]
+            
+            let firstChar = currentUser.firstname.first!
+            
+            let firstCharString = "\(firstChar)"
+            
+            if firstCharString != sectionTitle {
+                
+                sectionTitle = firstCharString
+                
+                self.allUsersGroupped[sectionTitle] = []
+                
+                self.sectionTitleList.append(sectionTitle)
+            }
+            
+            self.allUsersGroupped[firstCharString]?.append(currentUser)
+        }
+    }
+    
 }
