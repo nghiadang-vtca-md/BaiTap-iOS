@@ -12,12 +12,27 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var authListener: AuthStateDidChangeListenerHandle?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
+        
+        // Auto Login
+        authListener = Auth.auth().addStateDidChangeListener({ (auth, user) in
+            
+            Auth.auth().removeStateDidChangeListener(self.authListener!)
+            
+            if user != nil {
+                if UserDefaults.standard.object(forKey: kCURRENTUSER) != nil {
+                    DispatchQueue.main.async {
+                        self.goToApp()
+                    }
+                }
+            }
+            
+        })
         
         return true
     }
@@ -36,6 +51,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    func goToApp() {
+        NotificationCenter.default.post(name: NSNotification.Name(USER_DID_LOGIN_NOTIFICATION), object: nil, userInfo: [kUSERID: FUser.currentId()])
+        let scence = UIApplication.shared.connectedScenes.first
+        if let mainView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainApplication") as? UITabBarController {
+            if let sd = (scence?.delegate as? SceneDelegate) {
+                sd.window?.rootViewController = mainView
+            }
+        }
+    }
+    
 }
 
