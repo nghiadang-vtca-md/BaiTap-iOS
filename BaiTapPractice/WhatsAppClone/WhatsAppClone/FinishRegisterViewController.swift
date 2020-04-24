@@ -100,9 +100,16 @@ class FinishRegisterViewController: UIViewController {
             }
             
             ProgressHUD.dismiss()
-            print("Go to app")
-            // go to app
+            self.goToApp()
         }
+    }
+    
+    func goToApp() {
+        cleanTextFields()
+        dismissKeyboard()
+        
+        let mainView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainApplication") as! UITabBarController
+        self.present(mainView, animated: true, completion: nil)
     }
     
     // MARK: Helpers

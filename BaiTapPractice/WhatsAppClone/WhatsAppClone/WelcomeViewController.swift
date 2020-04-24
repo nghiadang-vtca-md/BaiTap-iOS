@@ -94,13 +94,14 @@ class WelcomeViewController: UIViewController {
     }
     
     // MARK: GoToApp
+    
     func goToApp() {
         ProgressHUD.dismiss()
         cleanTextFields()
         dismissKeyboard()
         
-        print("show the app")
-        // present the app
+        let mainView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainApplication") as! UITabBarController
+        self.present(mainView, animated: true, completion: nil)
     }
     
     // MARK: Navigation
@@ -108,7 +109,7 @@ class WelcomeViewController: UIViewController {
         if segue.identifier == "welcomeToFinishRegister" {
             if let vc = segue.destination as? FinishRegisterViewController {
                 vc.email = emailTextField.text!
-                vc.password = emailTextField.text!
+                vc.password = passwordTextField.text!
             }
         }
     }
