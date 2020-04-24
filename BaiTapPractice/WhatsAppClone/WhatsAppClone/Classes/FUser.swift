@@ -195,7 +195,7 @@ class FUser {
         
     }
     
-    // MARK: Register functions
+    // MARK: Register function
     
     class func registerUserWith(email: String, password: String, firstName: String, lastName: String, avatar: String = "", completion: @escaping (_ error: Error?) -> Void ) {
         
@@ -211,8 +211,32 @@ class FUser {
             saveUserToFireStore(fUser: fUser)
             completion(error)
         }
-        
     }
+    
+    // MARK: LogOut function
+    
+    class func logOutCurrentUser(completion: @escaping (_ success: Bool) -> Void ) {
+        //userDefaults.removeObject(forKey: kPUSHID)
+//        removeOneSignalId()
+        
+        userDefaults.removeObject(forKey: kCURRENTUSER)
+        userDefaults.synchronize()
+        
+        do {
+            try Auth.auth().signOut()
+            completion(true)
+        } catch let error as NSError {
+            completion(false)
+            print(error.localizedDescription)
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
 } // end class
 
 // MARK: Save user functions
