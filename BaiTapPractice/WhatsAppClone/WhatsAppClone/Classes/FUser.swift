@@ -268,4 +268,31 @@ func userDictionaryFrom(user: FUser) -> NSDictionary {
     return NSDictionary(objects: [user.objectId, createdAt, updatedAt, user.email, user.loginMethod, user.pushId!, user.firstname, user.lastname, user.fullname, user.avatar, user.contacts, user.blockedUsers, user.isOnline, user.phoneNumber, user.countryCode, user.city, user.country], forKeys: [kOBJECTID as NSCopying, kCREATEAT as NSCopying, kUPDATEAT as NSCopying, kEMAIL as NSCopying, kLOGINMETHOD as NSCopying, kPUSHID as NSCopying, kFIRSTNAME as NSCopying, kLASTNAME as NSCopying, kFULLNAME as NSCopying, kAVATAR as NSCopying, kCONTACT as NSCopying, kBLOCKEDUSERID as NSCopying, kISONLINE as NSCopying, kPHONE as NSCopying, kCOUNTRYCODE as NSCopying, kCITY as NSCopying, kCOUNTRY as NSCopying])
 }
 
+func updateCurrentUserInFireStore(withValues: [String: Any], completion: @escaping (_ error: Error?) -> Void ) {
+    if let dictionary = UserDefaults.standard.object(forKey: kCURRENTUSER) {
+        
+        var tempWithValues = withValues
+        
+        let currentUserId = FUser.currentId()
+        
+        let updatedAt = dateFormatter().string(from: Date())
+        
+        tempWithValues[kUPDATEAT] = updatedAt
+        
+        let userObject = (dictionary as! NSDictionary).mutableCopy() as! NSMutableDictionary
+        
+        userObject.setValuesForKeys(tempWithValues)
+        
+        reference(.User).document(currentUserId).updateData(withValues) { (error) in
+            if error != nil {
+                completion(error)
+                return
+            }
+            
+            UserDefaults.standard.setValue(userObject, forKeyPath: kCURRENTUSER)
+            UserDefaults.standard.synchronize()
+        }
+        
+    }
+}
 

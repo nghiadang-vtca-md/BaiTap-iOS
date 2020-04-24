@@ -26,8 +26,6 @@ class FinishRegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(email, password)
     }
     
 
@@ -68,7 +66,41 @@ class FinishRegisterViewController: UIViewController {
     // MARK: Functions
     
     func registerUser() {
+        let fullName = nameTextField.text! + " " + surnameTextField.text!
         
+        var tempDictionary: Dictionary = [kFIRSTNAME: nameTextField.text!, kLASTNAME: surnameTextField.text!, kFULLNAME: fullName, kCOUNTRY: countryTextField.text!, kCITY: cityTextField.text!, kPHONE: phoneTextField.text!] as [String: Any]
+        
+        if avatarImage == nil {
+            imageFromInitials(firstName: nameTextField.text!, lastName: surnameTextField.text!) { (avatarInitials) in
+                
+                let avatarIMG = avatarInitials.jpegData(compressionQuality: 0.7)
+                let avatar = avatarIMG?.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+                
+                tempDictionary[kAVATAR] = avatar
+                
+                self.finishRegistration(withValues: tempDictionary)
+            }
+        } else {
+            let avatarData = avatarImage?.jpegData(compressionQuality: 0.7)
+            let avatar = avatarData?.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+        
+            tempDictionary[kAVATAR] = avatar
+            
+            self.finishRegistration(withValues: tempDictionary)
+        }
+    }
+    
+    func finishRegistration(withValues: [String: Any]) {
+        updateCurrentUserInFireStore(withValues: withValues) { (error) in
+            if error != nil {
+                DispatchQueue.main.sync {
+                    ProgressHUD.showError(error!.localizedDescription)
+                }
+                return
+            }
+            
+            // go to App
+        }
     }
     
     // MARK: Helpers
