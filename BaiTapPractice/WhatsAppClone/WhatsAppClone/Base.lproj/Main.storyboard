@@ -235,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="955.07246376811599" y="136.95652173913044"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Users Table View Controller-->
         <scene sceneID="NNN-dl-nSf">
             <objects>
-                <tableViewController id="5Wq-m0-sEV" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="usersTableView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Wq-m0-sEV" customClass="UsersTableViewController" customModule="WhatsAppClone" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qSm-ek-Vie">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -255,6 +255,9 @@
                                         <segment title="My Country"/>
                                         <segment title="All"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="filterSegmentValueChanged:" destination="5Wq-m0-sEV" eventType="valueChanged" id="eXC-4X-tzj"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -266,7 +269,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="i66-4p-k7m" customClass="UserTableViewCell" customModule="WhatsAppClone" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="i66-4p-k7m" customClass="UserTableViewCell" customModule="WhatsAppClone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i66-4p-k7m" id="qVG-sq-mBf">
@@ -280,9 +283,9 @@
                                                 <constraint firstAttribute="width" constant="60" id="7yk-Gg-hBt"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ko2-98-Efa">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ko2-98-Efa">
                                             <rect key="frame" x="76" y="26.666666666666671" width="330" height="27"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -306,10 +309,14 @@
                             <outlet property="delegate" destination="5Wq-m0-sEV" id="RN1-JQ-Ct6"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="filterSegmentedControl" destination="lhz-it-vXh" id="oRp-fI-MRk"/>
+                        <outlet property="headerView" destination="KSf-j3-VCS" id="fyc-2s-66o"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJX-eT-Wzy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4679.7101449275369" y="-247.0108695652174"/>
+            <point key="canvasLocation" x="5586.9565217391309" y="-247.0108695652174"/>
         </scene>
         <!--Settings-->
         <scene sceneID="pOl-XZ-bBt">
@@ -375,21 +382,27 @@
             </objects>
             <point key="canvasLocation" x="3912" y="557"/>
         </scene>
-        <!--Call-->
+        <!--Chats-->
         <scene sceneID="9ux-dH-NRI">
             <objects>
-                <viewController id="c5I-QC-Icm" sceneMemberID="viewController">
+                <viewController id="c5I-QC-Icm" customClass="ChatsViewController" customModule="WhatsAppClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ad4-uc-GJd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="R63-x4-dps"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Call" image="call" id="IY0-MQ-ved"/>
+                    <navigationItem key="navigationItem" title="Chats" id="0DY-PI-Kmp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="2Kt-tA-4eq">
+                            <connections>
+                                <action selector="createNewChatButtonPressed:" destination="c5I-QC-Icm" id="Npb-wy-4L1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viQ-t8-l9p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2996" y="-272"/>
+            <point key="canvasLocation" x="3902.898550724638" y="-272.28260869565219"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jgz-ST-Jor">
@@ -401,7 +414,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="c5I-QC-Icm" kind="relationship" relationship="viewControllers" id="jEL-mB-bZq"/>
+                        <segue destination="7jP-3U-EDn" kind="relationship" relationship="viewControllers" id="jEL-mB-bZq"/>
                         <segue destination="CLN-Vc-B2y" kind="relationship" relationship="viewControllers" id="ZoP-SB-iMe"/>
                     </connections>
                 </tabBarController>
@@ -428,10 +441,29 @@
             </objects>
             <point key="canvasLocation" x="2995.6521739130435" y="556.79347826086962"/>
         </scene>
+        <!--Chat-->
+        <scene sceneID="7vT-Jj-hYz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7jP-3U-EDn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Chat" image="chat" id="IY0-MQ-ved"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UHX-0t-yNF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="c5I-QC-Icm" kind="relationship" relationship="rootViewController" id="BnQ-E3-E7q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fR8-pr-k1p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2995.6521739130435" y="-272.28260869565219"/>
+        </scene>
     </scenes>
     <resources>
         <image name="avatarPlaceholder" width="101" height="101"/>
-        <image name="call" width="30" height="30"/>
+        <image name="chat" width="25" height="25"/>
         <image name="settings" width="25" height="25"/>
     </resources>
 </document>
