@@ -21,6 +21,7 @@
 		D3EEA4992451877200DFE493 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4982451877200DFE493 /* HelperFunctions.swift */; };
 		D3EEA49B2452768000DFE493 /* FinishRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA49A2452768000DFE493 /* FinishRegisterViewController.swift */; };
 		D3EEA49F2452D30000DFE493 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA49E2452D30000DFE493 /* SettingsTableViewController.swift */; };
+		D3EEA4A12452EB9600DFE493 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4A02452EB9600DFE493 /* UserTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		D3EEA4982451877200DFE493 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		D3EEA49A2452768000DFE493 /* FinishRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegisterViewController.swift; sourceTree = "<group>"; };
 		D3EEA49E2452D30000DFE493 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		D3EEA4A02452EB9600DFE493 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				D3EEA49D2452769F00DFE493 /* Classes */,
 				D3EEA49C2452768F00DFE493 /* Helpers */,
 				D3EEA49E2452D30000DFE493 /* SettingsTableViewController.swift */,
+				D3EEA4A02452EB9600DFE493 /* UserTableViewCell.swift */,
 			);
 			path = WhatsAppClone;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				D3EEA49524517E3400DFE493 /* Constants.swift in Sources */,
 				D3EEA49B2452768000DFE493 /* FinishRegisterViewController.swift in Sources */,
 				D3EEA48F2451714A00DFE493 /* WelcomeViewController.swift in Sources */,
+				D3EEA4A12452EB9600DFE493 /* UserTableViewCell.swift in Sources */,
 				D3EEA47B2451523F00DFE493 /* AppDelegate.swift in Sources */,
 				D3EEA47D2451523F00DFE493 /* SceneDelegate.swift in Sources */,
 				D3EEA49324517A5500DFE493 /* FUser.swift in Sources */,
