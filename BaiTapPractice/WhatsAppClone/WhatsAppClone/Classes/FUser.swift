@@ -194,6 +194,25 @@ class FUser {
         }
         
     }
+    
+    // MARK: Register functions
+    
+    class func registerUserWith(email: String, password: String, firstName: String, lastName: String, avatar: String = "", completion: @escaping (_ error: Error?) -> Void ) {
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (firUser, error) in
+            if error != nil {
+                completion(error)
+                return
+            }
+            
+            let fUser = FUser(_objectId: firUser!.user.uid, _pushId: "", _createAt: Date(), _updatedAt: Date(), _email: email, _firstname: firstName, _lastname: lastName, _avatar: avatar, _loginMethod: kEMAIL, _phoneNumber: "", _city: "", _country: "")
+            
+            saveUserLocally(fUser: fUser)
+            saveUserToFireStore(fUser: fUser)
+            completion(error)
+        }
+        
+    }
 } // end class
 
 // MARK: Save user functions
