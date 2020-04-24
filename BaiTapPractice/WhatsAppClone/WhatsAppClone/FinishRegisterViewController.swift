@@ -40,10 +40,10 @@ class FinishRegisterViewController: UIViewController {
     
     @IBAction func doneButtonPressed(_ sender: Any) {
         dismissKeyboard()
-        ProgressHUD.show("Registering...")
+        
         
         if nameTextField.text != "" && surnameTextField.text != "" && countryTextField.text != "" && cityTextField.text != "" && phoneTextField.text != "" {
-            
+            ProgressHUD.show("Registering...")
             FUser.registerUserWith(email: email!, password: password!, firstName: nameTextField.text!, lastName: surnameTextField.text!) { (error) in
                 
                 if error != nil {
@@ -54,10 +54,10 @@ class FinishRegisterViewController: UIViewController {
                 
                 self.registerUser()
                 
+                
             }
             
         } else {
-            ProgressHUD.dismiss()
             ProgressHUD.showError("All fields are required!")
         }
         
@@ -99,7 +99,9 @@ class FinishRegisterViewController: UIViewController {
                 return
             }
             
-            // go to App
+            ProgressHUD.dismiss()
+            print("Go to app")
+            // go to app
         }
     }
     

@@ -220,7 +220,7 @@ class FUser {
 func saveUserToFireStore(fUser: FUser) {
     reference(.User).document(fUser.objectId)
         .setData(userDictionaryFrom(user: fUser) as! [String: Any]) { (error) in
-            print("error is \(error?.localizedDescription ?? "")")
+            print("error is \(error?.localizedDescription ?? "nil")")
     }
 }
 
@@ -291,6 +291,7 @@ func updateCurrentUserInFireStore(withValues: [String: Any], completion: @escapi
             
             UserDefaults.standard.setValue(userObject, forKeyPath: kCURRENTUSER)
             UserDefaults.standard.synchronize()
+            completion(error)
         }
         
     }
