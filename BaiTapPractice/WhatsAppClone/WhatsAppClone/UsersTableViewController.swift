@@ -19,6 +19,8 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
     var filteredUsers: [FUser] = []
     var allUsersGroupped = NSDictionary() as! [String: [FUser]]
     var sectionTitleList: [String] = []
+    
+    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,13 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
         self.title = "Users"
         navigationItem.largeTitleDisplayMode = .never
         tableView.tableFooterView = UIView()
+        
+        navigationItem.searchController = searchController
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        
         loadUsers(filter: kCITY)
     }
 
