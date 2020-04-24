@@ -19,6 +19,7 @@
 		D3EEA49524517E3400DFE493 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA49424517E3400DFE493 /* Constants.swift */; };
 		D3EEA4972451860200DFE493 /* CollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4962451860200DFE493 /* CollectionReference.swift */; };
 		D3EEA4992451877200DFE493 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4982451877200DFE493 /* HelperFunctions.swift */; };
+		D3EEA49B2452768000DFE493 /* FinishRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA49A2452768000DFE493 /* FinishRegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D3EEA49424517E3400DFE493 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D3EEA4962451860200DFE493 /* CollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReference.swift; sourceTree = "<group>"; };
 		D3EEA4982451877200DFE493 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		D3EEA49A2452768000DFE493 /* FinishRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,9 @@
 			isa = PBXGroup;
 			children = (
 				D3EEA4792451523F00DFE493 /* WhatsAppClone */,
+				D3EEA4882451524100DFE493 /* Info.plist */,
+				D3EEA4902451789C00DFE493 /* GoogleService-Info.plist */,
+				D3EEA4832451524000DFE493 /* Assets.xcassets */,
 				D3EEA4782451523F00DFE493 /* Products */,
 				D025262A96DC4D4532EB5641 /* Pods */,
 				CE4BF4B5D6AFF5FA6F99A477 /* Frameworks */,
@@ -93,17 +98,31 @@
 				D3EEA47A2451523F00DFE493 /* AppDelegate.swift */,
 				D3EEA47C2451523F00DFE493 /* SceneDelegate.swift */,
 				D3EEA4802451523F00DFE493 /* Main.storyboard */,
-				D3EEA4832451524000DFE493 /* Assets.xcassets */,
 				D3EEA4852451524100DFE493 /* LaunchScreen.storyboard */,
-				D3EEA4882451524100DFE493 /* Info.plist */,
-				D3EEA4902451789C00DFE493 /* GoogleService-Info.plist */,
 				D3EEA48E2451714A00DFE493 /* WelcomeViewController.swift */,
-				D3EEA49224517A5500DFE493 /* FUser.swift */,
+				D3EEA49A2452768000DFE493 /* FinishRegisterViewController.swift */,
+				D3EEA49D2452769F00DFE493 /* Classes */,
+				D3EEA49C2452768F00DFE493 /* Helpers */,
+			);
+			path = WhatsAppClone;
+			sourceTree = "<group>";
+		};
+		D3EEA49C2452768F00DFE493 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
 				D3EEA49424517E3400DFE493 /* Constants.swift */,
 				D3EEA4962451860200DFE493 /* CollectionReference.swift */,
 				D3EEA4982451877200DFE493 /* HelperFunctions.swift */,
 			);
-			path = WhatsAppClone;
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D3EEA49D2452769F00DFE493 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D3EEA49224517A5500DFE493 /* FUser.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +243,7 @@
 			files = (
 				D3EEA4992451877200DFE493 /* HelperFunctions.swift in Sources */,
 				D3EEA49524517E3400DFE493 /* Constants.swift in Sources */,
+				D3EEA49B2452768000DFE493 /* FinishRegisterViewController.swift in Sources */,
 				D3EEA48F2451714A00DFE493 /* WelcomeViewController.swift in Sources */,
 				D3EEA47B2451523F00DFE493 /* AppDelegate.swift in Sources */,
 				D3EEA47D2451523F00DFE493 /* SceneDelegate.swift in Sources */,
@@ -374,7 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WhatsAppClone/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,7 +412,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WhatsAppClone/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
