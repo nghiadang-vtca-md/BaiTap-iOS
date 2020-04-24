@@ -23,6 +23,9 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Users"
+        navigationItem.largeTitleDisplayMode = .never
+        tableView.tableFooterView = UIView()
         loadUsers(filter: kCITY)
     }
 
