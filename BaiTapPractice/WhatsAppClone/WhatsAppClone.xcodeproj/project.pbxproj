@@ -109,15 +109,12 @@
 				D3EEA47C2451523F00DFE493 /* SceneDelegate.swift */,
 				D3EEA4802451523F00DFE493 /* Main.storyboard */,
 				D3EEA4852451524100DFE493 /* LaunchScreen.storyboard */,
-				D3EEA48E2451714A00DFE493 /* WelcomeViewController.swift */,
-				D3EEA49A2452768000DFE493 /* FinishRegisterViewController.swift */,
+				D3EEA4A02452EB9600DFE493 /* UserTableViewCell.swift */,
+				D3EEA4A824544A4300DFE493 /* WelcomeView */,
 				D3EEA49D2452769F00DFE493 /* Classes */,
 				D3EEA49C2452768F00DFE493 /* Helpers */,
-				D3EEA49E2452D30000DFE493 /* SettingsTableViewController.swift */,
-				D3EEA4A02452EB9600DFE493 /* UserTableViewCell.swift */,
-				D3EEA4A22452FEE300DFE493 /* UsersTableViewController.swift */,
-				D3EEA4A42453081C00DFE493 /* ChatsViewController.swift */,
-				D3EEA4A62454358F00DFE493 /* ProfileViewTableViewController.swift */,
+				D3EEA4A924544A8300DFE493 /* MainViews */,
+				D3EEA4AA24544AA300DFE493 /* SecondaryViews */,
 			);
 			path = WhatsAppClone;
 			sourceTree = "<group>";
@@ -138,6 +135,33 @@
 				D3EEA49224517A5500DFE493 /* FUser.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		D3EEA4A824544A4300DFE493 /* WelcomeView */ = {
+			isa = PBXGroup;
+			children = (
+				D3EEA48E2451714A00DFE493 /* WelcomeViewController.swift */,
+				D3EEA49A2452768000DFE493 /* FinishRegisterViewController.swift */,
+			);
+			path = WelcomeView;
+			sourceTree = "<group>";
+		};
+		D3EEA4A924544A8300DFE493 /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				D3EEA49E2452D30000DFE493 /* SettingsTableViewController.swift */,
+				D3EEA4A42453081C00DFE493 /* ChatsViewController.swift */,
+			);
+			path = MainViews;
+			sourceTree = "<group>";
+		};
+		D3EEA4AA24544AA300DFE493 /* SecondaryViews */ = {
+			isa = PBXGroup;
+			children = (
+				D3EEA4A22452FEE300DFE493 /* UsersTableViewController.swift */,
+				D3EEA4A62454358F00DFE493 /* ProfileViewTableViewController.swift */,
+			);
+			path = SecondaryViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
