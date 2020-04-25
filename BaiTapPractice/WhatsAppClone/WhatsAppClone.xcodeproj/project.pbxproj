@@ -24,6 +24,7 @@
 		D3EEA4A12452EB9600DFE493 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4A02452EB9600DFE493 /* UserTableViewCell.swift */; };
 		D3EEA4A32452FEE300DFE493 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4A22452FEE300DFE493 /* UsersTableViewController.swift */; };
 		D3EEA4A52453081C00DFE493 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4A42453081C00DFE493 /* ChatsViewController.swift */; };
+		D3EEA4A72454358F00DFE493 /* ProfileViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4A62454358F00DFE493 /* ProfileViewTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		D3EEA4A02452EB9600DFE493 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		D3EEA4A22452FEE300DFE493 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		D3EEA4A42453081C00DFE493 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		D3EEA4A62454358F00DFE493 /* ProfileViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				D3EEA4A02452EB9600DFE493 /* UserTableViewCell.swift */,
 				D3EEA4A22452FEE300DFE493 /* UsersTableViewController.swift */,
 				D3EEA4A42453081C00DFE493 /* ChatsViewController.swift */,
+				D3EEA4A62454358F00DFE493 /* ProfileViewTableViewController.swift */,
 			);
 			path = WhatsAppClone;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				D3EEA49324517A5500DFE493 /* FUser.swift in Sources */,
 				D3EEA4972451860200DFE493 /* CollectionReference.swift in Sources */,
 				D3EEA4A52453081C00DFE493 /* ChatsViewController.swift in Sources */,
+				D3EEA4A72454358F00DFE493 /* ProfileViewTableViewController.swift in Sources */,
 				D3EEA49F2452D30000DFE493 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
