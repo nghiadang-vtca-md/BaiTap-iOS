@@ -26,6 +26,7 @@
 		D3EEA4A52453081C00DFE493 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4A42453081C00DFE493 /* ChatsViewController.swift */; };
 		D3EEA4A72454358F00DFE493 /* ProfileViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4A62454358F00DFE493 /* ProfileViewTableViewController.swift */; };
 		D3EEA4AC2454501C00DFE493 /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4AB2454501C00DFE493 /* Recent.swift */; };
+		D3EEA4AE24559C8B00DFE493 /* RecentChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4AD24559C8B00DFE493 /* RecentChatTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		D3EEA4A42453081C00DFE493 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		D3EEA4A62454358F00DFE493 /* ProfileViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTableViewController.swift; sourceTree = "<group>"; };
 		D3EEA4AB2454501C00DFE493 /* Recent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
+		D3EEA4AD24559C8B00DFE493 /* RecentChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentChatTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				D3EEA49C2452768F00DFE493 /* Helpers */,
 				D3EEA4A924544A8300DFE493 /* MainViews */,
 				D3EEA4AA24544AA300DFE493 /* SecondaryViews */,
+				D3EEA4AD24559C8B00DFE493 /* RecentChatTableViewCell.swift */,
 			);
 			path = WhatsAppClone;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				D3EEA49B2452768000DFE493 /* FinishRegisterViewController.swift in Sources */,
 				D3EEA48F2451714A00DFE493 /* WelcomeViewController.swift in Sources */,
 				D3EEA4A12452EB9600DFE493 /* UserTableViewCell.swift in Sources */,
+				D3EEA4AE24559C8B00DFE493 /* RecentChatTableViewCell.swift in Sources */,
 				D3EEA4A32452FEE300DFE493 /* UsersTableViewController.swift in Sources */,
 				D3EEA47B2451523F00DFE493 /* AppDelegate.swift in Sources */,
 				D3EEA47D2451523F00DFE493 /* SceneDelegate.swift in Sources */,
