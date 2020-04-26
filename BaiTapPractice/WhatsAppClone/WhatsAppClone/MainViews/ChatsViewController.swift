@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseFirestore
 
-class ChatsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ChatsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, RecentChatTableViewCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -49,6 +49,7 @@ class ChatsViewController: UIViewController, UITableViewDataSource, UITableViewD
         let recent = recentChats[indexPath.row]
         
         cell.generateCell(recentChat: recent, indexPath: indexPath)
+        cell.delegate = self
         
         return cell
     }
@@ -80,8 +81,44 @@ class ChatsViewController: UIViewController, UITableViewDataSource, UITableViewD
                 self.tableView.reloadData()
                 
             }
-            
         })
+    }
+    
+    // MARK: RecentChatCell Delegate
+    
+    func didTapAvatarImage(indexPath: IndexPath) {
+        
+        let recentChat = recentChats[indexPath.row]
+        
+        if recentChat[kTYPE] as! String == kPRIVATE {
+            
+            reference(.User).document(recentChat[kWITHUSERUSERID] as! String).getDocument { (snapshot, error) in
+                
+                guard let snapshot = snapshot else { return }
+                
+                if snapshot.exists {
+                    
+                    let userDictionary = snapshot.data()! as NSDictionary
+                    
+                    let tempUser = FUser(_dictionary: userDictionary)
+                    
+                    self.showUserProfile(user: tempUser)
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    func showUserProfile(user: FUser) {
+        
+        let profileVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profileView") as! ProfileViewTableViewController
+        
+        profileVC.user = user
+        
+        self.navigationController?.pushViewController(profileVC, animated: true)
         
     }
     
