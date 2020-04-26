@@ -25,6 +25,7 @@
 		D3EEA4A32452FEE300DFE493 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4A22452FEE300DFE493 /* UsersTableViewController.swift */; };
 		D3EEA4A52453081C00DFE493 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4A42453081C00DFE493 /* ChatsViewController.swift */; };
 		D3EEA4A72454358F00DFE493 /* ProfileViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4A62454358F00DFE493 /* ProfileViewTableViewController.swift */; };
+		D3EEA4AC2454501C00DFE493 /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA4AB2454501C00DFE493 /* Recent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		D3EEA4A22452FEE300DFE493 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		D3EEA4A42453081C00DFE493 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		D3EEA4A62454358F00DFE493 /* ProfileViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTableViewController.swift; sourceTree = "<group>"; };
+		D3EEA4AB2454501C00DFE493 /* Recent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				D3EEA49224517A5500DFE493 /* FUser.swift */,
+				D3EEA4AB2454501C00DFE493 /* Recent.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				D3EEA47D2451523F00DFE493 /* SceneDelegate.swift in Sources */,
 				D3EEA49324517A5500DFE493 /* FUser.swift in Sources */,
 				D3EEA4972451860200DFE493 /* CollectionReference.swift in Sources */,
+				D3EEA4AC2454501C00DFE493 /* Recent.swift in Sources */,
 				D3EEA4A52453081C00DFE493 /* ChatsViewController.swift in Sources */,
 				D3EEA4A72454358F00DFE493 /* ProfileViewTableViewController.swift in Sources */,
 				D3EEA49F2452D30000DFE493 /* SettingsTableViewController.swift in Sources */,
