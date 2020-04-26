@@ -546,7 +546,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="100" id="TEj-Jt-e40">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="TEj-Jt-e40" customClass="RecentChatTableViewCell" customModule="WhatsAppClone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TEj-Jt-e40" id="svH-48-V12">
@@ -615,6 +615,14 @@
                                                 <constraint firstItem="2nR-zM-r4E" firstAttribute="leading" secondItem="vvx-jM-DSJ" secondAttribute="trailing" constant="8" id="ziP-1r-Puu"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="zsg-cF-jDM" id="IyD-ZP-bMA"/>
+                                            <outlet property="dateLabel" destination="WJt-xU-ej5" id="CQh-BV-L0m"/>
+                                            <outlet property="lastMessageLabel" destination="vvx-jM-DSJ" id="QXg-SD-pCc"/>
+                                            <outlet property="messageCounterBackground" destination="2nR-zM-r4E" id="d0E-XM-LTh"/>
+                                            <outlet property="messageCounterLabel" destination="plt-g8-87K" id="rlK-HG-i7E"/>
+                                            <outlet property="nameLabel" destination="wrb-zN-aXo" id="w4L-Zg-hML"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -634,6 +642,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Wtg-wj-TSQ" id="Eop-fA-bK4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="viQ-t8-l9p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

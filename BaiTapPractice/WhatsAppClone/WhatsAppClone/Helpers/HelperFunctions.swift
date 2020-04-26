@@ -95,6 +95,19 @@ func timeElapsed(date: Date) -> String {
     return elapsed!
 }
 
+// for calls and chats
+func dictionaryFromSnapshots(snapshots: [DocumentSnapshot]) -> [NSDictionary] {
+    
+    var allMessages: [NSDictionary] = []
+    
+    for snapshot in snapshots {
+        allMessages.append(snapshot.data()! as NSDictionary)
+    }
+    
+    return allMessages
+    
+}
+
 // MARK: UIImageExtension
 
 extension UIImage {
