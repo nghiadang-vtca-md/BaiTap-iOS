@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A12A8831E314544547F14FB /* Pods_WhatsAppClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1796F66895D8841153956B /* Pods_WhatsAppClone.framework */; };
+		D38C24472456FC49000E7C8B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C24462456FC49000E7C8B /* ChatViewController.swift */; };
 		D3EEA47B2451523F00DFE493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA47A2451523F00DFE493 /* AppDelegate.swift */; };
 		D3EEA47D2451523F00DFE493 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA47C2451523F00DFE493 /* SceneDelegate.swift */; };
 		D3EEA4822451523F00DFE493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EEA4802451523F00DFE493 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		5F1796F66895D8841153956B /* Pods_WhatsAppClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsAppClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A4D2F703765545D562B4F2 /* Pods-WhatsAppClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone.release.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone/Pods-WhatsAppClone.release.xcconfig"; sourceTree = "<group>"; };
 		CF2602B8C45E5B1AEAE44F92 /* Pods-WhatsAppClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone.debug.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone/Pods-WhatsAppClone.debug.xcconfig"; sourceTree = "<group>"; };
+		D38C24462456FC49000E7C8B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D3EEA4772451523F00DFE493 /* WhatsAppClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EEA47A2451523F00DFE493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3EEA47C2451523F00DFE493 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				D3EEA4A22452FEE300DFE493 /* UsersTableViewController.swift */,
 				D3EEA4A62454358F00DFE493 /* ProfileViewTableViewController.swift */,
+				D38C24462456FC49000E7C8B /* ChatViewController.swift */,
 			);
 			path = SecondaryViews;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			files = (
 				D3EEA4992451877200DFE493 /* HelperFunctions.swift in Sources */,
 				D3EEA49524517E3400DFE493 /* Constants.swift in Sources */,
+				D38C24472456FC49000E7C8B /* ChatViewController.swift in Sources */,
 				D3EEA49B2452768000DFE493 /* FinishRegisterViewController.swift in Sources */,
 				D3EEA48F2451714A00DFE493 /* WelcomeViewController.swift in Sources */,
 				D3EEA4A12452EB9600DFE493 /* UserTableViewCell.swift in Sources */,

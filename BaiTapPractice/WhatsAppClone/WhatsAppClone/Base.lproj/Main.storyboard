@@ -235,6 +235,21 @@
             </objects>
             <point key="canvasLocation" x="955.07246376811599" y="136.95652173913044"/>
         </scene>
+        <!--Messages View Controller-->
+        <scene sceneID="TsW-gj-CLX">
+            <objects>
+                <viewController id="3wf-hj-KTp" customClass="JSQMessagesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2my-ea-49m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="w8A-Jq-5mL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xxN-Qh-fMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4813" y="-245"/>
+        </scene>
         <!--Users Table View Controller-->
         <scene sceneID="NNN-dl-nSf">
             <objects>

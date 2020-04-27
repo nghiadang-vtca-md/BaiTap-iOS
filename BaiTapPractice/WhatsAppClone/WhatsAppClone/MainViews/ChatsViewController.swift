@@ -135,6 +135,26 @@ class ChatsViewController: UIViewController, UITableViewDataSource, UITableViewD
         return swipeActions
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        var recent: NSDictionary!
+        
+        if searchController.isActive && searchController.searchBar.text != "" {
+            recent = filteredChats[indexPath.row]
+        } else {
+            recent = recentChats[indexPath.row]
+        }
+        
+        restartRecentChat(recent: recent)
+        
+        let chatVC = ChatViewController()
+        chatVC.hidesBottomBarWhenPushed = true
+        
+        navigationController?.pushViewController(chatVC, animated: true)
+    }
+    
     // MARK: Load Recent Chats
     
     func loadRecentChats() {
