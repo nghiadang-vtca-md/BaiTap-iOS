@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseFirestore
 
-class ChatsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, RecentChatTableViewCellDelegate {
+class ChatsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, RecentChatTableViewCellDelegate, UISearchResultsUpdating {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,19 +17,38 @@ class ChatsViewController: UIViewController, UITableViewDataSource, UITableViewD
     var filteredChats: [NSDictionary] = []
     
     var recentListener: ListenerRegistration!
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadRecentChats()
+        tableView.tableFooterView = UIView()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        recentListener.remove()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.tableFooterView = UIView()
 
-        // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = true
         
-        loadRecentChats()
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        
+        setTableViewHeader()
     }
+    
+    
     
     // MARK: IBActions
     @IBAction func createNewChatButtonPressed(_ sender: Any) {
@@ -40,13 +59,25 @@ class ChatsViewController: UIViewController, UITableViewDataSource, UITableViewD
     // MARK: TableView DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recentChats.count
+        
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredChats.count
+        } else {
+            return recentChats.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RecentChatTableViewCell
         
-        let recent = recentChats[indexPath.row]
+        var recent: NSDictionary!
+        
+        if searchController.isActive && searchController.searchBar.text != "" {
+            recent = filteredChats[indexPath.row]
+        } else {
+            recent = recentChats[indexPath.row]
+        }
         
         cell.generateCell(recentChat: recent, indexPath: indexPath)
         cell.delegate = self
@@ -88,7 +119,13 @@ class ChatsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func didTapAvatarImage(indexPath: IndexPath) {
         
-        let recentChat = recentChats[indexPath.row]
+        var recentChat: NSDictionary!
+        
+        if searchController.isActive && searchController.searchBar.text != "" {
+            recentChat = filteredChats[indexPath.row]
+        } else {
+            recentChat = recentChats[indexPath.row]
+        }
         
         if recentChat[kTYPE] as! String == kPRIVATE {
             
@@ -122,5 +159,46 @@ class ChatsViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
+    // MARK: Search controller functions
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filteredChats = recentChats.filter({ (recentChat) -> Bool in
+            return (recentChat[kWITHUSERFULLNAME] as! String).lowercased().contains(searchText.lowercased())
+        })
+        
+        tableView.reloadData()
+    }
     
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchText: searchController.searchBar.text!)
+    }
+    
+    // MARK: Custom tableViewHeader
+    
+    func setTableViewHeader() {
+        
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 45))
+        
+        let buttonView = UIView(frame: CGRect(x: 0, y: 5, width: tableView.frame.width, height: 35))
+        
+        let groupButton = UIButton(frame: CGRect(x: tableView.frame.width - 110, y: 10, width: 100, height: 20))
+        
+        groupButton.addTarget(self, action: #selector(self.groupButtonPressed), for: .touchUpInside)
+        groupButton.setTitle("New group", for: .normal)
+        let buttonColor = UIColor.link
+        groupButton.setTitleColor(buttonColor, for: .normal)
+        
+        let lineView = UIView(frame: CGRect(x: 0, y: headerView.frame.height - 1, width: tableView.frame.width, height: 1))
+        lineView.backgroundColor = UIColor.gray
+        
+        buttonView.addSubview(groupButton)
+        headerView.addSubview(buttonView)
+        headerView.addSubview(lineView)
+        
+        tableView.tableHeaderView = headerView
+        
+    }
+    
+    @objc func groupButtonPressed() {
+        print("Hello")
+    }
 }

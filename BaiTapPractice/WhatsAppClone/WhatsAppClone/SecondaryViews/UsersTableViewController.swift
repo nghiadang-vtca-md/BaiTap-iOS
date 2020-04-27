@@ -30,6 +30,7 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
         tableView.tableFooterView = UIView()
         
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = true
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -37,6 +38,7 @@ class UsersTableViewController: UITableViewController, UISearchResultsUpdating {
         
         loadUsers(filter: kCITY)
     }
+    
     
     // MARK: - Table view data source
     
