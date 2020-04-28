@@ -22,6 +22,15 @@ class ChatViewController: JSQMessagesViewController {
     var membersToPush: [String]!
     var titleName: String!
     
+    let legitTypes = [kAUDIO, kVIDEO, kTEXT, kLOCATION, kPICTURE]
+    
+    var messages: [JSQMessage] = []
+    var objectMessages: [NSDictionary] = []
+    var loadedMessages: [NSDictionary] = []
+    var allPictureMessages: [String] = []
+    
+    var initialLoadComplete = false
+    
     var outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
     var incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
     
@@ -127,6 +136,39 @@ class ChatViewController: JSQMessagesViewController {
         
     }
     
+    // MARK: Load Messages
+    
+    func loadMessages() {
+        
+        // get last 11 messages
+        reference(.Message).document(FUser.currentId()).collection(chatRoomId).order(by: kDATE, descending: true).limit(to: 11).getDocuments { (snapshot, error) in
+            
+            guard let snapshot = snapshot else {
+                self.initialLoadComplete = true
+                // listen for new chats
+                return
+            }
+            
+            let sorted = ((dictionaryFromSnapshots(snapshots: snapshot.documents)) as NSArray).sortedArray(using: [NSSortDescriptor(key: kDATE, ascending: true)])
+            as! [NSDictionary]
+            
+            // remove bad messages ( corrupt internet connection )
+            self.loadedMessages = self.removeBadMesages(allMessages: sorted)
+            
+            // insert messages
+            
+            self.initialLoadComplete = true
+            
+            // get picture messages
+            
+            // get old messages in background
+            
+            // start listening for new chats
+            
+        }
+        
+    }
+    
     // MARK: IBActiton
     @objc func backAction() {
         self.navigationController?.popViewController(animated: true)
@@ -150,5 +192,29 @@ class ChatViewController: JSQMessagesViewController {
             self.inputToolbar.contentView.rightBarButtonItem.setImage(UIImage(named: "mic"), for: .normal)
             self.inputToolbar.contentView.rightBarButtonItem.isEnabled = true
         }
+    }
+    
+    // MARK: Helper functions
+    
+    func removeBadMesages(allMessages: [NSDictionary]) -> [NSDictionary] {
+        
+        var tempMessages = allMessages
+        
+        for message in tempMessages {
+            
+            if message[kTYPE] != nil {
+                if !self.legitTypes.contains(message[kTYPE] as! String) {
+                    
+                    tempMessages.remove(at: tempMessages.firstIndex(of: message)!)
+                    
+                }
+            } else {
+                tempMessages.remove(at: tempMessages.firstIndex(of: message)!)
+            }
+            
+        }
+        
+        return tempMessages
+        
     }
 }
