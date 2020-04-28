@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9A12A8831E314544547F14FB /* Pods_WhatsAppClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1796F66895D8841153956B /* Pods_WhatsAppClone.framework */; };
+		D3102EF024584E770073032F /* IncomingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3102EEF24584E770073032F /* IncomingMessage.swift */; };
 		D38C24472456FC49000E7C8B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C24462456FC49000E7C8B /* ChatViewController.swift */; };
+		D38C244B2458396F000E7C8B /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C244A2458396F000E7C8B /* OutgoingMessage.swift */; };
 		D3EEA47B2451523F00DFE493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA47A2451523F00DFE493 /* AppDelegate.swift */; };
 		D3EEA47D2451523F00DFE493 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA47C2451523F00DFE493 /* SceneDelegate.swift */; };
 		D3EEA4822451523F00DFE493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EEA4802451523F00DFE493 /* Main.storyboard */; };
@@ -34,7 +36,9 @@
 		5F1796F66895D8841153956B /* Pods_WhatsAppClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsAppClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70A4D2F703765545D562B4F2 /* Pods-WhatsAppClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone.release.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone/Pods-WhatsAppClone.release.xcconfig"; sourceTree = "<group>"; };
 		CF2602B8C45E5B1AEAE44F92 /* Pods-WhatsAppClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsAppClone.debug.xcconfig"; path = "Target Support Files/Pods-WhatsAppClone/Pods-WhatsAppClone.debug.xcconfig"; sourceTree = "<group>"; };
+		D3102EEF24584E770073032F /* IncomingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingMessage.swift; sourceTree = "<group>"; };
 		D38C24462456FC49000E7C8B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		D38C244A2458396F000E7C8B /* OutgoingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
 		D3EEA4772451523F00DFE493 /* WhatsAppClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EEA47A2451523F00DFE493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3EEA47C2451523F00DFE493 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 			children = (
 				D3EEA49224517A5500DFE493 /* FUser.swift */,
 				D3EEA4AB2454501C00DFE493 /* Recent.swift */,
+				D38C244A2458396F000E7C8B /* OutgoingMessage.swift */,
+				D3102EEF24584E770073032F /* IncomingMessage.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -293,6 +299,7 @@
 				D3EEA49524517E3400DFE493 /* Constants.swift in Sources */,
 				D38C24472456FC49000E7C8B /* ChatViewController.swift in Sources */,
 				D3EEA49B2452768000DFE493 /* FinishRegisterViewController.swift in Sources */,
+				D38C244B2458396F000E7C8B /* OutgoingMessage.swift in Sources */,
 				D3EEA48F2451714A00DFE493 /* WelcomeViewController.swift in Sources */,
 				D3EEA4A12452EB9600DFE493 /* UserTableViewCell.swift in Sources */,
 				D3EEA4AE24559C8B00DFE493 /* RecentChatTableViewCell.swift in Sources */,
@@ -303,6 +310,7 @@
 				D3EEA4972451860200DFE493 /* CollectionReference.swift in Sources */,
 				D3EEA4AC2454501C00DFE493 /* Recent.swift in Sources */,
 				D3EEA4A52453081C00DFE493 /* ChatsViewController.swift in Sources */,
+				D3102EF024584E770073032F /* IncomingMessage.swift in Sources */,
 				D3EEA4A72454358F00DFE493 /* ProfileViewTableViewController.swift in Sources */,
 				D3EEA49F2452D30000DFE493 /* SettingsTableViewController.swift in Sources */,
 			);
