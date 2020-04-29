@@ -282,6 +282,8 @@ func fetchCurrentUserFromFireStore(userId: String, completion: @escaping (_ user
 
 
 
+
+
 // MARK: Helper functions
 
 func userDictionaryFrom(user: FUser) -> NSDictionary {
@@ -290,6 +292,44 @@ func userDictionaryFrom(user: FUser) -> NSDictionary {
     let updatedAt = dateFormatter().string(from: user.updatedAt)
     
     return NSDictionary(objects: [user.objectId, createdAt, updatedAt, user.email, user.loginMethod, user.pushId!, user.firstname, user.lastname, user.fullname, user.avatar, user.contacts, user.blockedUsers, user.isOnline, user.phoneNumber, user.countryCode, user.city, user.country], forKeys: [kOBJECTID as NSCopying, kCREATEAT as NSCopying, kUPDATEAT as NSCopying, kEMAIL as NSCopying, kLOGINMETHOD as NSCopying, kPUSHID as NSCopying, kFIRSTNAME as NSCopying, kLASTNAME as NSCopying, kFULLNAME as NSCopying, kAVATAR as NSCopying, kCONTACT as NSCopying, kBLOCKEDUSERID as NSCopying, kISONLINE as NSCopying, kPHONE as NSCopying, kCOUNTRYCODE as NSCopying, kCITY as NSCopying, kCOUNTRY as NSCopying])
+}
+
+func getUsersFromFirestore(withIds: [String], completion: @escaping (_ usersArray: [FUser]) -> Void) {
+    
+    var count = 0
+    var usersArray: [FUser] = []
+    
+    // go through each user and download it from firestore
+    for userid in withIds {
+        
+        reference(.User).document(userid).getDocument { (snapshot, error) in
+            
+            guard let snapshot = snapshot else { return }
+            
+            if snapshot.exists {
+                
+                let user = FUser(_dictionary: snapshot.data()! as NSDictionary)
+                
+                count += 1
+                
+                // don't add if it is current user
+                if user.objectId != FUser.currentId() {
+                    usersArray.append(user)
+                }
+
+            } else {
+                completion(usersArray)
+            }
+            
+            if count == withIds.count {
+                // we have finished, return the array
+                completion(usersArray)
+            }
+            
+        }
+        
+    }
+    
 }
 
 func updateCurrentUserInFireStore(withValues: [String: Any], completion: @escaping (_ error: Error?) -> Void ) {

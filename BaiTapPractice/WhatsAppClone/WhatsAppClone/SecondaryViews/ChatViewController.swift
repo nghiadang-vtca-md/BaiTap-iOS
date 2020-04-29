@@ -21,6 +21,9 @@ class ChatViewController: JSQMessagesViewController {
     var memberIds: [String]!
     var membersToPush: [String]!
     var titleName: String!
+    var isGroup: Bool?
+    var group: NSDictionary?
+    var withUsers: [FUser] = []
     
     var typingListener: ListenerRegistration?
     var updatedChatListener: ListenerRegistration?
@@ -43,6 +46,32 @@ class ChatViewController: JSQMessagesViewController {
     var outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
     var incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
     
+    // MARK: Custom header
+    
+    let leftBarButtonView: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 44))
+        return view
+    }()
+    
+    let avatarButton: UIButton = {
+        let button = UIButton(frame: CGRect(x: 0, y: 10, width: 25, height: 25))
+        return button
+    }()
+    
+    let titleLabel: UILabel = {
+        let title = UILabel(frame: CGRect(x: 30, y: 10, width: 140, height: 15))
+        title.textAlignment = .left
+        title.font = UIFont(name: title.font.fontName, size: 14)
+        return title
+    }()
+    
+    let subtitleLabel: UILabel = {
+        let sub = UILabel(frame: CGRect(x: 30, y: 25, width: 140, height: 15))
+        sub.textAlignment = .left
+        sub.font = UIFont(name: sub.font.fontName, size: 10)
+        return sub
+    }()
+    
     // fix for iPhone X
     override func viewDidLayoutSubviews() {
         perform(Selector(("jsq_updateCollectionViewInsets")))
@@ -58,6 +87,8 @@ class ChatViewController: JSQMessagesViewController {
         
         collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+        
+        setCustomTitle()
         
         loadMessages()
 
@@ -432,6 +463,24 @@ class ChatViewController: JSQMessagesViewController {
     @objc func backAction() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @objc func infoButtonPressed() {
+        print("Show image messages")
+    }
+    
+    @objc func showGroup() {
+        print("Show group")
+    }
+    
+    @objc func showUser() {
+        
+        let profileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profileView") as! ProfileViewTableViewController
+        
+        profileVC.user = withUsers.first!
+        
+        self.navigationController?.pushViewController(profileVC, animated: true)
+        
+    }
 
     // MARK: Custom Send button
     
@@ -451,6 +500,63 @@ class ChatViewController: JSQMessagesViewController {
             self.inputToolbar.contentView.rightBarButtonItem.setImage(UIImage(named: "mic"), for: .normal)
             self.inputToolbar.contentView.rightBarButtonItem.isEnabled = true
         }
+    }
+    
+    // MARK: UpdateUI
+    
+    func setCustomTitle() {
+        
+        leftBarButtonView.addSubview(avatarButton)
+        leftBarButtonView.addSubview(titleLabel)
+        leftBarButtonView.addSubview(subtitleLabel)
+        
+        let infoButton = UIBarButtonItem(image: UIImage(named: "info"), style: .plain, target: self, action: #selector(self.infoButtonPressed))
+        
+        self.navigationItem.rightBarButtonItem = infoButton
+        
+        let leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonView)
+        self.navigationItem.leftBarButtonItems?.append(leftBarButtonItem)
+        
+        if isGroup! {
+            avatarButton.addTarget(self, action: #selector(self.showGroup), for: .touchUpInside)
+        } else {
+            avatarButton.addTarget(self, action: #selector(self.showUser), for: .touchUpInside)
+        }
+        
+        getUsersFromFirestore(withIds: memberIds) { (withUsers) in
+            
+            self.withUsers = withUsers
+            // get avatars
+            if !self.isGroup! {
+                self.setUIForSingleChat()
+            }
+            
+        }
+        
+    }
+    
+    func setUIForSingleChat() {
+        
+        let withUser = withUsers.first!
+        
+        imageFromData(pictureData: withUser.avatar) { (image) in
+            
+            if image != nil {
+                avatarButton.setImage(image!.circleMasked, for: .normal)
+            }
+            
+        }
+        
+        titleLabel.text = withUser.fullname
+        
+        if withUser.isOnline {
+            subtitleLabel.text = "Online"
+        } else {
+            subtitleLabel.text = "Offline"
+        }
+        
+        avatarButton.addTarget(self, action: #selector(self.showUser), for: .touchUpInside)
+        
     }
     
     // MARK: Helper functions
