@@ -31,6 +31,11 @@ class ChatViewController: JSQMessagesViewController {
     
     var initialLoadComplete = false
     
+    var maxMessageNumber = 0
+    var minMessageNumber = 0
+    var loadOld = false
+    var loadedMessagesCount = 0
+    
     var outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
     var incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
     
@@ -49,9 +54,13 @@ class ChatViewController: JSQMessagesViewController {
         
         collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+        
+        loadMessages()
 
         self.senderId = FUser.currentId()
         self.senderDisplayName = FUser.currentUser()?.firstname
+        
+        
         
         // fix for iPhone X
         let constraint = perform(Selector(("toolbarBottomLayoutGuide")))?.takeUnretainedValue() as! NSLayoutConstraint
@@ -64,6 +73,43 @@ class ChatViewController: JSQMessagesViewController {
         self.inputToolbar.contentView.rightBarButtonItem.setImage(UIImage(named: "mic"), for: .normal)
         self.inputToolbar.contentView.rightBarButtonItem.setTitle("", for: .normal)
         self.inputToolbar.contentView.rightBarButtonItem.isEnabled = true
+    }
+    
+    // MARK: JSQMessages Datasource functions
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = super.collectionView(collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
+        
+        let data = messages[indexPath.row]
+        
+        // set text color
+        if data.senderId == FUser.currentId() {
+            cell.textView.textColor = .white
+        } else {
+            cell.textView.textColor = .black
+        }
+        
+        return cell
+    }
+    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData! {
+        return messages[indexPath.row]
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource! {
+        let data = messages[indexPath.row]
+        
+        if data.senderId == FUser.currentId() {
+            return outgoingBubble
+        } else {
+            return incomingBubble
+        }
+        
     }
     
     // MARK: JSQMessages Delegate functions
@@ -155,10 +201,12 @@ class ChatViewController: JSQMessagesViewController {
             // remove bad messages ( corrupt internet connection )
             self.loadedMessages = self.removeBadMesages(allMessages: sorted)
             
-            // insert messages
+            self.insertMessages()
+            self.finishReceivingMessage(animated: true)
             
             self.initialLoadComplete = true
             
+            print("we have \(self.messages.count) messages loaded.")
             // get picture messages
             
             // get old messages in background
@@ -167,6 +215,47 @@ class ChatViewController: JSQMessagesViewController {
             
         }
         
+    }
+    
+    // MARK: Insert Messages
+    
+    func insertMessages() {
+        
+        maxMessageNumber = loadedMessages.count - loadedMessagesCount
+        minMessageNumber = maxMessageNumber - kNUMBEROFMESSAGES
+        
+        if minMessageNumber < 0 {
+            minMessageNumber = 0
+        }
+        
+        for i in minMessageNumber..<maxMessageNumber {
+            let messDictionary = loadedMessages[i]
+            
+            // insert message
+            _ = insertInitialLoadMessages(messageDictionary: messDictionary)
+            loadedMessagesCount += 1
+        }
+        
+        
+        self.showLoadEarlierMessagesHeader = (loadedMessagesCount != loadedMessages.count)
+    }
+    
+    func insertInitialLoadMessages(messageDictionary: NSDictionary) -> Bool {
+        
+        let incomingMessage = IncomingMessage(collectionView_: self.collectionView!)
+        
+        if (messageDictionary[kSENDERID] as! String) != FUser.currentId() {
+            // update message status
+        }
+        
+        let message = incomingMessage.createMessage(messageDictionary: messageDictionary, chatRoomId: chatRoomId)
+        
+        if message != nil {
+            objectMessages.append(messageDictionary)
+            messages.append(message!)
+        }
+        
+        return isIncoming(messageDictionary: messageDictionary)
     }
     
     // MARK: IBActiton
@@ -215,6 +304,15 @@ class ChatViewController: JSQMessagesViewController {
         }
         
         return tempMessages
+    }
+    
+    func isIncoming(messageDictionary: NSDictionary) -> Bool {
+        
+        if FUser.currentId() == (messageDictionary[kSENDERID] as! String) {
+            return false
+        } else {
+            return true
+        }
         
     }
 }

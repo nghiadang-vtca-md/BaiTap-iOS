@@ -11,9 +11,9 @@ import JSQMessagesViewController
 
 class IncomingMessage {
     
-    var collectionView: JSQMessagesViewController
+    var collectionView: JSQMessagesCollectionView
     
-    init(collectionView_: JSQMessagesViewController) {
+    init(collectionView_: JSQMessagesCollectionView) {
         collectionView = collectionView_
     }
     
@@ -53,7 +53,7 @@ class IncomingMessage {
     func createTextMessage(messageDictionary: NSDictionary, chatRoomId: String) -> JSQMessage {
         
         let name = messageDictionary[kSENDERNAME] as? String
-        let userId = messageDictionary[kUSERID] as? String
+        let userId = messageDictionary[kSENDERID] as? String
         
         var date: Date!
         
