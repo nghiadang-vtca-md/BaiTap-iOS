@@ -15,7 +15,7 @@ import AVFoundation
 import AVKit
 import FirebaseFirestore
 
-class ChatViewController: JSQMessagesViewController {
+class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var chatRoomId: String!
     var memberIds: [String]!
@@ -202,6 +202,9 @@ class ChatViewController: JSQMessagesViewController {
     // MARK: JSQMessages Delegate functions
     
     override func didPressAccessoryButton(_ sender: UIButton!) {
+        
+        let camera = Camera(delegate_: self)
+        
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let takePhotoOrVideo = UIAlertAction(title: "Camera", style: .default) { (action) in
@@ -557,6 +560,26 @@ class ChatViewController: JSQMessagesViewController {
         
         avatarButton.addTarget(self, action: #selector(self.showUser), for: .touchUpInside)
         
+    }
+    
+    // MARK: UIImagePickerController delegate
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let video = info[UIImagePickerController.InfoKey.mediaURL] as? NSURL
+        let picture = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        
+        sendMessage(text: nil, date: Date(), picture: picture, location: nil, video: video, audio: nil)
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+        // update permission in info.plist
+        // Privacy - Camera Usage Description
+        // Privacy - Media Library Usage Description
+        // Privacy - Photo Library Usage Description
+        // Privacy - Microphone Usage Description
+        // Privacy - Location When In Use Usage Description
+        // Privacy - Contacts Usage Description
     }
     
     // MARK: Helper functions
