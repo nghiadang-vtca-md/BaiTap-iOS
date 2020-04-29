@@ -57,7 +57,7 @@ class IncomingMessage {
         
         var date: Date!
         
-        if let created = messageDictionary[kCREATEAT] {
+        if let created = messageDictionary[kDATE] {
             if (created as! String).count != 14 {
                 date = Date()
             } else {

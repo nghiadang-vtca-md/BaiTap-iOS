@@ -22,6 +22,10 @@ class ChatViewController: JSQMessagesViewController {
     var membersToPush: [String]!
     var titleName: String!
     
+    var typingListener: ListenerRegistration?
+    var updatedChatListener: ListenerRegistration?
+    var newChatListener: ListenerRegistration?
+    
     let legitTypes = [kAUDIO, kVIDEO, kTEXT, kLOCATION, kPICTURE]
     
     var messages: [JSQMessage] = []
@@ -115,7 +119,6 @@ class ChatViewController: JSQMessagesViewController {
         
         if indexPath.item % 3 == 0 {
             let message = messages[indexPath.row]
-            
             return JSQMessagesTimestampFormatter.shared()?.attributedTimestamp(for: message.date)
         }
         
@@ -215,6 +218,12 @@ class ChatViewController: JSQMessagesViewController {
         
     }
     
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, header headerView: JSQMessagesLoadEarlierHeaderView!, didTapLoadEarlierMessagesButton sender: UIButton!) {
+        
+        self.loadMoreMessages(maxNumber: maxMessageNumber, minNumber: minMessageNumber)
+        self.collectionView.reloadData()
+    }
+    
     // MARK: Send messages
     
     func sendMessage(text: String?, date: Date, picture: UIImage?, location: String?, video: NSURL?, audio: String?) {
@@ -263,8 +272,80 @@ class ChatViewController: JSQMessagesViewController {
             // get picture messages
             
             // get old messages in background
-            
+            self.getOldMessagesInBackground()
             // start listening for new chats
+            self.listenForNewChats()
+            
+        }
+        
+    }
+    
+    func listenForNewChats() {
+        
+        var lastMessageDate = "0"
+        
+        if loadedMessages.count > 0 {
+            lastMessageDate = loadedMessages.last![kDATE] as! String
+        }
+        
+        newChatListener = reference(.Message).document(FUser.currentId()).collection(chatRoomId).whereField(kDATE, isGreaterThan: lastMessageDate).addSnapshotListener({ (snapshot, error) in
+            
+            guard let snapshot = snapshot else { return }
+            
+            if !snapshot.isEmpty {
+                
+                for diff in snapshot.documentChanges {
+                    
+                    if (diff.type == .added) {
+                        
+                        let item = diff.document.data() as NSDictionary
+                        
+                        if let type = item[kTYPE] {
+                            
+                            if self.legitTypes.contains(type as! String) {
+                                // this is for picture messages
+                                if type as! String == kPICTURE {
+                                    // add to picture
+                                }
+                                
+                                if self.insertInitialLoadMessages(messageDictionary: item) {
+                                    JSQSystemSoundPlayer.jsq_playMessageReceivedSound()
+                                }
+                                
+                                self.finishReceivingMessage()
+                            }
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        })
+    }
+    
+    func getOldMessagesInBackground() {
+        
+        if loadedMessages.count > 10 {
+            
+            let firstMessageDate = loadedMessages.first![kDATE] as! String
+            
+            reference(.Message).document(FUser.currentId()).collection(chatRoomId).whereField(kDATE, isLessThan: firstMessageDate).getDocuments { (snapshot, error) in
+                
+                guard let snapshot = snapshot else { return }
+                
+                let sorted = ((dictionaryFromSnapshots(snapshots: snapshot.documents)) as NSArray).sortedArray(using: [NSSortDescriptor(key: kDATE, ascending: true)]) as! [NSDictionary]
+                
+                self.loadedMessages = self.removeBadMesages(allMessages: sorted) + self.loadedMessages
+                
+                // get the picture messages
+                
+                self.maxMessageNumber = self.loadedMessages.count - self.loadedMessagesCount - 1
+                self.minMessageNumber = self.maxMessageNumber - kNUMBEROFMESSAGES
+                
+            }
             
         }
         
@@ -309,6 +390,42 @@ class ChatViewController: JSQMessagesViewController {
         }
         
         return isIncoming(messageDictionary: messageDictionary)
+    }
+    
+    // MARK: Load more messages
+    
+    func loadMoreMessages(maxNumber: Int, minNumber: Int) {
+        print("Max number: \(maxNumber)")
+        print("Min number: \(minNumber)")
+        if loadOld {
+            maxMessageNumber = minNumber - 1
+            minMessageNumber = maxMessageNumber - kNUMBEROFMESSAGES
+        }
+        
+        if minMessageNumber < 0 {
+            minMessageNumber = 0
+        }
+        
+        for i in (minMessageNumber...maxMessageNumber).reversed() {
+            let messageDictionary = loadedMessages[i]
+            insertNewMessage(messageDictionary: messageDictionary)
+            loadedMessagesCount += 1
+        }
+        
+        loadOld = true
+        self.showLoadEarlierMessagesHeader = (loadedMessagesCount != loadedMessages.count)
+        
+    }
+    
+    func insertNewMessage(messageDictionary: NSDictionary) {
+        
+        let incomingMessage = IncomingMessage(collectionView_: self.collectionView!)
+        
+        let message = incomingMessage.createMessage(messageDictionary: messageDictionary, chatRoomId: chatRoomId)
+        
+        objectMessages.insert(messageDictionary, at: 0)
+        messages.insert(message!, at: 0)
+        
     }
     
     // MARK: IBActiton
