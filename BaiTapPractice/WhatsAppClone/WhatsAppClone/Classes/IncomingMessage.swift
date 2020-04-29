@@ -29,7 +29,7 @@ class IncomingMessage {
         case kTEXT:
             message = createTextMessage(messageDictionary: messageDictionary, chatRoomId: chatRoomId)
         case kPICTURE:
-            print("create picture message")
+            message = createPictureMessage(messageDictionary: messageDictionary, chatRoomId: chatRoomId)
         case kVIDEO:
             print("create video message")
         case kAUDIO:
@@ -71,6 +71,46 @@ class IncomingMessage {
         
         return JSQMessage(senderId: userId, senderDisplayName: name, date: date, text: text)
         
+    }
+    
+    func createPictureMessage(messageDictionary: NSDictionary, chatRoomId: String) -> JSQMessage {
+        
+        let name = messageDictionary[kSENDERNAME] as? String
+        let userId = messageDictionary[kSENDERID] as? String
+        
+        var date: Date!
+        
+        if let created = messageDictionary[kDATE] {
+            if (created as! String).count != 14 {
+                date = Date()
+            } else {
+                date = dateFormatter().date(from: created as! String)
+            }
+        } else {
+            date = Date()
+        }
+        
+        let mediaItem = PhotoMediaItem(image: nil)
+        mediaItem?.appliesMediaViewMaskAsOutgoing = returnOutgoingStatusForUser(senderId: userId!)
+        
+        //download image
+        downloadImage(imageUrl: messageDictionary[kPICTURE] as! String) { (image) in
+            
+            if let _image = image {
+                mediaItem?.image = _image
+                self.collectionView.reloadData()
+            }
+        
+        }
+        
+        return JSQMessage(senderId: userId, senderDisplayName: name, date: date, media: mediaItem)
+        
+    }
+    
+    // MARK: Helpers
+    
+    func returnOutgoingStatusForUser(senderId: String) -> Bool {
+        return senderId == FUser.currentId()
     }
     
 }

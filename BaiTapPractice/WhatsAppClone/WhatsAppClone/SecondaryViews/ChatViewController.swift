@@ -120,9 +120,9 @@ class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDele
         
         // set text color
         if data.senderId == FUser.currentId() {
-            cell.textView.textColor = .white
+            cell.textView?.textColor = .white
         } else {
-            cell.textView.textColor = .black
+            cell.textView?.textColor = .black
         }
         
         return cell

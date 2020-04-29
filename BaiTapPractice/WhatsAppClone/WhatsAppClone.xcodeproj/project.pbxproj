@@ -11,6 +11,7 @@
 		D3102EF024584E770073032F /* IncomingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3102EEF24584E770073032F /* IncomingMessage.swift */; };
 		D3102EF2245956DA0073032F /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3102EF1245956DA0073032F /* Camera.swift */; };
 		D3102EF42459685B0073032F /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3102EF32459685B0073032F /* Downloader.swift */; };
+		D3102EF6245978210073032F /* PhotoMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3102EF5245978210073032F /* PhotoMediaItem.swift */; };
 		D38C24472456FC49000E7C8B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C24462456FC49000E7C8B /* ChatViewController.swift */; };
 		D38C244B2458396F000E7C8B /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C244A2458396F000E7C8B /* OutgoingMessage.swift */; };
 		D3EEA47B2451523F00DFE493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA47A2451523F00DFE493 /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 		D3102EEF24584E770073032F /* IncomingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingMessage.swift; sourceTree = "<group>"; };
 		D3102EF1245956DA0073032F /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		D3102EF32459685B0073032F /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		D3102EF5245978210073032F /* PhotoMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMediaItem.swift; sourceTree = "<group>"; };
 		D38C24462456FC49000E7C8B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D38C244A2458396F000E7C8B /* OutgoingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
 		D3EEA4772451523F00DFE493 /* WhatsAppClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 				D38C244A2458396F000E7C8B /* OutgoingMessage.swift */,
 				D3102EEF24584E770073032F /* IncomingMessage.swift */,
 				D3102EF1245956DA0073032F /* Camera.swift */,
+				D3102EF5245978210073032F /* PhotoMediaItem.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				D3EEA47B2451523F00DFE493 /* AppDelegate.swift in Sources */,
 				D3102EF42459685B0073032F /* Downloader.swift in Sources */,
 				D3EEA47D2451523F00DFE493 /* SceneDelegate.swift in Sources */,
+				D3102EF6245978210073032F /* PhotoMediaItem.swift in Sources */,
 				D3EEA49324517A5500DFE493 /* FUser.swift in Sources */,
 				D3102EF2245956DA0073032F /* Camera.swift in Sources */,
 				D3EEA4972451860200DFE493 /* CollectionReference.swift in Sources */,
