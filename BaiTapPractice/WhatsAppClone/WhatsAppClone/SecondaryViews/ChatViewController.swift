@@ -208,15 +208,15 @@ class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDele
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let takePhotoOrVideo = UIAlertAction(title: "Camera", style: .default) { (action) in
-            print("Camera")
+            //camera.PresentMultyCamera(target: self, canEdit: false)
         }
         
         let sharePhoto = UIAlertAction(title: "Photo Library", style: .default) { (action) in
-            print("Photo library")
+            camera.PresentPhotoLibrary(target: self, canEdit: false)
         }
         
         let shareVideo = UIAlertAction(title: "Video library", style: .default) { (action) in
-            print("Video library")
+            //camera.PresentVideoLibrary(target: self, canEdit: false)
         }
         
         let shareLocation = UIAlertAction(title: "Share location", style: .default) { (action) in
@@ -265,9 +265,33 @@ class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDele
         var outgoingMessage: OutgoingMessage?
         let currentUSer = FUser.currentUser()!
         
+        // text message
         if let text = text {
             
             outgoingMessage = OutgoingMessage(message: text, senderId: currentUSer.objectId, senderName: currentUSer.firstname, date: date, status: kDELIVERED, type: kTEXT)
+            
+        }
+        
+        // picture message
+        if let pic = picture {
+            
+            uploadImage(image: pic, chatRoomId: chatRoomId, view: self.navigationController!.view) { (imageLink) in
+                
+                if imageLink != nil {
+                    
+                    let text = kPICTURE
+                    
+                    outgoingMessage = OutgoingMessage(message: text, pictureLink: imageLink!, senderId: currentUSer.objectId, senderName: currentUSer.firstname, date: date, status: kDELIVERED, type: kPICTURE)
+                    
+                    JSQSystemSoundPlayer.jsq_playMessageSentSound()
+                    self.finishSendingMessage()
+                    
+                    outgoingMessage?.sendMessage(chatRoomID: self.chatRoomId, messageDictionary: outgoingMessage!.messageDictionary, memberIds: self.memberIds, membersToPush: self.membersToPush)
+                    
+                }
+                
+            }
+            return
             
         }
         
