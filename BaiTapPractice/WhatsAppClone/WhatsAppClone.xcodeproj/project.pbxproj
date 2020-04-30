@@ -14,6 +14,7 @@
 		D3102EF6245978210073032F /* PhotoMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3102EF5245978210073032F /* PhotoMediaItem.swift */; };
 		D3102EF8245A6EB80073032F /* VideoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3102EF7245A6EB80073032F /* VideoMessage.swift */; };
 		D3102EFA245A8D580073032F /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3102EF9245A8D580073032F /* AudioViewController.swift */; };
+		D3102EFC245ACAB10073032F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3102EFB245ACAB10073032F /* MapViewController.swift */; };
 		D38C24472456FC49000E7C8B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C24462456FC49000E7C8B /* ChatViewController.swift */; };
 		D38C244B2458396F000E7C8B /* OutgoingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C244A2458396F000E7C8B /* OutgoingMessage.swift */; };
 		D3EEA47B2451523F00DFE493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EEA47A2451523F00DFE493 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 		D3102EF5245978210073032F /* PhotoMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMediaItem.swift; sourceTree = "<group>"; };
 		D3102EF7245A6EB80073032F /* VideoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMessage.swift; sourceTree = "<group>"; };
 		D3102EF9245A8D580073032F /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		D3102EFB245ACAB10073032F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D38C24462456FC49000E7C8B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D38C244A2458396F000E7C8B /* OutgoingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingMessage.swift; sourceTree = "<group>"; };
 		D3EEA4772451523F00DFE493 /* WhatsAppClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +192,7 @@
 				D3EEA4A22452FEE300DFE493 /* UsersTableViewController.swift */,
 				D3EEA4A62454358F00DFE493 /* ProfileViewTableViewController.swift */,
 				D38C24462456FC49000E7C8B /* ChatViewController.swift */,
+				D3102EFB245ACAB10073032F /* MapViewController.swift */,
 			);
 			path = SecondaryViews;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				D38C244B2458396F000E7C8B /* OutgoingMessage.swift in Sources */,
 				D3EEA48F2451714A00DFE493 /* WelcomeViewController.swift in Sources */,
 				D3EEA4A12452EB9600DFE493 /* UserTableViewCell.swift in Sources */,
+				D3102EFC245ACAB10073032F /* MapViewController.swift in Sources */,
 				D3EEA4AE24559C8B00DFE493 /* RecentChatTableViewCell.swift in Sources */,
 				D3EEA4A32452FEE300DFE493 /* UsersTableViewController.swift in Sources */,
 				D3EEA47B2451523F00DFE493 /* AppDelegate.swift in Sources */,

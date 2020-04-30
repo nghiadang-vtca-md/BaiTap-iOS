@@ -721,6 +721,35 @@
             </objects>
             <point key="canvasLocation" x="2995.6521739130435" y="-272.28260869565219"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="xeC-1g-Ref">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9ZB-Aj-oK6" customClass="MapViewController" customModule="WhatsAppClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iYg-ku-5Ti">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bSC-w0-utf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bSC-w0-utf" firstAttribute="top" secondItem="r9S-bJ-B9N" secondAttribute="top" id="dxs-Fl-qqm"/>
+                            <constraint firstItem="bSC-w0-utf" firstAttribute="bottom" secondItem="r9S-bJ-B9N" secondAttribute="bottom" id="rFC-Zs-S3d"/>
+                            <constraint firstItem="bSC-w0-utf" firstAttribute="leading" secondItem="r9S-bJ-B9N" secondAttribute="leading" id="scn-Nu-0MO"/>
+                            <constraint firstItem="bSC-w0-utf" firstAttribute="trailing" secondItem="r9S-bJ-B9N" secondAttribute="trailing" id="uJm-eA-cIq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r9S-bJ-B9N"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="bSC-w0-utf" id="nE8-RA-dHZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="duJ-3B-Cyd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7188.4057971014499" y="-247.0108695652174"/>
+        </scene>
     </scenes>
     <resources>
         <image name="avatarPlaceholder" width="101" height="101"/>

@@ -17,6 +17,8 @@ import FirebaseFirestore
 
 class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, IQAudioRecorderViewControllerDelegate {
     
+    let sceneDelegate = UIApplication.shared.connectedScenes.first
+    
     var chatRoomId: String!
     var memberIds: [String]!
     var membersToPush: [String]!
@@ -220,7 +222,11 @@ class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDele
         }
         
         let shareLocation = UIAlertAction(title: "Share location", style: .default) { (action) in
-            print("Location")
+            if self.haveAccessToUserLocation() {
+                
+                self.sendMessage(text: nil, date: Date(), picture: nil, location: kLOCATION, video: nil, audio: nil)
+                
+            }
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
@@ -281,6 +287,17 @@ class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDele
 //            }
         case kLOCATION:
             print("location message tapped")
+            
+            let message = messages[indexPath.row]
+            
+            let mediaItem = message.media as! JSQLocationMediaItem
+            
+            let mapView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+            
+            mapView.location = mediaItem.location
+            
+            self.navigationController?.pushViewController(mapView, animated: true)
+            
         case kVIDEO:
             print("video message tapped")
             
@@ -388,6 +405,21 @@ class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDele
                 }
             }
             return
+            
+        }
+        
+        // send location message
+        if location != nil {
+            
+            if let sd = (sceneDelegate?.delegate as? SceneDelegate) {
+                guard let coordinates = sd.coordinates else { return }
+                let lat: NSNumber   = NSNumber(value: coordinates.latitude)
+                let long: NSNumber  = NSNumber(value: coordinates.longitude)
+                
+                let text = "[\(kLOCATION)]"
+                
+                outgoingMessage = OutgoingMessage(message: text, latitude: lat, longitude: long, senderId: currentUSer.objectId, senderName: currentUSer.firstname, date: date, status: kDELIVERED, type: kLOCATION)
+            }
             
         }
         
@@ -713,6 +745,23 @@ class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDele
         // Privacy - Microphone Usage Description
         // Privacy - Location When In Use Usage Description
         // Privacy - Contacts Usage Description
+    }
+    
+    // MARK: Location access
+    
+    func haveAccessToUserLocation() -> Bool {
+
+        if let sd = (sceneDelegate?.delegate as? SceneDelegate) {
+            
+            if sd.locationManager != nil {
+                return true
+            } else {
+                ProgressHUD.showError("Please give access tp location in Settings.")
+                return false
+            }
+            
+        }
+        return false
     }
     
     // MARK: Helper functions
