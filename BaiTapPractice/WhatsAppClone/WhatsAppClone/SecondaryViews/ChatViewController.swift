@@ -216,7 +216,7 @@ class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDele
         }
         
         let shareVideo = UIAlertAction(title: "Video library", style: .default) { (action) in
-            //camera.PresentVideoLibrary(target: self, canEdit: false)
+            camera.PresentVideoLibrary(target: self, canEdit: false)
         }
         
         let shareLocation = UIAlertAction(title: "Share location", style: .default) { (action) in
@@ -258,6 +258,42 @@ class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDele
         self.collectionView.reloadData()
     }
     
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, didTapMessageBubbleAt indexPath: IndexPath!) {
+        
+        let messageDictionary = objectMessages[indexPath.row]
+        let messageType = messageDictionary[kTYPE] as! String
+        
+        switch messageType {
+        case kPICTURE:
+            print("picture message tapped")
+        case kLOCATION:
+            print("location message tapped")
+        case kVIDEO:
+            print("video message tapped")
+            
+            let message = messages[indexPath.row]
+            
+            let mediaItem = message.media as! VideoMessage
+            
+            let player = AVPlayer(url: mediaItem.fileURL! as URL)
+            let moviePlayer = AVPlayerViewController()
+            
+            let session = AVAudioSession.sharedInstance()
+            
+            try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: .default, options: .defaultToSpeaker)
+            
+            moviePlayer.player = player
+            
+            self.present(moviePlayer, animated: true) {
+                moviePlayer.player!.play()
+            }
+            
+        default:
+            print("Unknown message tapped")
+        }
+        
+    }
+    
     // MARK: Send messages
     
     func sendMessage(text: String?, date: Date, picture: UIImage?, location: String?, video: NSURL?, audio: String?) {
@@ -279,7 +315,7 @@ class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDele
                 
                 if imageLink != nil {
                     
-                    let text = kPICTURE
+                    let text = "[\(kPICTURE)]"
                     
                     outgoingMessage = OutgoingMessage(message: text, pictureLink: imageLink!, senderId: currentUSer.objectId, senderName: currentUSer.firstname, date: date, status: kDELIVERED, type: kPICTURE)
                     
@@ -293,6 +329,31 @@ class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDele
             }
             return
             
+        }
+        
+        // video message
+        if let video = video {
+            
+            let videoData = NSData(contentsOfFile: video.path!)
+            
+            let dataThumbnail = videoThumbnail(video: video).jpegData(compressionQuality: 0.3)
+            
+            uploadVideo(video: videoData!, chatRoomId: chatRoomId, view: self.navigationController!.view) { (videoLink) in
+                
+                if videoLink != nil {
+                    
+                    let text = "[\(kVIDEO)]"
+                    
+                    outgoingMessage = OutgoingMessage(message: text, videoLink: videoLink!, thumbNail: dataThumbnail! as NSData, senderId: currentUSer.objectId, senderName: currentUSer.firstname, date: date, status: kDELIVERED, type: kVIDEO)
+                    
+                    JSQSystemSoundPlayer.jsq_playMessageSentSound()
+                    self.finishSendingMessage()
+                    
+                    outgoingMessage?.sendMessage(chatRoomID: self.chatRoomId, messageDictionary: outgoingMessage!.messageDictionary, memberIds: self.memberIds, membersToPush: self.membersToPush)
+                }
+                
+            }
+            return
         }
         
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
