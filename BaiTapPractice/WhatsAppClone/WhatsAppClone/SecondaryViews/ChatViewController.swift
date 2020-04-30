@@ -266,6 +266,16 @@ class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDele
         switch messageType {
         case kPICTURE:
             print("picture message tapped")
+//            let message = messages[indexPath.row]
+//
+//            let mediaItem = message.media as! JSQPhotoMediaItem
+//
+//            let photos = IDMPhoto.photos(withImages: [mediaItem.image])
+//            let browser = IDMPhotoBrowser(photos: photos)
+//
+//            if let browser = browser {
+//                self.present(browser, animated: true, completion: nil)
+//            }
         case kLOCATION:
             print("location message tapped")
         case kVIDEO:
@@ -709,3 +719,4 @@ class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDele
         
     }
 }
+
